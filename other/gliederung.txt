@@ -1,0 +1,34 @@
+Gliederng Projekiotpräsentation:
+
+I. Einleitung
+A. Vorstellung des Rollenspiels via. PowerPoint 
+B. Erläuterung des Zwecks und Nutzens des Rollenspiels für den Physikunterricht via. PowerPoint
+C. Vorstellung der Regeln und Spielweise via. PowerPoint
+
+II. Thema 1: Mechanik
+A. Einführung in die Mechanik
+B. Erklärung von Grundlagen falls nötig
+C. Aufgaben mit verschiedenen Lösungsmöglichkeiten 
+D. Erklärung der Ergebnisse
+
+III. Thema 2: Elektrizitätslehre
+A. Einführung in die Elektrizitätslehre
+B. Erklärung von Grundlagen falls nötig
+C. Aufgaben mit verschiedenen Lösungsmöglichkeiten
+D. Erklärung der Ergebnisse
+
+IV. Thema 3: Wärmelehre
+A. Einführung in die Wärmelehre
+B. Erklärung von Grundlagen falls nötig
+C. Aufgaben mit verschiedenen Lösungsmöglichkeiten
+D. Erklärung der Ergebnisse
+
+V. Abschluss
+A. Zusammenfassung der wichtigsten Erkenntnissen
+B. Ausblick auf weitere Themen im Physikunterricht
+C. Quellenangaben
+D. Auf GitHub verweisen
+
+VI. Schlusswort
+A. Dank an die Schüler für Aufmerksamkeit
+B. Ermutigung zur weiteren Beschäftigung mit den physikalischen Prinzipien

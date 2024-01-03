@@ -1,0 +1,7 @@
+Copyright (c) 2024 <SCHOOL>
+
+Files:
+
+other/resource/Logo/*
+
+-----------------------------------

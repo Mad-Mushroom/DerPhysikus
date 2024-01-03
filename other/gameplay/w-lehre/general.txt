@@ -1,0 +1,48 @@
+== Wärme Beginn ==
+
+Karte (Brücke, Nebel) || Level (Tor, Tür)
+
+Lückentext (Definition von Wärme)   |   2-1
+
+->
+->
+
+Innere Energie
+
+QUEST: Kugel mit genügend innere Energie "füllen"
+--> kin. Energie und pot. Energie
+
+-> kin. Energie:   |   2-2
+
+Auswahlmöglochkeiten mit verschiedenen Werten
+=> Möglichkeit finden mit XY Joule
+
+-> pot. Energie   |   2-3
+
+Auswahlmöglochkeiten mit verschiedenen Werten
+=> Möglichkeit finden mit XY Joule
+
+-> innere Energie   |   2-4
+
+Auswahlmöglochkeiten mit verschiedenen Werten
+=> Innere Energie muss XY Joule sein
+
+->
+->
+
+Energietransport (Wärmetransport)
+
+QUEST: Kugel braucht genug Wärme
+
+verschiedene möglichkeiten für mehr temperatur
+
+-> Reibung   |   2-5
+Kugel ist in einem Kugellager und wird durch reibung wärmer  --> Zu viel: 2-9
+
+-> Konvektion   |   2-6
+Kugel wird in heißes wasser geschmissen, wasser kühlt ab
+
+-> Strahlung   |   2-7
+Kugel wird durch sonne wärmer
+
+=> genug wärme um durch barriere zu schmelzen   |   2-8

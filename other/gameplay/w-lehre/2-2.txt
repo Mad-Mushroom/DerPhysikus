@@ -1,0 +1,8 @@
+4 Auswahlmöglochkeiten:
+
+- m = 20g; v = 10cm/s; = 1,000 Joule
+- m = 20g; v = 5cm/s;  = 250 Joule
+- m = 20g; v = 20cm/s; = 4,000 Joule
+- m = 20g; v = 15cm/s; = 2,250 Joule
+
+Ziel: 2,250 Joule
