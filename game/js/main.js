@@ -121,10 +121,10 @@ function E_ltext(Text, answer1, answer2, answer3, answer4, rightAnswer1, rightAn
     var selectedT = 0;
     var dones = 0;
 
-    let flBtn = new Button("________________________", 250, 20, l1X, l1Y, 0xffffff, 0x212121, 20);
+    let flBtn = new Button("________________________", 250, 20, l1X, l1Y, 0xffffff, 0x212121, 20, 0);
     flBtn.Draw();
 
-    let slBtn = new Button("________________________", 250, 20, l2X, l2Y, 0xffffff, 0x212121, 20);
+    let slBtn = new Button("________________________", 250, 20, l2X, l2Y, 0xffffff, 0x212121, 20, 0);
     slBtn.Draw();
 
     let fTextBtn = new Button(answer1, 300, 100, btn1X, btn1Y, 0xffffff, 0x313131, 20);
@@ -203,7 +203,7 @@ function E_ltext(Text, answer1, answer2, answer3, answer4, rightAnswer1, rightAn
                 btnnX = btn4X;
                 btnnY = btn4Y;
             }
-            let tmp = new Button(ranswer, 250, 20, l1X, l1Y, 0xffffff, 0x212121, 20);
+            let tmp = new Button(ranswer, 250, 20, l1X, l1Y, 0xffffff, 0x212121, 20, 0);
             tmp.Draw();
             selectedT = 0;
             let tmp2 = new Button("a", 300, 100, btnnX, btnnY, 0x212121, 0x212121, 20);
@@ -238,7 +238,7 @@ function E_ltext(Text, answer1, answer2, answer3, answer4, rightAnswer1, rightAn
                 btnnX = btn4X;
                 btnnY = btn4Y;
             }
-            let tmp = new Button(ranswer, 250, 20, l2X, l2Y, 0xffffff, 0x212121, 20);
+            let tmp = new Button(ranswer, 250, 20, l2X, l2Y, 0xffffff, 0x212121, 20, 0);
             tmp.Draw();
             selectedT = 0;
             let tmp2 = new Button("a", 300, 100, btnnX, btnnY, 0x212121, 0x212121, 20);

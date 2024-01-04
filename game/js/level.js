@@ -1,7 +1,12 @@
 function e2m1(){
     E_clear(0x212121);
+    let bkgSprite = PIXI.Sprite.from('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m1_background.png');
+    bkgSprite.x = 0;
+    bkgSprite.y = 0;
+    bkgSprite.width = window.innerWidth;
+    bkgSprite.height = window.innerHeight;
+    app.stage.addChild(bkgSprite);
     E_header();
-    let bkgSprite = PIXI.Sprite.from("./res/e2m1_background.png");
     let ltexti = "Wärme ist die Energie, die in Folge von ________________________ übertragen wird.\n\nDies kann innerhalb eines Körpers erfolgen oder zwischen zwei Körpern mit ________________________ Temperatur.";
     E_ltext(ltexti, "Temperaturunterschieden", "unterschiedlicher", "Dichte", "2", 1, 2, 520, 302, 700, 350, () => {
         e2m2();
