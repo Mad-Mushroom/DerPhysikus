@@ -6,5 +6,5 @@ function MainMenu(){
     let NewGameBtn = new Button("New Game", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+100)/2, 0xffffff, 0x000000, 20);
     NewGameBtn.Draw();
 
-    NewGameBtn.OnClick = () => {LoadLevel(21);};
+    NewGameBtn.OnClick = () => {e2m1();};
 }

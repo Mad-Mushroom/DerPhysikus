@@ -1,0 +1,29 @@
+function LoadLevel(level){
+    if(level == 11) e1m1();
+    if(level == 12) e1m2();
+    if(level == 13) e1m3();
+    if(level == 14) e1m4();
+    if(level == 15) e1m5();
+    if(level == 16) e1m6();
+    if(level == 17) e1m7();
+    if(level == 18) e1m8();
+    if(level == 19) e1m9();
+    if(level == 21) e2m1();
+    if(level == 22) e2m2();
+    if(level == 23) e2m3();
+    if(level == 24) e2m4();
+    if(level == 25) e2m5();
+    if(level == 26) e2m6();
+    if(level == 27) e2m7();
+    if(level == 28) e2m8();
+    if(level == 29) e2m9();
+    if(level == 31) e3m1();
+    if(level == 32) e3m2();
+    if(level == 33) e3m3();
+    if(level == 34) e3m4();
+    if(level == 35) e3m5();
+    if(level == 36) e3m6();
+    if(level == 37) e3m7();
+    if(level == 38) e3m8();
+    if(level == 39) e3m9();
+}

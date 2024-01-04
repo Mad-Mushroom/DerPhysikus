@@ -1,29 +1,54 @@
-function LoadLevel(level){
-    if(level == 11) e1m1();
-    if(level == 12) e1m2();
-    if(level == 13) e1m3();
-    if(level == 14) e1m4();
-    if(level == 15) e1m5();
-    if(level == 16) e1m6();
-    if(level == 17) e1m7();
-    if(level == 18) e1m8();
-    if(level == 19) e1m9();
-    if(level == 21) e2m1();
-    if(level == 22) e2m2();
-    if(level == 23) e2m3();
-    if(level == 24) e2m4();
-    if(level == 25) e2m5();
-    if(level == 26) e2m6();
-    if(level == 27) e2m7();
-    if(level == 28) e2m8();
-    if(level == 29) e2m9();
-    if(level == 31) e3m1();
-    if(level == 32) e3m2();
-    if(level == 33) e3m3();
-    if(level == 34) e3m4();
-    if(level == 35) e3m5();
-    if(level == 36) e3m6();
-    if(level == 37) e3m7();
-    if(level == 38) e3m8();
-    if(level == 39) e3m9();
+function e2m1(){
+    E_clear(0x212121);
+    E_header();
+    let bkgSprite = PIXI.Sprite.from("./res/e2m1_background.png");
+    let ltexti = "Wärme ist die Energie, die in Folge von ________________________ übertragen wird.\n\nDies kann innerhalb eines Körpers erfolgen oder zwischen zwei Körpern mit ________________________ Temperatur.";
+    E_ltext(ltexti, "Temperaturunterschieden", "unterschiedlicher", "Dichte", "2", 1, 2, 520, 302, 700, 350, () => {
+        e2m2();
+    });
+}
+
+function e2m2(){
+    E_clear(0x212121);
+    E_header();
+    E_reveale("mechanische Arbeit", "Übertragung von Wärme", "Strahlung", "Zuführen von elektrischer Energie", 0x00ff00, 0x00ff00, 0x00ff00, 0x00ff00, () => {
+        e2m3();
+    });
+}
+
+function e2m3(){
+    E_clear(0x212121);
+    E_header();
+
+    let tmpp = 0;
+
+    let circ  = new PIXI.Graphics(); circ.beginFill(0xffffff);
+    circ.drawCircle((window.innerWidth)/2, 650, 100);
+    app.stage.addChild(circ);
+
+    eventBtn = new Button("a", 200, 200, ((window.innerWidth)/2)-100, 550, 0xffffff, 0x313131, 20, 0);
+    eventBtn.Draw();
+
+    eventBtn.OnClick = () => {
+        let tmpTxt = new PIXI.Text("Eₖᵢₙ",{fontFamily : 'Arial', fontSize: 15, fill : 0x1008e0, align : 'center'});
+        tmpTxt.x = E_random(((window.innerWidth)/2)-60, ((window.innerWidth)/2)+60);;
+        tmpTxt.y = E_random(590, 710);;
+        app.stage.addChild(tmpTxt);
+        let tmp2Txt = new PIXI.Text("Eₚₒₜ",{fontFamily : 'Arial', fontSize: 15, fill : 0xea8125, align : 'center'});
+        tmp2Txt.x = E_random(((window.innerWidth)/2)-60, ((window.innerWidth)/2)+60);
+        tmp2Txt.y = E_random(590, 710);
+        app.stage.addChild(tmp2Txt);
+        if(tmpp == 0){
+            let tmp2 = new Button("=>", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+            tmp2.Draw();
+            tmp2.OnClick = () => {
+                e2m4();
+            };
+        }
+        tmpp++;
+    }
+}
+
+function e2m4(){
+
 }
