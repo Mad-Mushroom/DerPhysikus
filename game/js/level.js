@@ -15,6 +15,12 @@ function e2m1(){
 
 function e2m2(){
     E_clear(0x212121);
+    let bkgSprite = PIXI.Sprite.from('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m2_background.png');
+    bkgSprite.x = 0;
+    bkgSprite.y = 0;
+    bkgSprite.width = window.innerWidth;
+    bkgSprite.height = window.innerHeight;
+    app.stage.addChild(bkgSprite);
     E_header();
     E_reveale("mechanische Arbeit", "Übertragung von Wärme", "Strahlung", "Zuführen von elektrischer Energie", 0x00ff00, 0x00ff00, 0x00ff00, 0x00ff00, () => {
         e2m3();
@@ -22,7 +28,14 @@ function e2m2(){
 }
 
 function e2m3(){
+    // https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m3_background.png
     E_clear(0x212121);
+    let bkgSprite = PIXI.Sprite.from('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m3_background.png');
+    bkgSprite.x = 0;
+    bkgSprite.y = 0;
+    bkgSprite.width = window.innerWidth;
+    bkgSprite.height = window.innerHeight;
+    app.stage.addChild(bkgSprite);
     E_header();
 
     let tmpp = 0;
