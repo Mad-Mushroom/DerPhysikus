@@ -5,11 +5,11 @@ const app = new PIXI.Application({
 document.body.appendChild(app.view);
 let elapsed = 0.0;
 
-let G_VERSION = "v. Alpha 1.4";
+let G_VERSION = "v. Alpha 1.6";
 let G_BUILD = "010424";
 let G_LEVEL = 0;
 
-let E_VERSION = "v. Alpha 1.1";
+let E_VERSION = "v. Alpha 1.4";
 let E_BUILD = "010424";
 
 let G_Points = 1;
@@ -46,7 +46,16 @@ function E_show_info(){
 
 function E_random(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
-  }
+}
+
+function E_background(link){
+    let bkgSprite = PIXI.Sprite.from(link);
+    bkgSprite.x = 0;
+    bkgSprite.y = 0;
+    bkgSprite.width = window.innerWidth;
+    bkgSprite.height = window.innerHeight;
+    app.stage.addChild(bkgSprite);
+}
 
 function E_header(){
     let backgroundRect = new PIXI.Graphics();
@@ -57,7 +66,7 @@ function E_header(){
     nameTxt.x = 10;
     nameTxt.y = 2.5;
     app.stage.addChild(nameTxt);
-    let pointsTxt = new PIXI.Text("Points: " + G_Points,{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
+    let pointsTxt = new PIXI.Text("Punkte: " + G_Points,{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
     pointsTxt.x = window.innerWidth - 100;
     pointsTxt.y = 2.5;
     app.stage.addChild(pointsTxt);
@@ -310,6 +319,37 @@ function E_reveale(btn1Txt, btn2Txt, btn3Txt, btn4Txt, btn1Color, btn2Color, btn
 
 }
 
+function E_fiftyfifty(answer1, answer2, rightAnswer, a1X, a1Y, a2X, a2Y, onclick){
+    let answer1Btn = new Button(answer1, 300, 100, a1X, a1Y, 0xffffff, 0x313131, 20);
+    answer1Btn.Draw();
+
+    let answer2Btn = new Button(answer2, 300, 100, a2X, a2Y, 0xffffff, 0x313131, 20);
+    answer2Btn.Draw();
+
+    answer1Btn.OnClick = () => {
+        if(rightAnswer == 1){
+            G_Points++;
+            onclick();
+        }else{
+            let tmp = new Button(answer1, 300, 100, a1X, a1Y, 0xffffff, 0xff0000, 20);
+            tmp.Draw();
+            G_Points--;
+            E_header();
+        }
+    }
+    answer2Btn.OnClick = () => {
+        if(rightAnswer == 2){
+            G_Points++;
+            onclick();
+        }else{
+            let tmp = new Button(answer2, 300, 100, a2X, a2Y, 0xffffff, 0xff0000, 20);
+            tmp.Draw();
+            G_Points--;
+            E_header();
+        }
+    }
+}
+
 function main(){
     G_show_info();
     MainMenu();
@@ -318,6 +358,21 @@ function main(){
 function Update(){
     if(G_Points < 0){
         E_clear(0xff00ff);
+    }
+
+    if(G_LEVEL == 210){
+        L210_ball.rotation += L210_rotSpeed;
+        let temp = (L210_rotSpeed * 2 * 20) + 20;
+        let temptxt = temp + "°C";
+        //document.getElementById("htmltxt").innerHTML = temptxt;
+        if(temp >= 60){
+            let checkBtn = new Button("->", 100, 50, 900, 550, 0xffffff, 0x313131, 20);
+            checkBtn.Draw();
+            checkBtn.OnClick = () => {
+                G_Points++;
+                e2m11();
+            }
+        }
     }
 }
 

@@ -40,3 +40,41 @@ class Button {
     OnClick(){}
     OnMouseDown(){}
 }
+
+class SpriteButton {
+    constructor(Texture, SizeX, SizeY, PosX, PosY, ForeColor, BackColor, FontSize, Alpha = 1) {
+        this.Texture = Texture;
+        this.PosX = PosX;
+        this.PosY = PosY;
+        this.SizeX = SizeX;
+        this.SizeY = SizeY;
+        this.ForeColor = ForeColor;
+        this.BackColor = BackColor;
+        this.FontSize = FontSize;
+        this.Alpha = Alpha;
+    }
+
+    Draw(){
+        this.sprite = PIXI.Sprite.from(this.Texture);
+        this.sprite.x = this.PosX;
+        this.sprite.y = this.PosY;
+        this.sprite.width = this.SizeX;
+        this.sprite.height = this.SizeY;
+        app.stage.addChild(this.sprite);
+        this.sprite.on('pointerdown', (event) => { this.OnClick() });
+        this.sprite.eventMode = 'static';
+    }
+
+    Update(){
+        this.obj = new PIXI.Graphics();
+        this.obj.beginFill(this.BackColor);
+        this.obj.drawRect(this.PosX, this.PosY, this.SizeX, this.SizeY);
+        this.sprite.x = this.PosX;
+        this.sprite.y = this.PosY;
+        this.sprite.width = this.SizeX;
+        this.sprite.height = this.SizeY;
+        this.obj.alpha = this.Alpha;
+    }
+
+    OnClick(){}
+}
