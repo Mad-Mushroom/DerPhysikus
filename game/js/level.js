@@ -1,9 +1,10 @@
 function e2m1(){
     E_clear(0x212121);
     G_LEVEL = 201;
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m1_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m1_background.png');
     E_header();
     let ltexti = "Wärme ist die Energie, die in Folge von ________________________ übertragen wird.\n\nDies kann innerhalb eines Körpers erfolgen oder zwischen zwei Körpern mit ________________________ Temperatur.";
+    E_topText("Was ist Wärme?\n\nVervollständige die Definition.");
     E_ltext(ltexti, "Temperaturunterschieden", "unterschiedlicher", "Dichte", "2", 1, 2, 520, 302, 700, 350, () => {
         e2m2();
     });
@@ -12,8 +13,9 @@ function e2m1(){
 function e2m2(){
     E_clear(0x212121);
     G_LEVEL = 202;
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m2_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m2_background.png');
     E_header();
+    E_topText("Wärme ist also ENERGIE\nund Körper haben ohnehin eine innere Energie.\n\nBei Festkörpern und Flüssigkeiten ist es noch nicht möglich\n die innere Energie anzugeben,\nABER die Änderung der inneren Energie können wir angeben.\n\nBeispiele für die Änderung der inneren Energie:");
     E_reveale("mechanische Arbeit", "Übertragung von Wärme", "Strahlung", "Zuführen von elektrischer Energie", 0x00ff00, 0x00ff00, 0x00ff00, 0x00ff00, () => {
         e2m3();
     });
@@ -22,7 +24,8 @@ function e2m2(){
 function e2m3(){
     E_clear(0x212121);
     G_LEVEL = 203;
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m3_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m3_background.png');
+    E_topText("Was ist innere Energie?\n\nEntsprechend dem Teilchenmodell, innere Energie =\nDie Summe der kinetischen und potenziellen Energie aller Teilchen des Körpers.\n\n‚");
     E_header();
 
     let tmpp = 0;
@@ -57,7 +60,8 @@ function e2m3(){
 function e2m4(){
     E_clear(0x212121);
     G_LEVEL = 204;
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m4_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m4_background.png');
+    E_topText("Kinetische Energie ist eine spezielle Form der mechanischen Energie\n und kennzeichnet den Zustand eines sich bewegenden Körpers.\nSomit wird sie auch als Zustandsgröße bezeichnet.\n\nDie kinetische Energie eines Körpers ist abhängig von seiner Masse und der Geschwindigkeit.\n\nWer hat wenn er unten ankommt mehr Joul/Newtonmeter kinetische Energie?", 20);
     E_header();
     E_fiftyfifty("Eₖᵢₙ = ½m * v²", "Eₖᵢₙ = ½m * v²", 1, 100, 700, 700, 700, () => {
         e2m5();
@@ -67,8 +71,9 @@ function e2m4(){
 function e2m5(){
     E_clear(0x212121);
     G_LEVEL = 205;
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m5_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m5_background.png');
     E_header();
+    E_topText("Potenzielle Energie ist eine spezielle Form mechanischer Energie.\nDie potenzielle Energie kennzeichnet den Zustand eines gehobenen oder eines verformten Körpers\nund wird deshalb wie jede Form von Energie auch als Zustandsgröße bezeichnet.\nPotenzielle Energie kann in einem Körper gespeichert sein.\nSie kann auch in andere Energieformen umgewandelt oder von einem Körper auf andere Körper übertragen werden.", 20);
     let ltexti = "Potenzielle Energie ist die Fähigkeit eines Körpers, aufgrund seiner ________________________ mechanische\n\n Arbeit zu verrichten, ________________________ abzugeben oder Licht auszusenden.";
     E_ltext(ltexti, "Wärme", "Lage", "Gewicht", "Aggregatszustands", 1, 2, 620, 302, 310, 350, () => {
         e2m6();
@@ -125,7 +130,8 @@ function e2m6(){
 function e2m7(){
     E_clear(0x212121);
     G_LEVEL = 207;
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m7_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m7_background.png');
+    E_topText("Das wissen wir:\nWärme ist die Energie, die durch Temperaturunterschiede übertragen wird.\n\nAber was ist Temperatur?");
     E_header();
     let ltexti = "Die Temperatur ist ein ________________________ für die ________________________ aller Teilchen eines Körpers.";
     E_ltext(ltexti, "Maß", "mittlere kinetische Energie", "Ton", "Wellenlänge", 1, 2, 220, 302, 550, 302, () => {
@@ -136,7 +142,8 @@ function e2m7(){
 function e2m8(){
     let dones = 0;
     E_clear(0x212121);
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m8_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m8_background.png');
+    E_topText("Es gibt auch verschiedene Temperatureinheiten:")
     G_LEVEL = 208;
     E_header();
 
@@ -201,13 +208,15 @@ let L210_rotSpeed = 0.1;
 
 function e2m10(){
     E_clear(0x212121);
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10a_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10a_background.png');
+    E_topText("Wärmeleitung erfolgt stets von Stellen höherer Temperatur\nzu stellen niedrigerer Temperatur.");
     E_header();
     let nextButton = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
     nextButton.Draw();
     nextButton.OnClick = () => {
         E_clear(0x212121);
-        E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10b_background.png');
+        //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10b_background.png');
+        E_topText("Schaffe es durch Reibung insgesamt 60°C zu erreichen.");
         E_header();
         
         let outerCirc  = new PIXI.Graphics(); outerCirc.beginFill(0xffffff);
@@ -245,30 +254,142 @@ function e2m10(){
     }
 }
 
+let L211_anim = true;
+let L211_ball01;
+let L211_ball02;
+let L211_ball03;
+let L211_ball04;
+let L211_ball05;
+let L211_ball06;
+let L211_ball07;
+let L211_ball08;
+
 function e2m11(){
     G_LEVEL = 0;
     E_clear(0x212121);
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11a_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11a_background.png');
+    E_topText("Unter Wärmeströmung (Konvektion) versteht man den Energietransport\nin Verbindung mit Teilchentransport innerhalb Flüssigkeiten oder Gasen");
     E_header();
     let nextButton = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
     nextButton.Draw();
     nextButton.OnClick = () => {
         E_clear(0x212121);
-        E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11b_background.png');
+        //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11b_background.png');
         E_header();
+
+        let water = new Button("", 320, 320, 40, 340, 0x0000ff, 0x0000ff, 1, 0.4);
+        water.Draw();
+
+        let dones = 0;
+
+        L211_ball01  = new PIXI.Graphics();
+        L211_ball01.beginFill(0xffffff);
+        L211_ball01.drawCircle(100, 600, 40);
+        app.stage.addChild(L211_ball01);
+        L211_ball02  = new PIXI.Graphics();
+        L211_ball02.beginFill(0xffffff);
+        L211_ball02.drawCircle(100, 500, 40);
+        app.stage.addChild(L211_ball02);
+        L211_ball03  = new PIXI.Graphics();
+        L211_ball03.beginFill(0xffffff);
+        L211_ball03.drawCircle(100, 400, 40);
+        app.stage.addChild(L211_ball03);
+        L211_ball04  = new PIXI.Graphics();
+        L211_ball04.beginFill(0xffffff);
+        L211_ball04.drawCircle(200, 400, 40);
+        app.stage.addChild(L211_ball04);
+        L211_ball05  = new PIXI.Graphics();
+        L211_ball05.beginFill(0xffffff);
+        L211_ball05.drawCircle(300, 400, 40);
+        app.stage.addChild(L211_ball05);
+        L211_ball06  = new PIXI.Graphics();
+        L211_ball06.beginFill(0xffffff);
+        L211_ball06.drawCircle(300, 500, 40);
+        app.stage.addChild(L211_ball06);
+        L211_ball07  = new PIXI.Graphics();
+        L211_ball07.beginFill(0xffffff);
+        L211_ball07.drawCircle(300, 600, 40);
+        app.stage.addChild(L211_ball07);
+        L211_ball08  = new PIXI.Graphics();
+        L211_ball08.beginFill(0xffffff);
+        L211_ball08.drawCircle(200, 600, 40);
+        app.stage.addChild(L211_ball08);
+
+        let animBtn = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+
+        let yellow1Btn = new Button("", 50, 50, 700, 200, 0x000000, 0xffff00, 1);
+        yellow1Btn.Draw();
+        yellow1Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xffff00); ball.drawCircle(100, 600, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        let yellow2Btn = new Button("", 50, 50, 800, 200, 0x000000, 0xffff00, 1);
+        yellow2Btn.Draw();
+        yellow2Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xffff00); ball.drawCircle(100, 500, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        let red1Btn = new Button("", 50, 50, 700, 300, 0x000000, 0xff0000, 1);
+        red1Btn.Draw();
+        red1Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xff0000); ball.drawCircle(100, 400, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        let red2Btn = new Button("", 50, 50, 800, 300, 0x000000, 0xff0000, 1);
+        red2Btn.Draw();
+        red2Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xff0000); ball.drawCircle(200, 400, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        let orange1Btn = new Button("", 50, 50, 700, 400, 0x000000, 0xff6e00, 1);
+        orange1Btn.Draw();
+        orange1Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xff6e00); ball.drawCircle(300, 400, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        let orange2Btn = new Button("", 50, 50, 800, 400, 0x000000, 0xff6e00, 1);
+        orange2Btn.Draw();
+        orange2Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xff6e00); ball.drawCircle(300, 500, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        let blue1Btn = new Button("", 50, 50, 700, 500, 0x000000, 0x0000ff, 1);
+        blue1Btn.Draw();
+        blue1Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0x0000ff); ball.drawCircle(300, 600, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        let blue2Btn = new Button("", 50, 50, 800, 500, 0x000000, 0x0000ff, 1);
+        blue2Btn.Draw();
+        blue2Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0x0000ff); ball.drawCircle(200, 600, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+    
+        animBtn.OnClick = () => {
+            const videoResource = new PIXI.resources.VideoResource(video); 
+            videoResource.updateFPS = 30
+            let texture = PIXI.Texture.from(videoResource);
+            let videoSprite = new PIXI.Sprite(texture);
+            this.backgroundVideo = videoSprite;
+            this.backgroundVideo.height = 200;
+            this.backgroundVideo.width = 200;
+            app.stage.addChild(this.backgroundVideo);
+            let nextButton = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+            nextButton.Draw();
+        };
+
+        G_LEVEL = 211;
     }
 }
 
+let L212_rect;
+let L212_speed = 0;
+let L212_count = 0;
+
 function e2m12(){
     E_clear(0x212121);
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12a_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12a_background.png');
+    E_topText("Alle Körper emittieren aufgerund ihrer Temperatur Wärmestrahlung.\nZugleich absobieren sie auftreffende Wärmestrahlung.")
     E_header();
     let nextButton = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
     nextButton.Draw();
     nextButton.OnClick = () => {
         E_clear(0x212121);
-        E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12b_background.png');
+        //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12b_background.png');
         E_header();
+
+        L212_rect = new PIXI.Graphics();
+        L212_rect.beginFill(0xff0000);
+        L212_rect.drawRect(300, 400, 100, 100);
+        app.stage.addChild(L212_rect);
+
+        let eventBtn = new Button("", 100, 200, 300, 300, 0x313131, 0x313131, 20, 0.5);
+        eventBtn.Draw();
+
+        eventBtn.OnClick = () => {
+            L212_speed = -5;
+            L212_count++;
+            if(L212_count >= 69) e2m13();
+        }
+
+        G_LEVEL = 212;
     }
 }
 

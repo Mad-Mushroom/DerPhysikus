@@ -350,6 +350,13 @@ function E_fiftyfifty(answer1, answer2, rightAnswer, a1X, a1Y, a2X, a2Y, onclick
     }
 }
 
+function E_topText(text, size = 30){
+    let toptxt = new PIXI.Text(text,{fontFamily : 'Arial', fontSize: size, fill : 0xffffff, align : 'center'});
+    toptxt.x = 10;
+    toptxt.y = 40;
+    app.stage.addChild(toptxt);
+}
+
 function main(){
     G_show_info();
     MainMenu();
@@ -373,6 +380,17 @@ function Update(){
                 e2m11();
             }
         }
+    }
+
+    if(G_LEVEL == 211){
+        if(L211_anim){
+            
+        }
+    }
+
+    if(G_LEVEL == 212){
+        L212_rect.y += L212_speed;
+        if(L212_speed < 1.5) L212_speed++;
     }
 }
 
