@@ -1,5 +1,0 @@
-Spieler kann Kugellager verschieden schnell drehen.
-
-=> Mehr Drehung -> mehr Temperatur (°C)
-
-Ziel: 30°C

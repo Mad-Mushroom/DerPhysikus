@@ -1,9 +1,0 @@
-sonne spawned -> strahlt auf den kugel drauf
-
-Strahlen werden visualisiert
-
--> kurz erklärt das wärmer wird
-
-spieler kann sonne bewegen (ee: gravitation)
-
-Ziel: 60°C erreichen

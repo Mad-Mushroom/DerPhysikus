@@ -1,8 +1,0 @@
-4 Auswahlmöglochkeiten:
-
-- m = 20g; g = 9.81N/kg; h = 10cm; = 1,962 Joule
-- m = 50g; g = 9.81N/kg; h = 20cm; = 9,810 Joule <-
-- m = 10g; g = 9.81N/kg; h = 45cm; = 4,415 Joule
-- m = 150g; g = 9.81N/kg; h = 5cm; = 7,358 Joule
-
-Ziel: 9,810 Joule

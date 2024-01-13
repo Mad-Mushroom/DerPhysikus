@@ -1,6 +1,6 @@
 == Dienstag 12/05/2023 ==
 
-[ ] Stoffsammlung, Recherche
+[X] Stoffsammlung, Recherche
 [X] Aufgaben untereinander aufteilen
 [X] Kontakt mit Lehrkraft aufnehmen
 [X] Gliederung erstellen
@@ -16,10 +16,10 @@
 
 == Freitag 01/12/2024 ==
 
-[ ] Termin mit Lehrkraft für 2. Zwischengespräch
-[ ] Vorbereitung für das Gespräch (Material zusammensammeln)
+[X] Termin mit Lehrkraft für 2. Zwischengespräch
+[X] Vorbereitung für das Gespräch (Material zusammensammeln)
 [ ] Liste der noch zu erledingen Dinge erstellen
-[ ] 2. Zwischengespräch durchführen
+[X] 2. Zwischengespräch durchführen
 
 == Freitag 01/26/2024 ==
 
