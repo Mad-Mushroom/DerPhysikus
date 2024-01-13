@@ -20,7 +20,9 @@ You can play it <a href="https://mad-mushroom.github.io/DerPhysikus/game/">here<
 ## Credits
 
 **Programming** Benjamin Braun / MadMushroom
-**Game Design** Sebastian Rützel+
+
+**Game Design** Sebastian Rützel
+
 **Artist** Fabio Schmidt / IceAge09
 
 ## License
