@@ -5,14 +5,16 @@ const app = new PIXI.Application({
 document.body.appendChild(app.view);
 let elapsed = 0.0;
 
-let G_VERSION = "v. Alpha 1.6";
-let G_BUILD = "010424";
+let G_VERSION = "v. Alpha 1.7";
+let G_BUILD = "011324";
 let G_LEVEL = 0;
 
-let E_VERSION = "v. Alpha 1.4";
-let E_BUILD = "010424";
+let E_VERSION = "v. Alpha 1.5";
+let E_BUILD = "011324";
 
 let G_Points = 1;
+
+let G_BACKGROUND = 0x212121;
 
 function G_show_license(){
     window.location.replace("https://mad-mushroom.github.io/DerPhysikus/license/game.txt");
@@ -383,8 +385,17 @@ function Update(){
     }
 
     if(G_LEVEL == 211){
-        if(L211_anim){
-            
+        if(L211_anim == true){
+            if(L211_elapsed >= L211_timeEl && L211_cf == 2){
+                L211_frame1();
+                L211_elapsed = 0;
+                L211_cf = 1;
+            }
+            if(L211_elapsed >= L211_timeEl && L211_cf == 1){
+                L211_frame2();
+                L211_elapsed = 0;
+                L211_cf = 2;
+            }
         }
     }
 
@@ -398,5 +409,6 @@ main();
 
 app.ticker.add((delta) => {
     elapsed += delta;
+    if(G_LEVEL == 211 && L211_anim == true) L211_elapsed += delta;
     Update();
 });

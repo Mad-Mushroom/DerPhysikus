@@ -1,5 +1,5 @@
 function e2m1(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     G_LEVEL = 201;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m1_background.png');
     E_header();
@@ -11,7 +11,7 @@ function e2m1(){
 }
 
 function e2m2(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     G_LEVEL = 202;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m2_background.png');
     E_header();
@@ -22,7 +22,7 @@ function e2m2(){
 }
 
 function e2m3(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     G_LEVEL = 203;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m3_background.png');
     E_topText("Was ist innere Energie?\n\nEntsprechend dem Teilchenmodell, innere Energie =\nDie Summe der kinetischen und potenziellen Energie aller Teilchen des Körpers.\n\n‚");
@@ -58,7 +58,7 @@ function e2m3(){
 }
 
 function e2m4(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     G_LEVEL = 204;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m4_background.png');
     E_topText("Kinetische Energie ist eine spezielle Form der mechanischen Energie\n und kennzeichnet den Zustand eines sich bewegenden Körpers.\nSomit wird sie auch als Zustandsgröße bezeichnet.\n\nDie kinetische Energie eines Körpers ist abhängig von seiner Masse und der Geschwindigkeit.\n\nWer hat wenn er unten ankommt mehr Joul/Newtonmeter kinetische Energie?", 20);
@@ -69,7 +69,7 @@ function e2m4(){
 }
 
 function e2m5(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     G_LEVEL = 205;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m5_background.png');
     E_header();
@@ -81,7 +81,7 @@ function e2m5(){
 }
 
 function e2m6(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m6c_background.png');
     G_LEVEL = 206;
     E_header();
@@ -128,7 +128,7 @@ function e2m6(){
 }
 
 function e2m7(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     G_LEVEL = 207;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m7_background.png');
     E_topText("Das wissen wir:\nWärme ist die Energie, die durch Temperaturunterschiede übertragen wird.\n\nAber was ist Temperatur?");
@@ -141,7 +141,7 @@ function e2m7(){
 
 function e2m8(){
     let dones = 0;
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m8_background.png');
     E_topText("Es gibt auch verschiedene Temperatureinheiten:")
     G_LEVEL = 208;
@@ -192,7 +192,7 @@ function e2m8(){
 }
 
 function e2m9(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m9_background.png');
     G_LEVEL = 209;
     E_header();
@@ -207,14 +207,14 @@ let L210_ball;
 let L210_rotSpeed = 0.1;
 
 function e2m10(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10a_background.png');
     E_topText("Wärmeleitung erfolgt stets von Stellen höherer Temperatur\nzu stellen niedrigerer Temperatur.");
     E_header();
     let nextButton = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
     nextButton.Draw();
     nextButton.OnClick = () => {
-        E_clear(0x212121);
+        E_clear(G_BACKGROUND);
         //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10b_background.png');
         E_topText("Schaffe es durch Reibung insgesamt 60°C zu erreichen.");
         E_header();
@@ -222,7 +222,7 @@ function e2m10(){
         let outerCirc  = new PIXI.Graphics(); outerCirc.beginFill(0xffffff);
         outerCirc.drawCircle((window.innerWidth)/2, (window.innerHeight)/2, 100);
         app.stage.addChild(outerCirc);
-        let outerInnerCirc  = new PIXI.Graphics(); outerInnerCirc.beginFill(0x212121);
+        let outerInnerCirc  = new PIXI.Graphics(); outerInnerCirc.beginFill(G_BACKGROUND);
         outerInnerCirc.drawCircle((window.innerWidth)/2, (window.innerHeight)/2, 90);
         app.stage.addChild(outerInnerCirc);
 
@@ -236,7 +236,7 @@ function e2m10(){
         let innerCirc  = new PIXI.Graphics(); innerCirc.beginFill(0xffffff);
         innerCirc.drawCircle((window.innerWidth)/2, (window.innerHeight)/2, 30);
         app.stage.addChild(innerCirc);
-        let innerInnerCirc  = new PIXI.Graphics(); innerInnerCirc.beginFill(0x212121);
+        let innerInnerCirc  = new PIXI.Graphics(); innerInnerCirc.beginFill(G_BACKGROUND);
         innerInnerCirc.drawCircle((window.innerWidth)/2, (window.innerHeight)/2, 20);
         app.stage.addChild(innerInnerCirc);
 
@@ -254,7 +254,7 @@ function e2m10(){
     }
 }
 
-let L211_anim = true;
+let L211_anim = false;
 let L211_ball01;
 let L211_ball02;
 let L211_ball03;
@@ -263,6 +263,31 @@ let L211_ball05;
 let L211_ball06;
 let L211_ball07;
 let L211_ball08;
+let L211_elapsed = 0;
+let L211_timeEl = 15;
+let L211_cf = 1;
+
+function L211_frame1(){
+    L211_ball01.x = -10; L211_ball01.y = -50; // y
+    L211_ball02.x = -10; L211_ball02.y = -50; // y
+    L211_ball03.x = +50; L211_ball03.y = -10; // x
+    L211_ball04.x = +50; L211_ball04.y = -10; // x
+    L211_ball05.x = +10; L211_ball05.y = +50; // y
+    L211_ball06.x = +10; L211_ball06.y = +50; // y
+    L211_ball07.x = -50; L211_ball07.y = +10; // x
+    L211_ball08.x = -50; L211_ball08.y = +10; // x
+}
+
+function L211_frame2(){
+    L211_ball01.x = +0; L211_ball01.y = +0; // y
+    L211_ball02.x = +0; L211_ball02.y = +0; // y
+    L211_ball03.x = -0; L211_ball03.y = +0; // x
+    L211_ball04.x = -0; L211_ball04.y = +0; // x
+    L211_ball05.x = -0; L211_ball05.y = -0; // y
+    L211_ball06.x = -0; L211_ball06.y = -0; // y
+    L211_ball07.x = +0; L211_ball07.y = -0; // x
+    L211_ball08.x = +0; L211_ball08.y = -0; // x
+}
 
 function e2m11(){
     G_LEVEL = 0;
@@ -319,40 +344,71 @@ function e2m11(){
 
         let yellow1Btn = new Button("", 50, 50, 700, 200, 0x000000, 0xffff00, 1);
         yellow1Btn.Draw();
-        yellow1Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xffff00); ball.drawCircle(100, 600, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        yellow1Btn.OnClick = () => {
+            L211_ball01.tint = 0xffff00; dones++;
+            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+            let tmpBtn = new Button("", 50, 50, 700, 200, 0x000000, G_BACKGROUND, 1);
+            tmpBtn.Draw();
+        }
         let yellow2Btn = new Button("", 50, 50, 800, 200, 0x000000, 0xffff00, 1);
         yellow2Btn.Draw();
-        yellow2Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xffff00); ball.drawCircle(100, 500, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        yellow2Btn.OnClick = () => {
+            L211_ball02.tint = 0xffff00; dones++;
+            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+            let tmpBtn = new Button("", 50, 50, 800, 200, 0x000000, G_BACKGROUND, 1);
+            tmpBtn.Draw();
+        }
         let red1Btn = new Button("", 50, 50, 700, 300, 0x000000, 0xff0000, 1);
         red1Btn.Draw();
-        red1Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xff0000); ball.drawCircle(100, 400, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        red1Btn.OnClick = () => {
+            L211_ball03.tint = 0xff0000; dones++;
+            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+            let tmpBtn = new Button("", 50, 50, 700, 300, 0x000000, G_BACKGROUND, 1);
+            tmpBtn.Draw();
+        }
         let red2Btn = new Button("", 50, 50, 800, 300, 0x000000, 0xff0000, 1);
         red2Btn.Draw();
-        red2Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xff0000); ball.drawCircle(200, 400, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        red2Btn.OnClick = () => {
+            L211_ball04.tint = 0xff0000; dones++;
+            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+            let tmpBtn = new Button("", 50, 50, 800, 300, 0x000000, G_BACKGROUND, 1);
+            tmpBtn.Draw();
+        }
         let orange1Btn = new Button("", 50, 50, 700, 400, 0x000000, 0xff6e00, 1);
         orange1Btn.Draw();
-        orange1Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xff6e00); ball.drawCircle(300, 400, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        orange1Btn.OnClick = () => {
+            L211_ball05.tint = 0xff6e00; dones++;
+            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+            let tmpBtn = new Button("", 50, 50, 700, 400, 0x000000, G_BACKGROUND, 1);
+            tmpBtn.Draw();
+        }
         let orange2Btn = new Button("", 50, 50, 800, 400, 0x000000, 0xff6e00, 1);
         orange2Btn.Draw();
-        orange2Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0xff6e00); ball.drawCircle(300, 500, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        orange2Btn.OnClick = () => {
+            L211_ball06.tint = 0xff6e00; dones++;
+            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+            let tmpBtn = new Button("", 50, 50, 800, 400, 0x000000, G_BACKGROUND, 1);
+            tmpBtn.Draw();
+        }
         let blue1Btn = new Button("", 50, 50, 700, 500, 0x000000, 0x0000ff, 1);
         blue1Btn.Draw();
-        blue1Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0x0000ff); ball.drawCircle(300, 600, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        blue1Btn.OnClick = () => {
+            L211_ball07.tint = 0x0000ff; dones++;
+            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+            let tmpBtn = new Button("", 50, 50, 700, 500, 0x000000, G_BACKGROUND, 1);
+            tmpBtn.Draw();
+        }
         let blue2Btn = new Button("", 50, 50, 800, 500, 0x000000, 0x0000ff, 1);
         blue2Btn.Draw();
-        blue2Btn.OnClick = () => { let ball  = new PIXI.Graphics(); ball.beginFill(0x0000ff); ball.drawCircle(200, 600, 40); app.stage.addChild(ball); dones++; if(dones >= 8){ animBtn.Draw(); } }
+        blue2Btn.OnClick = () => {
+            L211_ball08.tint = 0x0000ff; dones++;
+            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+            let tmpBtn = new Button("", 50, 50, 800, 500, 0x000000, G_BACKGROUND, 1);
+            tmpBtn.Draw();
+        }
     
         animBtn.OnClick = () => {
-            const videoResource = new PIXI.resources.VideoResource(video); 
-            videoResource.updateFPS = 30
-            let texture = PIXI.Texture.from(videoResource);
-            let videoSprite = new PIXI.Sprite(texture);
-            this.backgroundVideo = videoSprite;
-            this.backgroundVideo.height = 200;
-            this.backgroundVideo.width = 200;
-            app.stage.addChild(this.backgroundVideo);
-            let nextButton = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
-            nextButton.Draw();
+            
         };
 
         G_LEVEL = 211;
@@ -364,14 +420,14 @@ let L212_speed = 0;
 let L212_count = 0;
 
 function e2m12(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12a_background.png');
     E_topText("Alle Körper emittieren aufgerund ihrer Temperatur Wärmestrahlung.\nZugleich absobieren sie auftreffende Wärmestrahlung.")
     E_header();
     let nextButton = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
     nextButton.Draw();
     nextButton.OnClick = () => {
-        E_clear(0x212121);
+        E_clear(G_BACKGROUND);
         //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12b_background.png');
         E_header();
 
