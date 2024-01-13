@@ -342,18 +342,18 @@ function e2m11(){
 
         let animBtn = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
 
-        let yellow1Btn = new Button("", 50, 50, 700, 200, 0x000000, 0xffff00, 1);
+        let yellow1Btn = new Button("", 50, 50, 700, 200, 0x000000, 0xf99602, 1);
         yellow1Btn.Draw();
         yellow1Btn.OnClick = () => {
-            L211_ball01.tint = 0xffff00; dones++;
+            L211_ball01.tint = 0xf99602; dones++;
             if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
             let tmpBtn = new Button("", 50, 50, 700, 200, 0x000000, G_BACKGROUND, 1);
             tmpBtn.Draw();
         }
-        let yellow2Btn = new Button("", 50, 50, 800, 200, 0x000000, 0xffff00, 1);
+        let yellow2Btn = new Button("", 50, 50, 800, 200, 0x000000, 0xf99602, 1);
         yellow2Btn.Draw();
         yellow2Btn.OnClick = () => {
-            L211_ball02.tint = 0xffff00; dones++;
+            L211_ball02.tint = 0xf99602; dones++;
             if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
             let tmpBtn = new Button("", 50, 50, 800, 200, 0x000000, G_BACKGROUND, 1);
             tmpBtn.Draw();
@@ -374,18 +374,18 @@ function e2m11(){
             let tmpBtn = new Button("", 50, 50, 800, 300, 0x000000, G_BACKGROUND, 1);
             tmpBtn.Draw();
         }
-        let orange1Btn = new Button("", 50, 50, 700, 400, 0x000000, 0xff6e00, 1);
+        let orange1Btn = new Button("", 50, 50, 700, 400, 0x000000, 0xa539db, 1);
         orange1Btn.Draw();
         orange1Btn.OnClick = () => {
-            L211_ball05.tint = 0xff6e00; dones++;
+            L211_ball05.tint = 0xa539db; dones++;
             if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
             let tmpBtn = new Button("", 50, 50, 700, 400, 0x000000, G_BACKGROUND, 1);
             tmpBtn.Draw();
         }
-        let orange2Btn = new Button("", 50, 50, 800, 400, 0x000000, 0xff6e00, 1);
+        let orange2Btn = new Button("", 50, 50, 800, 400, 0x000000, 0xa539db, 1);
         orange2Btn.Draw();
         orange2Btn.OnClick = () => {
-            L211_ball06.tint = 0xff6e00; dones++;
+            L211_ball06.tint = 0xa539db; dones++;
             if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
             let tmpBtn = new Button("", 50, 50, 800, 400, 0x000000, G_BACKGROUND, 1);
             tmpBtn.Draw();
@@ -408,7 +408,7 @@ function e2m11(){
         }
     
         animBtn.OnClick = () => {
-            
+            e2m12();
         };
 
         G_LEVEL = 211;
