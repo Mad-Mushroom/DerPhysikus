@@ -6,6 +6,19 @@ The Game is made using <a href="https://pixijs.com/">PixiJS</a>, therefore it is
 
 You can play it <a href="https://mad-mushroom.github.io/DerPhysikus/game/">here</a>.
 
+## HOW TO: Open Game in iPad "mode" on Firefox
+
+**This only works in Firefox!**
+
+1) Click F12
+2) Click this Button on the Menu at the bottom
+![howto1](https://github.com/Mad-Mushroom/DerPhysikus/assets/100442757/d6609128-edcc-4b41-81c5-e48c59a109b3)
+3) Click On the Drop-Down (left)
+4) Select iPad
+5) Click the "Rotate Screen" Button, **IF NOT IN LANDSCAPE**
+![howto2](https://github.com/Mad-Mushroom/DerPhysikus/assets/100442757/830d4900-6dca-4931-b0ca-3f99e859bdbf)
+
+
 ## Directory Structure
 
 - game
