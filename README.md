@@ -17,7 +17,8 @@ You can play it <a href="https://mad-mushroom.github.io/DerPhysikus/game/">here<
 4) Select iPad
 5) Click the "Rotate Screen" Button, **IF NOT IN LANDSCAPE**
 ![howto2](https://github.com/Mad-Mushroom/DerPhysikus/assets/100442757/830d4900-6dca-4931-b0ca-3f99e859bdbf)
-
+6) Press F5 to reload the page
+7) Enjoy!
 
 ## Directory Structure
 
