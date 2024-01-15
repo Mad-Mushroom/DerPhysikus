@@ -20,24 +20,15 @@ You can play it <a href="https://mad-mushroom.github.io/DerPhysikus/game/">here<
 6) Press F5 to reload the page
 7) Enjoy!
 
-## Directory Structure
-
-- game
-	- js
- 		- res
- 	- old
-- other
-	- resource
-		- Logo
-- license
-
 ## Credits
 
 **Programming** Benjamin Braun / MadMushroom
 
 **Game Design** Sebastian Rützel
+		Benjamin Braun / MadMushroom
 
 **Artist** Fabio Schmidt / IceAge09
+	   Benjamin Braun / MadMushroom
 
 ## License
 
