@@ -11,14 +11,18 @@ You can play it <a href="https://mad-mushroom.github.io/DerPhysikus/game/">here<
 **This only works in Firefox!**
 
 1) Click F12
+  
 2) Click this Button on the Menu at the bottom
 ![howto1](https://github.com/Mad-Mushroom/DerPhysikus/assets/100442757/d6609128-edcc-4b41-81c5-e48c59a109b3)
-3) Click On the Drop-Down (left)
-4) Select iPad
-5) Click the "Rotate Screen" Button, **IF NOT IN LANDSCAPE**
+4) Click On the Drop-Down (left)
+   
+5) Select iPad
+   
+6) Click the "Rotate Screen" Button, **IF NOT IN LANDSCAPE**
 ![howto2](https://github.com/Mad-Mushroom/DerPhysikus/assets/100442757/830d4900-6dca-4931-b0ca-3f99e859bdbf)
-6) Press F5 to reload the page
-7) Enjoy!
+7) Press F5 to reload the page
+    
+8) Enjoy!
 
 ## Credits
 
