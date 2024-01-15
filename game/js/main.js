@@ -5,16 +5,16 @@ const app = new PIXI.Application({
 document.body.appendChild(app.view);
 let elapsed = 0.0;
 
-let G_VERSION = "v. Alpha 1.7";
-let G_BUILD = "011324";
+let G_VERSION = "v. Alpha 2.4";
+let G_BUILD = "011524";
 let G_LEVEL = 0;
+let G_BACKGROUND = 0x212121;
+let G_DEBUG = false;
 
-let E_VERSION = "v. Alpha 1.5";
-let E_BUILD = "011324";
+let E_VERSION = "v. Alpha 3.6";
+let E_BUILD = "011524";
 
 let G_Points = 1;
-
-let G_BACKGROUND = 0x212121;
 
 function G_show_license(){
     window.location.replace("https://mad-mushroom.github.io/DerPhysikus/license/game.txt");
@@ -37,7 +37,7 @@ function E_show_license(){
 }
 
 function E_show_info(){
-    console.log("%cPhysikus Engine", "color: dodgerblue; font-size: xxx-large")
+    console.log("%cPhysikus Engine", "color: dodgerblue; font-size: xxx-large");
     console.log("%c" + E_VERSION + " Build " + E_BUILD, "color: grey; font-size: x-small");
     console.log("%cCopyright (c) 2024 MadMushroom // aka. Benjamin", "color: light-grey; font-size: small");
     console.log("%c", "color: grey; font-size: 2px");
@@ -79,6 +79,24 @@ function E_clear(color){
     background.beginFill(color);
     background.drawRect(0, 0, window.innerWidth, window.innerHeight);
     app.stage.addChild(background);
+    background.on('pointerdown', (event) => { /*console.log("69");*/ });
+    background.eventMode = 'static';
+}
+
+function E_mainmenu(){
+    vText = new PIXI.Text(G_VERSION,{fontFamily : 'Arial', fontSize: 10, fill : 0xffffff, align : 'center'});
+    vText.x = 0;
+    vText.y = window.innerHeight - 20;
+    app.stage.addChild(vText);
+    let mechanikBtn = new Button("Mechanik", 200, 100, (window.innerWidth-200)/2, (window.innerHeight-150)/2, 0xffffff, 0x000000, 20);
+    mechanikBtn.Draw();
+    mechanikBtn.OnClick = () => {e1m1();};
+    let wlehreBtn = new Button("Wärmelehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+100)/2, 0xffffff, 0x000000, 20);
+    wlehreBtn.Draw();
+    wlehreBtn.OnClick = () => {e2m1();};
+    let elehreBtn = new Button("Elektrizitätslehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+350)/2, 0xffffff, 0x000000, 20);
+    elehreBtn.Draw();
+    elehreBtn.OnClick = () => {e3m1();};
 }
 
 function E_transition(){
@@ -113,6 +131,50 @@ function E_quiz(question, answer1, answer2, answer3, answer4, rightAnswer, oncli
     if(rightAnswer == 2) answer2Btn.OnClick = onclick;
     if(rightAnswer == 3) answer3Btn.OnClick = onclick;
     if(rightAnswer == 4) answer4Btn.OnClick = onclick;
+}
+
+function E_quiz3(question, answer1, answer2, answer3, rightAnswer, onclick){
+    let questionTxt = new PIXI.Text(question,{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
+    questionTxt.x = 10;
+    questionTxt.y = 200;
+    app.stage.addChild(questionTxt);
+
+    let answer1Btn = new Button(answer1, 300, 100, 100, 400, 0xffffff, 0x313131, 20);
+    answer1Btn.Draw();
+
+    let answer2Btn = new Button(answer2, 300, 100, 100, 550, 0xffffff, 0x313131, 20);
+    answer2Btn.Draw();
+
+    let answer3Btn = new Button(answer3, 300, 100, 700, 400, 0xffffff, 0x313131, 20);
+    answer3Btn.Draw();
+
+    if(rightAnswer == 1) answer1Btn.OnClick = onclick;
+    if(rightAnswer == 2) answer2Btn.OnClick = onclick;
+    if(rightAnswer == 3) answer3Btn.OnClick = onclick;
+    if(rightAnswer != 1){
+        answer1Btn.OnClick = () => {
+            let answer1Btn = new Button(answer1, 300, 100, 100, 400, 0xffffff, 0xff0000, 20);
+            answer1Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+    }
+    if(rightAnswer != 2){
+        answer2Btn.OnClick = () => {
+            let answer2Btn = new Button(answer2, 300, 100, 100, 550, 0xffffff, 0xff0000, 20);
+            answer2Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+    }
+    if(rightAnswer != 3){
+        answer3Btn.OnClick = () => {
+            let answer3Btn = new Button(answer3, 300, 100, 700, 400, 0xffffff, 0xff0000, 20);
+            answer3Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+    }
 }
 
 function E_ltext(Text, answer1, answer2, answer3, answer4, rightAnswer1, rightAnswer2, l1X, l1Y, l2X, l2Y, onclick){
@@ -352,19 +414,515 @@ function E_fiftyfifty(answer1, answer2, rightAnswer, a1X, a1Y, a2X, a2Y, onclick
     }
 }
 
+function E_trueFalse5(text1, text2, text3, text4, text5, numberTrue, onclick){
+    let a1X = 700;
+    let a1Y = 600;
+    let a2X = 50;
+    let a2Y = 200;
+    let a3X = 400;
+    let a3Y = 400;
+    let a4X = 400;
+    let a4Y = 200;
+    let a5X = 300;
+    let a5Y = 600;
+
+    let dones = 0;
+
+    let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0x313131, 15);
+    answer1Btn.Draw();
+    answer1Btn.OnClick = () => {
+        if(numberTrue >= 1){
+            let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0x00ff00, 15);
+            answer1Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0xff0000, 15);
+            answer1Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0x313131, 15);
+    answer2Btn.Draw();
+    answer2Btn.OnClick = () => {
+        if(numberTrue >= 2){
+            let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0x00ff00, 15);
+            answer2Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0xff0000, 15);
+            answer2Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0x313131, 15);
+    answer3Btn.Draw();
+    answer3Btn.OnClick = () => {
+        if(numberTrue >= 3){
+            let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0x00ff00, 15);
+            answer3Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0xff0000, 15);
+            answer3Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer4Btn = new Button(text4, 300, 100, a4X, a4Y, 0xffffff, 0x313131, 15);
+    answer4Btn.Draw();
+    answer4Btn.OnClick = () => {
+        if(numberTrue >= 4){
+            let answer4Btn = new Button(text4, 300, 100, a4X, a4Y, 0xffffff, 0x00ff00, 15);
+            answer4Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer4Btn = new Button(text4, 300, 100, a4X, a4Y, 0xffffff, 0xff0000, 15);
+            answer4Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0x313131, 15);
+    answer5Btn.Draw();
+    answer5Btn.OnClick = () => {
+        if(numberTrue >= 5){
+            let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0x00ff00, 15);
+            answer5Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0xff0000, 15);
+            answer5Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+}
+
+function E_trueFalse6(text1, text2, text3, text4, text5, text6, numberTrue, onclick){
+    let a1X = 700;
+    let a1Y = 600;
+    let a2X = 50;
+    let a2Y = 200;
+    let a3X = 400;
+    let a3Y = 400;
+    let a4X = 400;
+    let a4Y = 200;
+    let a5X = 300;
+    let a5Y = 600;
+    let a6X = 750;
+    let a6Y = 200;
+
+    let dones = 0;
+
+    let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0x313131, 20);
+    answer1Btn.Draw();
+    answer1Btn.OnClick = () => {
+        if(numberTrue >= 1){
+            let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0x00ff00, 20);
+            answer1Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0xff0000, 20);
+            answer1Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0x313131, 20);
+    answer2Btn.Draw();
+    answer2Btn.OnClick = () => {
+        if(numberTrue >= 2){
+            let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0x00ff00, 20);
+            answer2Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0xff0000, 20);
+            answer2Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0x313131, 20);
+    answer3Btn.Draw();
+    answer3Btn.OnClick = () => {
+        if(numberTrue >= 3){
+            let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0x00ff00, 20);
+            answer3Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0xff0000, 20);
+            answer3Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer4Btn = new Button(text4, 300, 100, a4X, a4Y, 0xffffff, 0x313131, 20);
+    answer4Btn.Draw();
+    answer4Btn.OnClick = () => {
+        if(numberTrue >= 4){
+            let answer4Btn = new Button(text4, 300, 100, a4X, a4Y, 0xffffff, 0x00ff00, 20);
+            answer4Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer4Btn = new Button(text4, 300, 100, a4X, a4Y, 0xffffff, 0xff0000, 20);
+            answer4Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0x313131, 20);
+    answer5Btn.Draw();
+    answer5Btn.OnClick = () => {
+        if(numberTrue >= 5){
+            let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0x00ff00, 20);
+            answer5Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0xff0000, 20);
+            answer5Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer6Btn = new Button(text6, 300, 100, a6X, a6Y, 0xffffff, 0x313131, 20);
+    answer6Btn.Draw();
+    answer6Btn.OnClick = () => {
+        if(numberTrue >= 6){
+            let answer6Btn = new Button(text6, 300, 100, a6X, a6Y, 0xffffff, 0x00ff00, 20);
+            answer6Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer6Btn = new Button(text6, 300, 100, a6X, a6Y, 0xffffff, 0xff0000, 20);
+            answer6Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+}
+
+function E_trueFalse8(text1, text2, text3, text4, text5, text6, text7, text8, numberTrue, onclick){
+    let a1X = 700;
+    let a1Y = 600;
+    let a2X = 50;
+    let a2Y = 200;
+    let a3X = 400;
+    let a3Y = 400;
+    let a4X = 400;
+    let a4Y = 200;
+    let a5X = 300;
+    let a5Y = 600;
+    let a6X = 750;
+    let a6Y = 200;
+    let a7X = 50;
+    let a7Y = 400;
+    let a8X = 750;
+    let a8Y = 400;
+
+    let dones = 0;
+
+    let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0x313131, 20);
+    answer1Btn.Draw();
+    answer1Btn.OnClick = () => {
+        if(numberTrue >= 1){
+            let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0x00ff00, 20);
+            answer1Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0xff0000, 20);
+            answer1Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0x313131, 20);
+    answer2Btn.Draw();
+    answer2Btn.OnClick = () => {
+        if(numberTrue >= 2){
+            let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0x00ff00, 20);
+            answer2Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0xff0000, 20);
+            answer2Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0x313131, 20);
+    answer3Btn.Draw();
+    answer3Btn.OnClick = () => {
+        if(numberTrue >= 3){
+            let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0x00ff00, 20);
+            answer3Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0xff0000, 20);
+            answer3Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer4Btn = new Button(text4, 300, 100, a4X, a4Y, 0xffffff, 0x313131, 20);
+    answer4Btn.Draw();
+    answer4Btn.OnClick = () => {
+        if(numberTrue >= 4){
+            let answer4Btn = new Button(text4, 300, 100, a4X, a4Y, 0xffffff, 0x00ff00, 20);
+            answer4Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer4Btn = new Button(text4, 300, 100, a4X, a4Y, 0xffffff, 0xff0000, 20);
+            answer4Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0x313131, 20);
+    answer5Btn.Draw();
+    answer5Btn.OnClick = () => {
+        if(numberTrue >= 5){
+            let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0x00ff00, 20);
+            answer5Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0xff0000, 20);
+            answer5Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer6Btn = new Button(text6, 300, 100, a6X, a6Y, 0xffffff, 0x313131, 20);
+    answer6Btn.Draw();
+    answer6Btn.OnClick = () => {
+        if(numberTrue >= 6){
+            let answer6Btn = new Button(text6, 300, 100, a6X, a6Y, 0xffffff, 0x00ff00, 20);
+            answer6Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer6Btn = new Button(text6, 300, 100, a6X, a6Y, 0xffffff, 0xff0000, 20);
+            answer6Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer7Btn = new Button(text7, 300, 100, a7X, a7Y, 0xffffff, 0x313131, 20);
+    answer7Btn.Draw();
+    answer7Btn.OnClick = () => {
+        if(numberTrue >= 7){
+            let answer7Btn = new Button(text7, 300, 100, a7X, a7Y, 0xffffff, 0x00ff00, 20);
+            answer7Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer7Btn = new Button(text7, 300, 100, a7X, a7Y, 0xffffff, 0xff0000, 20);
+            answer7Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer8Btn = new Button(text8, 300, 100, a8X, a8Y, 0xffffff, 0x313131, 20);
+    answer8Btn.Draw();
+    answer8Btn.OnClick = () => {
+        if(numberTrue >= 8){
+            let answer8Btn = new Button(text8, 300, 100, a8X, a8Y, 0xffffff, 0x00ff00, 20);
+            answer8Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer8Btn = new Button(text8, 300, 100, a8X, a8Y, 0xffffff, 0xff0000, 20);
+            answer8Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+}
+
+function E_continue(onclick){
+    let tmp = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+    tmp.Draw();
+    tmp.OnClick = onclick;
+}
+
 function E_topText(text, size = 30){
     let toptxt = new PIXI.Text(text,{fontFamily : 'Arial', fontSize: size, fill : 0xffffff, align : 'center'});
-    toptxt.x = 10;
+    toptxt.x = (window.innerWidth-toptxt.width)/2;
     toptxt.y = 40;
     app.stage.addChild(toptxt);
 }
 
+function E_endscreen(){
+    E_clear(0x212121);
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m13a_background.png');
+    E_header();
+    let pText = "Total Points: " + G_Points;
+    let pointsText = new PIXI.Text(pText,{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
+    pointsText.x = (window.innerWidth-pointsText.width)/2;
+    pointsText.y = 120;
+    app.stage.addChild(pointsText);
+
+    let backBtn = new Button("Zurück", 200, 100, (window.innerWidth-200)/2, 600, 0xffffff, 0x313131, 20);
+    backBtn.Draw();
+    backBtn.OnClick = () => {
+        window.location.reload();
+    }
+
+    let continueBtn = new Button("Weiter", 200, 100, (window.innerWidth-200)/2, 400, 0xffffff, 0x313131, 20);
+    if(G_LEVEL < 300) continueBtn.Draw();
+    continueBtn.OnClick = () => {
+        if(G_LEVEL == 116) e2m1();
+        if(G_LEVEL == 212) e3m1();
+    }
+}
+
+function G_SETDEBUG(){
+    G_DEBUG = true;
+    console.log("%cYou entered DEBUG Mode!", "color: red; font-size: xxx-large");
+    console.log("%cBe careful!", "color: grey; font-size: x-small");
+}
+
+function E_dev(onclick){
+    E_clear(G_BACKGROUND);
+    E_topText("This level is\n\nUNDER DEVELOPMENT\n\nLevel: " + G_LEVEL);
+    E_continue(onclick);
+    let tmp = new Button("Enter DEBUG Mode", 200, 50, 400, 750, 0xffffff, 0xff0000, 20);
+    tmp.Draw();
+    tmp.OnClick = () => {
+        G_DEBUG = true;
+        console.log("%cYou entered DEBUG Mode!", "color: red; font-size: xxx-large");
+        console.log("%cBe careful!", "color: grey; font-size: x-small");
+    };
+}
+
+function D_setLevel(level){
+    if(!G_DEBUG) return "Cannot warp while not being in DEBUG Mode!";
+    if(level == 101) e1m1();
+    if(level == 102) e1m2();
+    if(level == 103) e1m3();
+    if(level == 104) e1m4();
+    if(level == 105) e1m5();
+    if(level == 106) e1m6();
+    if(level == 107) e1m7();
+    if(level == 108) e1m8();
+    if(level == 109) e1m9();
+    if(level == 110) e1m10();
+    if(level == 111) e1m11();
+    if(level == 112) e1m12();
+    if(level == 113) e1m13();
+    if(level == 114) e1m14();
+    if(level == 115) e1m15();
+    if(level == 116) e1m16();
+    if(level == 201) e2m1();
+    if(level == 202) e2m2();
+    if(level == 203) e2m3();
+    if(level == 204) e2m4();
+    if(level == 205) e2m5();
+    if(level == 206) e2m6();
+    if(level == 207) e2m7();
+    if(level == 208) e2m8();
+    if(level == 209) e2m9();
+    if(level == 210) e2m10();
+    if(level == 211) e2m11();
+    if(level == 212) e2m12();
+    if(level == 301) e3m1();
+    if(level == 302) e3m2();
+    if(level == 303) e3m3();
+    if(level == 304) e3m4();
+    if(level == 305) e3m5();
+    if(level == 306) e3m6();
+    if(level == 307) e3m7();
+    if(level == 308) e3m8();
+    if(level == 309) e3m9();
+    if(level == 310) e3m10();
+    if(level == 311) e3m11();
+}
+
+function D_getLevel(){
+    if(!G_DEBUG) return "Please enter DEBUG Mode first!";
+    return G_LEVEL;
+}
+
 function main(){
     G_show_info();
-    MainMenu();
+    E_mainmenu();
 }
 
 function Update(){
+    if(G_DEBUG){
+        G_BACKGROUND = 0x000000;
+    }
+
     if(G_Points < 0){
         E_clear(0xff00ff);
     }

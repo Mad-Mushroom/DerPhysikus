@@ -1,3 +1,395 @@
+function e1m1(){
+    E_clear(G_BACKGROUND);
+    G_LEVEL = 101;
+    E_header();
+    E_topText("Die Mechanik\n\n\nDie Mechanik wird in 4 Themenbereiche eingeteilt:")
+    E_reveale("Mechanische Arbeit", "Mechanische Energie E", "Mechanische Leistung P", "Wirkungsgrad η", 0x313131, 0x313131, 0x313131, 0x313131, () => {
+        e1m2();
+    })
+}
+
+function e1m2(){
+    E_clear(G_BACKGROUND);
+    G_LEVEL = 102;
+    E_header();
+    E_topText("Mechanische Arbeit W\n\n\nDer Betrag von verichteter Arbeit W ist auch der Betrag\num Energie eines Systems bei einem Vorgang ändert.\n\nTypen der Arbeit sind:");
+    E_reveale("Hubarbeit -> pot. Energie", "Beschleunigungsarbeit\n-> kin. Energie", "Spannarbeit -> Spannenergie", "Reibungsarbeit -> innere Energie", 0x313131, 0x313131, 0x313131, 0x313131, () => {
+        e1m3();
+    });
+}
+
+function e1m3(){
+    E_clear(G_BACKGROUND);
+    G_LEVEL = 103;
+    E_header();
+    E_topText("Hubarbeit\n\n\nWhub = Hubarbeit =\n\ndie potenzielle Energie des Körpers nach dem Hubvorgang\nminus potenzielle Energie des Körpers vor des Hubvorgangs,\nes gilt auch die Kraft Fg zum Anheben (m*g)\nmultipliziert mit der Strecke h, die der Körper zurücklegt.\n\nEpot nach - Epot vor = F(m*g) * h");
+    E_continue(() => {
+        e1m4();
+    });
+}
+
+function e1m4(){
+    E_clear(G_BACKGROUND);
+    G_LEVEL = 104;
+    E_header();
+    E_topText("PWS will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon80cm Höhe heben.");
+    E_quiz3("1) Welche mechanische Arbeit verrichtet PWS?", "Hub", "Reib", "Beschleunigungs", 1, () => {
+        G_Points++;
+        E_clear(G_BACKGROUND);
+        E_header();
+        E_quiz3("2) Um die verrichtete Arbeit zu berechnen,\nmusst du zuvor die Gewichtskraft Fg kennen: Fg = Masse * Ortsfaktor", "833.85kN", "8.3kN", "0.83kN", 3, () => {
+            G_Points++;
+            E_clear(G_BACKGROUND);
+            E_header();
+            E_quiz3("3) Berechne die verrichtete Arbeit:", "Whub = 0.66kJ", "Whub = 6.66kJ", "Whub = 66kJ", 1, () => {
+                e1m5();
+            })
+        })
+    })
+}
+
+function e1m5(){
+    E_clear(G_BACKGROUND);
+    G_LEVEL = 105;
+    E_header();
+    E_topText("Beschleunigungsarbeit\n\nist die Differenz kinetischer Energie des Körpers\nnach dem Beschleunigungsvorgangs mit der am Anfang.\n\nEkin nach - Ekin vor\noder bei konstanter Kraft Fs * s (zurückgelegte Strecke)");
+    E_quiz3("Wann kannst du Fs * s nutzen?", "PWS bewegt sich reibungsfrei,\n bei konstanter Geschwindigkeit\nauf der Skatebahn wagerecht.", "PWS wird immer schneller\nals er reibungsfrei\ndie schräge Skatebahn hinabfährt", "PWS fährt die Halfpipe mit\nreibung rauf und runter", 1, () => {
+        G_Points++;
+        e1m6();
+    })
+}
+
+let L106_feder;
+let L106_triangle;
+
+function e1m6(){
+    G_LEVEL = 106;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Spannarbeit\n\nist die Different von Espann nach - Espann vor, doch ACHTUNG:\nder Betrag der Kraft F während des SPannens ändert sich längs des Wegs,\ndann berechnet man die Fläche unter der Weg-Kraft-Kurve (Dreiecksfläche).\n\n\nBeispiel Gummiband:");
+
+    const geometry = new PIXI.Geometry()
+    .addAttribute('aVertexPosition', [-100, -50, 100, -50, 0, 100]);
+
+    const shader = PIXI.Shader.from(`
+
+        precision mediump float;
+        attribute vec2 aVertexPosition;
+
+        uniform mat3 translationMatrix;
+        uniform mat3 projectionMatrix;
+
+        void main() {
+            gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);
+        }`,
+
+    `precision mediump float;
+
+        void main() {
+            gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        }
+
+    `);
+
+    L106_feder = new PIXI.Graphics();
+    L106_feder.beginFill(0xffffff);
+    L106_feder.drawRect((1080-20)/2, (810-140)/2, 20, 200);
+    app.stage.addChild(L106_feder);
+
+    let lineX = new PIXI.Graphics();
+    lineX.lineStyle(2,0xffffff,1);
+    lineX.moveTo(500,700);
+    lineX.lineTo(500,600);
+    app.stage.addChild(lineX);
+    let lineY = new PIXI.Graphics();
+    lineY.lineStyle(2,0xffffff,1);
+    lineY.moveTo(500,700);
+    lineY.lineTo(600,700);
+    app.stage.addChild(lineY);
+    let lineMiddle = new PIXI.Graphics();
+    lineMiddle.lineStyle(2,0xffffff,1);
+    lineMiddle.moveTo(500,700);
+    lineMiddle.lineTo(595,605);
+    app.stage.addChild(lineMiddle);
+
+    L106_triangle = new PIXI.Mesh(geometry, shader);
+    L106_triangle.position.set(500, 700);
+    app.stage.addChild(L106_triangle);
+}
+
+function e1m7(){
+    G_LEVEL = 107;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Spanne das Gummiband auf xJ");
+    let clicks = 0;
+    let feder = new PIXI.Graphics();
+    feder.beginFill(0xffffff);
+    feder.drawRect((1080-20)/2, (810-200)/2, 20, 200);
+    app.stage.addChild(feder);
+    feder.on('pointerdown', (event) => {
+        feder.width--;
+        feder.height++;
+        feder.x += 25;
+        clicks++;
+        if(clicks >= 10){
+            E_continue(() => {e1m8();});
+        }
+    });
+    feder.eventMode = 'static';
+}
+
+function e1m8(){
+    G_LEVEL = 108;
+    E_dev(() => {e1m9();});
+}
+
+function e1m9(){
+    G_LEVEL = 109;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_quiz3("Wie viel Reibungsarbeit hat PWS verrichtet,\nwenn er auf einer ebenen Fläche (μ = 0.090) 300m gezogen wurde?", "405kJ", "40.5kJ", "4.05J", 2, () => {
+        G_Points++;
+        e1m10();
+    })
+}
+
+function e1m10(){
+    G_LEVEL = 110;
+    E_dev(() => {e1m11();});
+}
+
+function e1m11(){
+    E_clear(G_BACKGROUND);
+    G_LEVEL = 111;
+    E_header();
+    E_topText("Ordne den verschiedenen mechanischen Energieformen Beispiele zu:");
+
+    let selection = 0;
+    let dones = 0;
+
+    let e1Btn = new Button("kinetische Energie", 300, 50, 50, 200, 0xffffff, 0x212121, 20);
+    e1Btn.Draw();
+    e1Btn.OnClick = () => {selection = 1;};
+    let e2Btn = new Button("Spannenergie", 300, 50, 50, 300, 0xffffff, 0x212121, 20);
+    e2Btn.Draw();
+    e2Btn.OnClick = () => {selection = 2;};
+    let e3Btn = new Button("innere Energie", 300, 50, 50, 400, 0xffffff, 0x212121, 20);
+    e3Btn.Draw();
+    e3Btn.OnClick = () => {selection = 3;};
+    let e4Btn = new Button("elektrische Energie", 300, 50, 50, 500, 0xffffff, 0x212121, 20);
+    e4Btn.Draw();
+    e4Btn.OnClick = () => {selection = 4;};
+    let e5Btn = new Button("potenzielle Energie", 300, 50, 50, 600, 0xffffff, 0x212121, 20);
+    e5Btn.Draw();
+    e5Btn.OnClick = () => {selection = 5;};
+    let e6Btn = new Button("chemische Energie", 300, 50, 50, 700, 0xffffff, 0x212121, 20);
+    e6Btn.Draw();
+    e6Btn.OnClick = () => {selection = 6;};
+
+    let eg1Btn = new Button("heißes Wasser", 300, 50, 600, 200, 0xffffff, 0x212121, 20);
+    eg1Btn.Draw();
+    eg1Btn.OnClick = () => {
+        if(selection == 3){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(200,400);
+            line.lineTo(700,200);
+            app.stage.addChild(line);
+        }
+        if(dones >= 6) E_continue(() => {e1m12();});
+    };
+    let eg2Btn = new Button("Schinken - Mayo", 300, 50, 600, 300, 0xffffff, 0x212121, 20);
+    eg2Btn.Draw();
+    eg2Btn.OnClick = () => {
+        if(selection == 6){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(200,700);
+            line.lineTo(700,300);
+            app.stage.addChild(line);
+        }
+        if(dones >= 6) E_continue(() => {e1m12();});
+    };
+    let eg3Btn = new Button("fallender Radiergummi", 300, 50, 600, 400, 0xffffff, 0x212121, 20);
+    eg3Btn.Draw();
+    eg3Btn.OnClick = () => {
+        if(selection == 1){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(200,200);
+            line.lineTo(700,400);
+            app.stage.addChild(line);
+        }
+        if(dones >= 6) E_continue(() => {e1m12();});
+    };
+    let eg4Btn = new Button("Kirsche hängt am Baum", 300, 50, 600, 500, 0xffffff, 0x212121, 20);
+    eg4Btn.Draw();
+    eg4Btn.OnClick = () => {
+        if(selection == 5){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(200,600);
+            line.lineTo(700,500);
+            app.stage.addChild(line);
+        }
+        if(dones >= 6) E_continue(() => {e1m12();});
+    };
+    let eg5Btn = new Button("Blitz", 300, 50, 600, 600, 0xffffff, 0x212121, 20);
+    eg5Btn.Draw();
+    eg5Btn.OnClick = () => {
+        if(selection == 4){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(200,500);
+            line.lineTo(700,600);
+            app.stage.addChild(line);
+        }
+        if(dones >= 6) E_continue(() => {e1m12();});
+    };
+    let eg6Btn = new Button("gedehntes Gummiband", 300, 50, 600, 700, 0xffffff, 0x212121, 20);
+    eg6Btn.Draw();
+    eg6Btn.OnClick = () => {
+        if(selection == 2){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(200,300);
+            line.lineTo(700,700);
+            app.stage.addChild(line);
+        }
+        if(dones >= 6) E_continue(() => {e1m12();});
+    };
+}
+
+function e1m12(){
+    G_LEVEL = 112;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Der Energierhaltungsatz");
+    let lTextObj = new PIXI.Text("Energie kann ________________________ werden, sie wird von einerEnergieform ________________________\nEnergieform ________________________.",{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
+    lTextObj.x = 10;
+    lTextObj.y = 300;
+    app.stage.addChild(lTextObj);
+
+    var selectedT = 0;
+    var dones = 0;
+
+    let flBtn = new Button("________________________", 250, 20, 140, 302, 0xffffff, 0xff0000, 20, 0);
+    flBtn.Draw();
+    flBtn.OnClick = () => {if(selectedT == 1){G_Points++;E_header();let flBtn = new Button("weder erzeugt noch verichtet", 250, 20, 140, 302, 0xffffff, G_BACKGROUND, 20, 0);flBtn.Draw();dones++;}}
+
+    let slBtn = new Button("________________________", 250, 20, 780, 302, 0xffffff, 0xff0000, 20, 0);
+    slBtn.Draw();
+    slBtn.OnClick = () => {if(selectedT == 2){G_Points++;E_header();let slBtn = new Button("in andere", 250, 20, 780, 302, 0xffffff, G_BACKGROUND, 20, 0);slBtn.Draw();dones++;}}
+
+    let tlBtn = new Button("________________________", 250, 20, 445, 326, 0xffffff, 0xff0000, 20, 0);
+    tlBtn.Draw();
+    tlBtn.OnClick = () => {if(selectedT == 6){G_Points++;E_header();let tlBtn = new Button("umgewandelt", 250, 20, 445, 326, 0xffffff, G_BACKGROUND, 20, 0);tlBtn.Draw();dones++;}}
+
+    let fTextBtn = new Button("weder erzeugt noch verichtet", 300, 100, 25, 450, 0xffffff, 0x313131, 20); // 1
+    fTextBtn.Draw();
+    fTextBtn.OnClick = () => {selectedT = 1;};
+
+    let dTextBtn = new Button("in andere", 300, 100, 350, 450, 0xffffff, 0x313131, 20); // 2
+    dTextBtn.Draw();
+    dTextBtn.OnClick = () => {selectedT = 2;};
+
+    let aTextBtn = new Button("erhalten", 300, 100, 675, 450, 0xffffff, 0x313131, 20);
+    aTextBtn.Draw();
+    aTextBtn.OnClick = () => {selectedT = 3;G_Points--;E_header();let aTextBtn = new Button("erhalten", 300, 100, 675, 450, 0xffffff, 0xff0000, 20);aTextBtn.Draw();};
+
+    let sTextBtn = new Button("erzeugt und vernichtet", 300, 100, 25, 600, 0xffffff, 0x313131, 20); 
+    sTextBtn.Draw();
+    sTextBtn.OnClick = () => {selectedT = 4;G_Points--;E_header();let sTextBtn = new Button("erzeugt und vernichtet", 300, 100, 25, 600, 0xffffff, 0xff0000, 20);sTextBtn.Draw();};
+
+    let fffTextBtn = new Button("in die selbe", 300, 100, 350, 600, 0xffffff, 0x313131, 20); 
+    fffTextBtn.Draw();
+    fffTextBtn.OnClick = () => {selectedT = 5;G_Points--;E_header();let fffTextBtn = new Button("in die selbe", 300, 100, 350, 600, 0xffffff, 0xff0000, 20);fffTextBtn.Draw();};
+
+    let gddTextBtn = new Button("umgewandelt", 300, 100, 675, 600, 0xffffff, 0x313131, 20); // 3
+    gddTextBtn.Draw();
+    gddTextBtn.OnClick = () => {selectedT = 6;};
+
+    let checkBtn = new Button("Check", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+    checkBtn.Draw();
+    fTextBtn.OnClick = () => {selectedT = 1;};
+
+    
+    checkBtn.OnClick = () => {
+        if(dones >= 3){
+            e1m13();
+        }
+    }
+}
+
+function e1m13(){
+    G_LEVEL = 113;
+    E_dev(() => {e1m14();});
+}
+
+function e1m14(){
+    G_LEVEL = 114;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("PWS trägt seine Schultasche in den 1. Stock und\nverrichtet somit eine Arbiet von 80J in 60 Sekunden.\n\nEin Schüler behauptet, wenn er seine gleich schwere Schultasche\nin 1.5 Minuten raufträgt, leistet er mehr Arbeit?");
+    E_fiftyfifty("Ja", "Nein", 2, 200, 500, 600, 500, () => {
+        G_Points++;
+        E_clear(G_BACKGROUND);
+        E_header();
+        E_topText("Verringert sich die Leistung P des Schülers im Vergleich zu PWS?");
+        E_fiftyfifty("Ja", "Nein", 1, 200, 500, 600, 500, () => {
+            G_Points++;
+            e1m15();
+        })
+    });
+}
+
+function e1m15(){
+    E_clear(G_BACKGROUND);
+    E_header();
+    G_LEVEL = 115;
+    E_topText("Wirkungsgrad\n\ngibt an, welcher Anteil der zugeführten ENergie\nin nutzbare Energie umgewandelt wird.\nDabei kann der Wirkungsgrad nicht größer als 1 sein\nder maximale Wirnkungsgrad wäre 100% = 1η\n\nη = Enutz/Ezu (Energie)\nes gilt auch η = Wnutz/Wzu (Arbeit) = Pnutz/Pzu (Leistung)");
+    E_continue(() => {
+        e1m16();
+    })
+}
+
+function e1m16(){
+    E_clear(G_BACKGROUND);
+    E_header();
+    G_LEVEL = 116;
+    E_topText("PWS sitzt vor seinem PC und zockt,\ndabei gibt der PC bei einem Wirkungsgrad von 55%\neine Leistung von 900W ab.\n\nWie viel elektrische Leistung wird zugeführt?");
+    let answer1Btn = new Button("Formelumstellung:\n\nPnutz = η * Pzu\n\n900W * 0.55 = \n495W", 300, 200, 100, 500, 0xffffff, 0x313131, 20);
+    answer1Btn.Draw();
+
+    let answer2Btn = new Button("Formelumstellung:\n\nPzu = Pnutz/η\n\n900W/0.55 = 1636W", 300, 200, 700, 500, 0xffffff, 0x313131, 20);
+    answer2Btn.Draw();
+
+    answer1Btn.OnClick = () => {
+        let answer1Btn = new Button("Formelumstellung:\n\nPnutz = η * Pzu\n\n900W * 0.55 = \n495W", 300, 200, 100, 500, 0xffffff, 0xff0000, 20);
+        answer1Btn.Draw();
+        G_Points--;
+        E_header();
+    }
+
+    answer2Btn.OnClick = () => {
+        G_Points++;
+        E_endscreen();
+    }
+}
+
 function e2m1(){
     E_clear(G_BACKGROUND);
     G_LEVEL = 201;
@@ -82,19 +474,19 @@ function e2m5(){
 
 function e2m6(){
     E_clear(G_BACKGROUND);
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m6c_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m6c_background.png');
     G_LEVEL = 206;
     E_header();
-    let answer1Btn = new Button("", 200, 200, 100, 300, 0xffffff, 0x313131, 69, 0);
+    let answer1Btn = new Button("1", 200, 200, 100, 300, 0xffffff, 0x313131, 69, 0);
     answer1Btn.Draw();
 
-    let answer2Btn = new Button("", 200, 200, 100, 550, 0xffffff, 0x313131, 69, 0);
+    let answer2Btn = new Button("2", 200, 200, 100, 550, 0xffffff, 0x313131, 69, 0);
     answer2Btn.Draw();
 
-    let answer3Btn = new Button("", 200, 200, 700, 300, 0xffffff, 0x313131, 69, 0);
+    let answer3Btn = new Button("3", 200, 200, 700, 300, 0xffffff, 0x313131, 69, 0);
     answer3Btn.Draw();
 
-    let answer4Btn = new Button("", 200, 200, 700, 550, 0xffffff, 0x313131, 69, 0);
+    let answer4Btn = new Button("4", 200, 200, 700, 550, 0xffffff, 0x313131, 69, 0);
     answer4Btn.Draw();
 
     let formulaText = new Button("Eₚₒₜ = m * g * h", 200, 200, (window.innerWidth-300)/2, 400, 0xffffff, 0x313131, 20, 0);
@@ -193,7 +585,7 @@ function e2m8(){
 
 function e2m9(){
     E_clear(G_BACKGROUND);
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m9_background.png');
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m9_background.png');
     G_LEVEL = 209;
     E_header();
     let nextButton = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
@@ -442,27 +834,216 @@ function e2m12(){
         eventBtn.OnClick = () => {
             L212_speed = -5;
             L212_count++;
-            if(L212_count >= 69) e2m13();
+            if(L212_count >= 69) E_endscreen();
         }
 
         G_LEVEL = 212;
     }
 }
 
-function e2m13(){
-    G_LEVEL = 213;
-    E_clear(0x212121);
-    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m13a_background.png');
+function e3m1(){
+    E_clear(G_BACKGROUND);
+    G_LEVEL = 301;
     E_header();
-    let pText = "Total Points: " + G_Points;
-    let pointsText = new PIXI.Text(pText,{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
-    pointsText.x = (window.innerWidth-pointsText.width)/2;
-    pointsText.y = 120;
-    app.stage.addChild(pointsText);
+    E_topText("Elektrizitätslehre\n\n\nhandelt von Grundlagen und Erscheinungen elektrischer...");
+    E_trueFalse8("Ladungen", "Felder", "Wellen", "Ströme", "Schwingungen", "Punkte", "Räume", "Abbildungen", 5, () => {
+        e3m2();
+    });
+}
 
-    let backBtn = new Button("Back", 200, 100, (window.innerWidth-200)/2, 600, 0xffffff, 0x313131, 20);
-    backBtn.Draw();
-    backBtn.OnClick = () => {
-        window.location.reload();
-    }
+function e3m2(){
+    G_LEVEL = 302;
+    E_dev(() => {e3m3();});
+}
+
+function e3m3(){
+    G_LEVEL = 303;
+    E_dev(() => {e3m4();});
+}
+
+function e3m4(){
+    G_LEVEL = 304;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Elektrisches Feld\n\nist der Raum um einen elektrischen Körper, indem Kräfte auf andere Ladungen wirken.\nEs wird dargestellt durch Feldlinien.\nWas sind die Eigenschaften von Feldlinien?", 25);
+    E_trueFalse6("Schneiden sich nie", "Reibung von + -> -", "je stärker das Feld,\ndesto enger liegen die linien\nbeisammen", "schneiden sich", "Richtung von - -> +", "je stärker das Feld,\ndesto weiter die linien\nauseinander", 3, () => {
+        e3m5();
+    })
+}
+
+function e3m5(){
+    G_LEVEL = 305;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Ordne zu:");
+
+    let selection = 0;
+    let dones = 0;
+
+    let e1Btn = new Button("Punktladung", 200, 150, 50, 200, 0xffffff, 0x212121, 20);
+    e1Btn.Draw();
+    e1Btn.OnClick = () => {selection = 1;};
+    let e2Btn = new Button("Homogenes\nelektrisches\nFeld", 200, 150, 50, 300, 0xffffff, 0x212121, 20);
+    e2Btn.Draw();
+    e2Btn.OnClick = () => {selection = 2;};
+    let e3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 50, 500, 0xffffff, 0x212121, 20);
+    e3Btn.Draw();
+    e3Btn.OnClick = () => {selection = 3;};
+
+    let eg1Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 100, 0xffffff, 0x212121, 20);
+    eg1Btn.Draw();
+    eg1Btn.OnClick = () => {
+        if(selection == 3){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(250,600);
+            line.lineTo(700,200);
+            app.stage.addChild(line);
+        }
+        if(dones >= 3) E_continue(() => {e1m12();});
+    };
+    let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
+    eg2Btn.Draw();
+    eg2Btn.OnClick = () => {
+        if(selection == 1){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(150,300);
+            line.lineTo(700,400);
+            app.stage.addChild(line);
+        }
+        if(dones >= 3) E_continue(() => {e1m12();});
+    };
+    let eg3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 600, 0xffffff, 0x212121, 20);
+    eg3Btn.Draw();
+    eg3Btn.OnClick = () => {
+        if(selection == 2){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(150,350);
+            line.lineTo(700,700);
+            app.stage.addChild(line);
+        }
+        if(dones >= 3) E_continue(() => {e3m6();});
+    };
+}
+
+function e3m6(){
+    G_LEVEL = 306;
+    E_dev(() => {e3m7();});
+}
+
+function e3m7(){
+    G_LEVEL = 307;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Was passiert, wenn man sich einen metallichen Leiter\nin einem elektrischen Feld der der Batterie befindet?");
+    let pic1 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 50, 300, 0xffffff, 0x212121, 20);
+    pic1.Draw();
+    let pic2 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 400, 300, 0xffffff, 0x212121, 20);
+    pic2.Draw();
+    let pic3 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 750, 300, 0xffffff, 0x212121, 20);
+    pic3.Draw();
+    E_continue(() => {
+        e3m8();
+    });
+}
+
+function e3m8(){
+    G_LEVEL = 308;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Warum wird PWS's Schreibtischlampe relativ schnell heiß?");
+    E_trueFalse5("Die frei beweglichen Elektronen\nstoßen bei ihrer Bewegung hin zum\nPluspol mit den ortsfesten\nAtomrümpfen zusammen.", "Durch die Wechselwirkung zwischen\nden Elektronen und Gitterionen wird\nkinetische Energie abgegeben", "Übertragung von kinetischer Energie\nerhöht die Temperatur des Leiters\nsomit erwärmt sich die Lampe", "Die Gitterionen fangen an\nsich in Richtung Minuspol zu bewegen", "Durch die kinetische Energie aufgrund\nder Bewegung der Gitterionen\nerwärmt sich die Lampe", 3, () => {
+        e3m9();
+    })
+}
+
+function e3m9(){
+    G_LEVEL = 309;
+    E_dev(() => {e3m10();});
+}
+
+function e3m10(){
+    G_LEVEL = 310;
+    E_dev(() => {e3m11();});
+}
+
+function e3m11(){
+    G_LEVEL = 311;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Ordne zu:");
+
+    let selection = 0;
+    let dones = 0;
+
+    let e1Btn = new Button("Gleichstrom", 200, 150, 50, 200, 0xffffff, 0x212121, 20);
+    e1Btn.Draw();
+    e1Btn.OnClick = () => {selection = 1;};
+    let e2Btn = new Button("Wechselstrom", 200, 150, 50, 300, 0xffffff, 0x212121, 20);
+    e2Btn.Draw();
+    e2Btn.OnClick = () => {selection = 2;};
+    /*let e3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 50, 500, 0xffffff, 0x212121, 20);
+    e3Btn.Draw();
+    e3Btn.OnClick = () => {selection = 3;};*/
+
+    let eg1Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 100, 0xffffff, 0x212121, 20);
+    eg1Btn.Draw();
+    eg1Btn.OnClick = () => {
+        if(selection == 3){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(250,600);
+            line.lineTo(700,200);
+            app.stage.addChild(line);
+        }
+        if(dones >= 2) E_continue(() => {e1m12();});
+    };
+    let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
+    eg2Btn.Draw();
+    eg2Btn.OnClick = () => {
+        if(selection == 1){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(150,300);
+            line.lineTo(700,400);
+            app.stage.addChild(line);
+        }
+        if(dones >= 2) E_continue(() => {e1m12();});
+    };
+    let eg3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 600, 0xffffff, 0x212121, 20);
+    eg3Btn.Draw();
+    eg3Btn.OnClick = () => {
+        if(selection == 2){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(150,350);
+            line.lineTo(700,700);
+            app.stage.addChild(line);
+        }
+        if(dones >= 2) E_continue(() => {e3m12();});
+    };
+}
+
+function e3m12(){
+    G_LEVEL = 312;
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Stromstärke\n\nist der Quotient aus der transportierten Ladungsmenge und Zeit\n\nI = Q(mAh) / t(h)\n[I] = 1A (Ampere)\n\nWie lange braucht das Ladegerät mit einem Ladestrom von 2.0 A\num PWS's Smartphone wieder voll aufzuladen, wenn noch\n4,100mAh fehlen?");
+    E_quiz3("", "I = Q/t ; 10^4mA = 1A ; 0.205h", "t = Q/I ; 10^3mA = 1A ; 2.05h", "Q = I*t ; 10^2mA = 1A ; 20.50h", 2, () => {
+        E_endscreen();
+    })
 }
