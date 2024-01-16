@@ -80,7 +80,7 @@ class SpriteButton {
 }
 
 class AnimationButton {
-    constructor(imagePaths, SizeX, SizeY, PosX, PosY, FrameX, FrameY, animSpeed = 0.5) {
+    constructor(imagePaths, SizeX, SizeY, PosX, PosY, FrameX, FrameY, animSpeed = 0.1) {
         this.imagePaths = imagePaths;
         this.PosX = PosX;
         this.PosY = PosY;

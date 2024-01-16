@@ -97,9 +97,6 @@ function E_mainmenu(){
     let elehreBtn = new Button("Elektrizitätslehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+350)/2, 0xffffff, 0x000000, 20);
     elehreBtn.Draw();
     elehreBtn.OnClick = () => {e3m1();};
-
-    let testAnim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png", 200, 200, 100, 100, 200, 200, 0.2);
-    testAnim.Draw();
 }
 
 function E_transition(){
