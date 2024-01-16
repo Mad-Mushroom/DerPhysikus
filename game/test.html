@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixiJS GIF Animation Example</title>
+    <script src="https://pixijs.download/v6.1.4/pixi.min.js"></script>
+</head>
+<body>
+
+<script>
+    // Create a Pixi application
+    const app = new PIXI.Application({
+        width: 800,
+        height: 600,
+        backgroundColor: 0x1099bb,
+    });
+    document.body.appendChild(app.view);
+
+    // Load the GIF using PIXI.Loader
+    app.loader.add('animatedGif', 'path/to/your/animated.gif').load((loader, resources) => {
+        // Create a new AnimatedSprite from the loaded GIF frames
+        const animatedSprite = new PIXI.AnimatedSprite(resources.animatedGif.textures);
+
+        // Set the position and scale of the animated sprite
+        animatedSprite.x = app.screen.width / 2;
+        animatedSprite.y = app.screen.height / 2;
+        animatedSprite.anchor.set(0.5);
+        animatedSprite.scale.set(0.5);
+
+        // Set animation speed and play the animation
+        animatedSprite.animationSpeed = 0.5;
+        animatedSprite.play();
+
+        // Add the animated sprite to the stage
+        app.stage.addChild(animatedSprite);
+    });
+</script>
+
+</body>
+</html>

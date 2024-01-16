@@ -97,9 +97,7 @@ function E_mainmenu(){
     let elehreBtn = new Button("Elektrizitätslehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+350)/2, 0xffffff, 0x000000, 20);
     elehreBtn.Draw();
     elehreBtn.OnClick = () => {e3m1();};
-
-    let image = PIXI.Assets.load();
-    app.stage.addChild(image);
+    
 }
 
 function E_transition(){
