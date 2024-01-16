@@ -923,11 +923,13 @@ function E_endscreen(){
         window.location.reload();
     }
 
-    let continueBtn = new Button("Weiter", 200, 100, (window.innerWidth-200)/2, 400, 0xffffff, 0x313131, 20);
-    if(G_LEVEL < 300) continueBtn.Draw();
-    continueBtn.OnClick = () => {
-        if(G_LEVEL == 116) e2m1();
-        if(G_LEVEL == 212) e3m1();
+    if(G_LEVEL < 300){
+        let continueBtn = new Button("Weiter", 200, 100, (window.innerWidth-200)/2, 400, 0xffffff, 0x313131, 20);
+        continueBtn.Draw();
+        continueBtn.OnClick = () => {
+            if(G_LEVEL == 116) e2m1();
+            if(G_LEVEL == 212) e3m1();
+        }
     }
 }
 

@@ -59,62 +59,14 @@ function e1m5(){
     })
 }
 
-let L106_feder;
-let L106_triangle;
-
 function e1m6(){
     G_LEVEL = 106;
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Spannarbeit\n\nist die Different von Espann nach - Espann vor, doch ACHTUNG:\nder Betrag der Kraft F während des SPannens ändert sich längs des Wegs,\ndann berechnet man die Fläche unter der Weg-Kraft-Kurve (Dreiecksfläche).\n\n\nBeispiel Gummiband:");
-
-    const geometry = new PIXI.Geometry()
-    .addAttribute('aVertexPosition', [-100, -50, 100, -50, 0, 100]);
-
-    const shader = PIXI.Shader.from(`
-
-        precision mediump float;
-        attribute vec2 aVertexPosition;
-
-        uniform mat3 translationMatrix;
-        uniform mat3 projectionMatrix;
-
-        void main() {
-            gl_Position = vec4((projectionMatrix * translationMatrix * vec3(aVertexPosition, 1.0)).xy, 0.0, 1.0);
-        }`,
-
-    `precision mediump float;
-
-        void main() {
-            gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
-        }
-
-    `);
-
-    L106_feder = new PIXI.Graphics();
-    L106_feder.beginFill(0xffffff);
-    L106_feder.drawRect((1080-20)/2, (810-140)/2, 20, 200);
-    app.stage.addChild(L106_feder);
-
-    let lineX = new PIXI.Graphics();
-    lineX.lineStyle(2,0xffffff,1);
-    lineX.moveTo(500,700);
-    lineX.lineTo(500,600);
-    app.stage.addChild(lineX);
-    let lineY = new PIXI.Graphics();
-    lineY.lineStyle(2,0xffffff,1);
-    lineY.moveTo(500,700);
-    lineY.lineTo(600,700);
-    app.stage.addChild(lineY);
-    let lineMiddle = new PIXI.Graphics();
-    lineMiddle.lineStyle(2,0xffffff,1);
-    lineMiddle.moveTo(500,700);
-    lineMiddle.lineTo(595,605);
-    app.stage.addChild(lineMiddle);
-
-    L106_triangle = new PIXI.Mesh(geometry, shader);
-    L106_triangle.position.set(500, 700);
-    app.stage.addChild(L106_triangle);
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png", 200, 300, 440, 400, 200, 200, 0.1);
+    anim.Draw();
+    E_continue(() => {e1m7();});
 }
 
 function e1m7(){
@@ -141,7 +93,12 @@ function e1m7(){
 
 function e1m8(){
     G_LEVEL = 108;
-    E_dev(() => {e1m9();});
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Reibungsarbeit\n= Epot nach - Epot vor\n\nFällt PWS mit konstanter Geschwindigkeit,\nso ist Fg = Freibung\n\nBeispiel Fallschirm:");
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png", 200, 300, 440, 400, 200, 200, 0.1);
+    anim.Draw();
+    E_continue(() => {e1m9();});
 }
 
 function e1m9(){
@@ -156,7 +113,12 @@ function e1m9(){
 
 function e1m10(){
     G_LEVEL = 110;
-    E_dev(() => {e1m11();});
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Energie E\n\nist gespeicherte Arbeit.\nWird also an einem Körper Arbeit verrichtet,\ndann wird Energie übertragen.\n\nBeispiel:");
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png", 200, 300, 440, 400, 200, 200, 0.1);
+    anim.Draw();
+    E_continue(() => {e1m11();});
 }
 
 function e1m11(){
@@ -336,7 +298,12 @@ function e1m12(){
 
 function e1m13(){
     G_LEVEL = 113;
-    E_dev(() => {e1m14();});
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Leistung P\n\nist der Quotient aus verrichteter Arbeit W und der dafür benötigten Zeit t.\nP = W/t [P] = 1 W (Watt)\n\nACHTUNG: W für Arbeit und W für Watt ist nicht das gleiche!");
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png", 200, 300, 440, 400, 200, 200, 0.1);
+    anim.Draw();
+    E_continue(() => {e1m14();});
 }
 
 function e1m14(){
