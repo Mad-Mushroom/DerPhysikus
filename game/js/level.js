@@ -853,7 +853,65 @@ function e3m1(){
 
 function e3m2(){
     G_LEVEL = 302;
-    E_dev(() => {e3m3();});
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Ordne zu:");
+
+    let selection = 0;
+    let dones = 0;
+
+    let e1Btn = new Button("neutrales Atom", 200, 150, 50, 200, 0xffffff, 0x212121, 20);
+    e1Btn.Draw();
+    e1Btn.OnClick = () => {selection = 1;};
+    let e2Btn = new Button("Elektronenmangel", 200, 150, 50, 300, 0xffffff, 0x212121, 20);
+    e2Btn.Draw();
+    e2Btn.OnClick = () => {selection = 2;};
+    let e3Btn = new Button("Elekronenüberschuss", 200, 200, 50, 500, 0xffffff, 0x212121, 20);
+    e3Btn.Draw();
+    e3Btn.OnClick = () => {selection = 3;};
+
+    let eg1Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 100, 0xffffff, 0x212121, 20);
+    eg1Btn.Draw();
+    eg1Btn.OnClick = () => {
+        if(selection == 3){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(250,600);
+            line.lineTo(700,200);
+            app.stage.addChild(line);
+        }
+        if(dones >= 3) E_continue(() => {e3m3();});
+    };
+    let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
+    eg2Btn.Draw();
+    eg2Btn.OnClick = () => {
+        if(selection == 1){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(150,300);
+            line.lineTo(700,400);
+            app.stage.addChild(line);
+        }
+        if(dones >= 3) E_continue(() => {e3m3();});
+    };
+    let eg3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 600, 0xffffff, 0x212121, 20);
+    eg3Btn.Draw();
+    eg3Btn.OnClick = () => {
+        if(selection == 2){
+            dones++;
+            G_Points++; E_header();
+            let line = new PIXI.Graphics();
+            line.lineStyle(2,0xffffff,1);
+            line.moveTo(150,350);
+            line.lineTo(700,700);
+            app.stage.addChild(line);
+        }
+        if(dones >= 3) E_continue(() => {e3m3();});
+    };
 }
 
 function e3m3(){
@@ -972,7 +1030,14 @@ function e3m9(){
 
 function e3m10(){
     G_LEVEL = 310;
-    E_dev(() => {e3m11();});
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Elektrizitätsleitung in Gasen\n\nWas wird passieren und warum?");
+    let anim = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 440, 200, 0xffffff, 0x212121, 20);
+    E_trueFalse4("Funken und kleine Blitze\nentstehen", "Gase werden durch Wärmezufuhr ionisiert,\nda (+) und (-) Ionen entstehen\nund es somit leitet.", "Nichts, weil Luft keine Elektrizität leitet", "Aufgrund der Wärme leiten die Metallnadeln\nbesser und überwinden die Distanz", 2, () => {
+        e3m11();
+    })
+    anim.Draw();
 }
 
 function e3m11(){
@@ -1006,7 +1071,7 @@ function e3m11(){
             line.lineTo(700,200);
             app.stage.addChild(line);
         }
-        if(dones >= 2) E_continue(() => {e1m12();});
+        if(dones >= 2) E_continue(() => {e3m12();});
     };
     let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
     eg2Btn.Draw();
@@ -1020,7 +1085,7 @@ function e3m11(){
             line.lineTo(700,400);
             app.stage.addChild(line);
         }
-        if(dones >= 2) E_continue(() => {e1m12();});
+        if(dones >= 2) E_continue(() => {e3m12();});
     };
     let eg3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 600, 0xffffff, 0x212121, 20);
     eg3Btn.Draw();
@@ -1043,7 +1108,12 @@ function e3m12(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Stromstärke\n\nist der Quotient aus der transportierten Ladungsmenge und Zeit\n\nI = Q(mAh) / t(h)\n[I] = 1A (Ampere)\n\nWie lange braucht das Ladegerät mit einem Ladestrom von 2.0 A\num PWS's Smartphone wieder voll aufzuladen, wenn noch\n4,100mAh fehlen?");
-    E_quiz3("", "I = Q/t ; 10^4mA = 1A ; 0.205h", "t = Q/I ; 10^3mA = 1A ; 2.05h", "Q = I*t ; 10^2mA = 1A ; 20.50h", 2, () => {
-        E_endscreen();
+    E_quiz3("", "Formelumstellung:\n\nI = Q/t ; 10^4mA = 1A", "Formelumstellung:\n\nt = Q/I ; 10^3mA = 1A", "Formelumstellung:\n\nQ = I*t ; 10^2mA = 1A ;", 2, () => {
+        E_clear(G_BACKGROUND);
+        E_header();
+        E_topText("Stromstärke\n\nist der Quotient aus der transportierten Ladungsmenge und Zeit\n\nI = Q(mAh) / t(h)\n[I] = 1A (Ampere)\n\nWie lange braucht das Ladegerät mit einem Ladestrom von 2.0 A\num PWS's Smartphone wieder voll aufzuladen, wenn noch\n4,100mAh fehlen?");
+        E_quiz3("", "Ergebnis:\n\n2.05h", "Ergebnis:\n\n0.205h", "Ergebnis:\n\n20.50h", 1, () => {
+            E_endscreen();
+        })
     })
 }

@@ -97,6 +97,9 @@ function E_mainmenu(){
     let elehreBtn = new Button("Elektrizitätslehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+350)/2, 0xffffff, 0x000000, 20);
     elehreBtn.Draw();
     elehreBtn.OnClick = () => {e3m1();};
+
+    let image = PIXI.Assets.load();
+    app.stage.addChild(image);
 }
 
 function E_transition(){
@@ -412,6 +415,91 @@ function E_fiftyfifty(answer1, answer2, rightAnswer, a1X, a1Y, a2X, a2Y, onclick
             E_header();
         }
     }
+}
+
+function E_trueFalse4(text1, text2, text3, text5, numberTrue, onclick){
+    let a1X = 700;
+    let a1Y = 600;
+    let a2X = 50;
+    let a2Y = 200;
+    let a3X = 100;
+    let a3Y = 400;
+    let a5X = 300;
+    let a5Y = 600;
+
+    let dones = 0;
+
+    let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0x313131, 15);
+    answer1Btn.Draw();
+    answer1Btn.OnClick = () => {
+        if(numberTrue >= 1){
+            let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0x00ff00, 15);
+            answer1Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer1Btn = new Button(text1, 300, 100, a1X, a1Y, 0xffffff, 0xff0000, 15);
+            answer1Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0x313131, 15);
+    answer2Btn.Draw();
+    answer2Btn.OnClick = () => {
+        if(numberTrue >= 2){
+            let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0x00ff00, 15);
+            answer2Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer2Btn = new Button(text2, 300, 100, a2X, a2Y, 0xffffff, 0xff0000, 15);
+            answer2Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0x313131, 15);
+    answer3Btn.Draw();
+    answer3Btn.OnClick = () => {
+        if(numberTrue >= 3){
+            let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0x00ff00, 15);
+            answer3Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer3Btn = new Button(text3, 300, 100, a3X, a3Y, 0xffffff, 0xff0000, 15);
+            answer3Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
+
+    let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0x313131, 15);
+    answer5Btn.Draw();
+    answer5Btn.OnClick = () => {
+        if(numberTrue >= 5){
+            let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0x00ff00, 15);
+            answer5Btn.Draw();
+            G_Points++;
+            E_header();
+            dones++;
+        }else{
+            let answer5Btn = new Button(text5, 300, 100, a5X, a5Y, 0xffffff, 0xff0000, 15);
+            answer5Btn.Draw();
+            G_Points--;
+            E_header();
+        }
+        if(dones >= numberTrue) E_continue(onclick);
+    };
 }
 
 function E_trueFalse5(text1, text2, text3, text4, text5, numberTrue, onclick){
