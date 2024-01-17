@@ -344,7 +344,7 @@ function E_reveale(btn1Txt, btn2Txt, btn3Txt, btn4Txt, btn1Color, btn2Color, btn
         tmp.Draw();
         dones++;
         if(dones >= 4){
-            let tmp2 = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+            let tmp2 = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
             tmp2.Draw();
             tmp2.OnClick = onclick;
         }
@@ -354,7 +354,7 @@ function E_reveale(btn1Txt, btn2Txt, btn3Txt, btn4Txt, btn1Color, btn2Color, btn
         tmp.Draw();
         dones++;
         if(dones >= 4){
-            let tmp2 = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+            let tmp2 = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
             tmp2.Draw();
             tmp2.OnClick = onclick;
         }
@@ -364,7 +364,7 @@ function E_reveale(btn1Txt, btn2Txt, btn3Txt, btn4Txt, btn1Color, btn2Color, btn
         tmp.Draw();
         dones++;
         if(dones >= 4){
-            let tmp2 = new Button("=>", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+            let tmp2 = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
             tmp2.Draw();
             tmp2.OnClick = onclick;
         }
@@ -375,7 +375,7 @@ function E_reveale(btn1Txt, btn2Txt, btn3Txt, btn4Txt, btn1Color, btn2Color, btn
         dones++;
         console.log(dones);
         if(dones >= 4){
-            let tmp2 = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+            let tmp2 = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
             tmp2.Draw();
             tmp2.OnClick = onclick;
         }
@@ -895,7 +895,7 @@ function E_trueFalse8(text1, text2, text3, text4, text5, text6, text7, text8, nu
 }
 
 function E_continue(onclick){
-    let tmp = new Button("->", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+    let tmp = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
     tmp.Draw();
     tmp.OnClick = onclick;
 }
@@ -1020,7 +1020,7 @@ function Update(){
         let temptxt = temp + "°C";
         //document.getElementById("htmltxt").innerHTML = temptxt;
         if(temp >= 60){
-            let checkBtn = new Button("->", 100, 50, 900, 550, 0xffffff, 0x313131, 20);
+            let checkBtn = new Button("→", 100, 50, 900, 550, 0xffffff, 0x313131, 20);
             checkBtn.Draw();
             checkBtn.OnClick = () => {
                 G_Points++;
