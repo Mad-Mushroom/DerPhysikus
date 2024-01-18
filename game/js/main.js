@@ -1005,6 +1005,9 @@ async function D_cacheAssets(){
     let temp1 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m8_anim.png");
     let temp2 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m10_anim.png");
     let temp3 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png");
+    let temp4 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m6_anim.png");
+    let temp5 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim.png");
+    let temp6 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim2.png");
 }
 
 function main(){

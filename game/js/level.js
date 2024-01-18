@@ -303,8 +303,10 @@ function e1m13(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Leistung P\n\nist der Quotient aus verrichteter Arbeit W und der dafür benötigten Zeit t.\nP = W/t [P] = 1 W (Watt)\n\nACHTUNG: W für Arbeit und W für Watt ist nicht das Gleiche!");
-    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png", 200, 300, 440, 400, 200, 200, 0.1);
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim.png", 200, 300, 240, 400, 200, 200, 0.1);
     anim.Draw();
+    let anim2 = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim2.png", 200, 300, 640, 400, 200, 200, 0.1);
+    anim2.Draw();
     E_continue(() => {e1m14();});
 }
 
