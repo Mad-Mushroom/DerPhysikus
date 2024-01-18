@@ -303,9 +303,9 @@ function e1m13(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Leistung P\n\nist der Quotient aus verrichteter Arbeit W und der dafür benötigten Zeit t.\nP = W/t [P] = 1 W (Watt)\n\nACHTUNG: W für Arbeit und W für Watt ist nicht das Gleiche!");
-    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim.png", 200, 300, 240, 400, 200, 200, 0.1);
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim.png", 200, 300, 240, 400, 200, 300, 0.1);
     anim.Draw();
-    let anim2 = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim2.png", 200, 300, 640, 400, 200, 200, 0.1);
+    let anim2 = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim2.png", 200, 300, 640, 400, 200, 300, 0.1);
     anim2.Draw();
     E_continue(() => {e1m14();});
 }
@@ -889,7 +889,20 @@ function e3m2(){
 
 function e3m3(){
     G_LEVEL = 303;
-    E_dev(() => {e3m4();});
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Was ist richtig?");
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim.png", 200, 200, 200, 200, 200, 200, 0.1);
+    anim.Draw();
+    let anim2 = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim2.png", 200, 200, 600, 200, 200, 200, 0.1);
+    anim2.Draw();
+
+    let answer1Btn = new Button("↑", 200, 100, 200, 500, 0xffffff, 0x313131, 30);
+    answer1Btn.Draw();
+    answer1Btn.OnClick = () => {e3m4();}
+    let answer2Btn = new Button("↑", 200, 100, 600, 500, 0xffffff, 0x313131, 30);
+    answer2Btn.Draw();
+    answer2Btn.OnClick = () => {let tmp = new Button("↑", 200, 100, 600, 500, 0xffffff, 0xff0000, 30);tmp.Draw();G_Points--;E_header();}
 }
 
 function e3m4(){
