@@ -66,7 +66,7 @@ function e1m6(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Spannarbeit\n\nist die Differenz von Espann nach - Espann vor, doch ACHTUNG:\nder Betrag der Kraft F während des Spannens ändert sich längs des Wegs,\ndann berechnet man die Fläche unter der Weg-Kraft-Kurve (Dreiecksfläche).\n\n\nBeispiel Gummiband:");
-    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png", 200, 300, 440, 400, 200, 200, 0.1);
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m6_anim.png", 200, 300, 440, 400, 200, 300, 0.1);
     anim.Draw();
     E_continue(() => {e1m7();});
 }

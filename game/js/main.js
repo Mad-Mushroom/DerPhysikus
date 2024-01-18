@@ -5,14 +5,14 @@ const app = new PIXI.Application({
 document.body.appendChild(app.view);
 let elapsed = 0.0;
 
-let G_VERSION = "v. Alpha 2.4";
-let G_BUILD = "011524";
+let G_VERSION = "v. Alpha 2.7";
+let G_BUILD = "011824";
 let G_LEVEL = 0;
 let G_BACKGROUND = 0x212121;
 let G_DEBUG = false;
 
-let E_VERSION = "v. Alpha 3.6";
-let E_BUILD = "011524";
+let E_VERSION = "v. Alpha 3.8";
+let E_BUILD = "011824";
 
 let G_Points = 1;
 
@@ -998,6 +998,13 @@ function D_setLevel(level){
 function D_getLevel(){
     if(!G_DEBUG) return "Please enter DEBUG Mode first!";
     return G_LEVEL;
+}
+
+async function D_cacheAssets(){
+    if(!G_DEBUG) return "Please enter DEBUG Mode first!";
+    let temp1 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m8_anim.png");
+    let temp2 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m10_anim.png");
+    let temp3 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png");
 }
 
 function main(){
