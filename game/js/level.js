@@ -98,7 +98,7 @@ function e1m8(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Reibungsarbeit\n= Eᴘᴏᴛ nach - Eᴘᴏᴛ vor\n\nFällt Physikus mit konstanter Geschwindigkeit,\nso ist Fɢ = Freibung\n\nBeispiel Fallschirm:");
-    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png", 200, 300, 440, 400, 200, 200, 0.1);
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m8_anim.png", 200, 200, 440, 400, 200, 200, 0.5);
     anim.Draw();
     E_continue(() => {e1m9();});
 }
