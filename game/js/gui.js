@@ -148,7 +148,6 @@ class PlainText {
         this.textObj = new PIXI.Text(this.Text,{fontFamily : 'Arial', fontSize: this.FontSize, fill : this.ForeColor, align : 'center'});
         this.textObj.x = this.PosX;
         this.textObj.y = this.PosY;
-        this.obj.alpha = this.Alpha;
         app.stage.addChild(this.textObj);
     }
 }

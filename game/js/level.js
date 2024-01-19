@@ -983,9 +983,11 @@ function e3m6(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Elektrischer Strom\n\nanhand der Modellvorstellung von elektrischen Leitern");
-    let iT = "In metallischen Leitern gibt es freie Elektronen (Leitungselektronen)\ndie sich inmitten positiv geladener Atomrümpfen (Gitterionen)\nregellos bewegen.";
-    let infoText = new PlainText(iT, 300, 500, 100, 200, 0xffffff, 0x000000, 20);
+    let iT = "In metallischen Leitern gibt es\nfreie Elektronen (Leitungselektronen)\ndie sich inmitten positiv\ngeladener Atomrümpfen (Gitterionen)\nregellos bewegen.";
+    let infoText = new PlainText(iT, 300, 500, 100, 200, 0xffffff, 0x000000, 25);
     infoText.Draw();
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m6_anim.png", 300, 200, 600, 200, 300, 200, 0.5);
+    anim.Draw();
 }
 
 function e3m7(){
