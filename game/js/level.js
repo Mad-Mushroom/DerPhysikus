@@ -983,7 +983,7 @@ function e3m6(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Elektrischer Strom\n\nanhand der Modellvorstellung von elektrischen Leitern");
-    let iT = "";
+    let iT = "In metallischen Leitern gibt es freie Elektronen (Leitungselektronen)\ndie sich inmitten positiv geladener Atomrümpfen (Gitterionen)\nregellos bewegen.";
     let infoText = new PlainText(iT, 300, 500, 100, 200, 0xffffff, 0x000000, 20);
     infoText.Draw();
 }
