@@ -373,7 +373,6 @@ function E_reveale(btn1Txt, btn2Txt, btn3Txt, btn4Txt, btn1Color, btn2Color, btn
         let tmp = new Button(btn4Txt, 300, 100, 700, 640, 0xffffff, btn4Color, 20);
         tmp.Draw();
         dones++;
-        console.log(dones);
         if(dones >= 4){
             let tmp2 = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
             tmp2.Draw();
