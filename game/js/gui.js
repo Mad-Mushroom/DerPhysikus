@@ -131,3 +131,24 @@ class AnimationButton {
 
     OnClick(){}
 }
+
+class PlainText {
+    constructor(Text, SizeX, SizeY, PosX, PosY, ForeColor, BackColor, FontSize, Alpha = 1) {
+        this.Text = Text;
+        this.PosX = PosX;
+        this.PosY = PosY;
+        this.SizeX = SizeX;
+        this.SizeY = SizeY;
+        this.ForeColor = ForeColor;
+        this.FontSize = FontSize;
+        this.Alpha = Alpha;
+    }
+
+    Draw(){
+        this.textObj = new PIXI.Text(this.Text,{fontFamily : 'Arial', fontSize: this.FontSize, fill : this.ForeColor, align : 'center'});
+        this.textObj.x = this.PosX;
+        this.textObj.y = this.PosY;
+        this.obj.alpha = this.Alpha;
+        app.stage.addChild(this.textObj);
+    }
+}

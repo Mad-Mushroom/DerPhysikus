@@ -892,7 +892,7 @@ function e3m3(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Was ist richtig?");
-    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim.png", 200, 200, 200, 200, 200, 200, 0.1);
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim.png", 200, 200, 200, 200, 200, 200, 0.05);
     anim.Draw();
     let anim2 = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim2.png", 200, 200, 600, 200, 200, 200, 0.1);
     anim2.Draw();
@@ -980,7 +980,12 @@ function e3m5(){
 
 function e3m6(){
     G_LEVEL = 306;
-    E_dev(() => {e3m7();});
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Elektrischer Strom\n\nanhand der Modellvorstellung von elektrischen Leitern");
+    let iT = "";
+    let infoText = new PlainText(iT, 300, 500, 100, 200, 0xffffff, 0x000000, 20);
+    infoText.Draw();
 }
 
 function e3m7(){
