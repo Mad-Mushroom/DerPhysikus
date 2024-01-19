@@ -1042,7 +1042,7 @@ function e3m10(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Elektrizitätsleitung in Gasen\n\nWas wird passieren und warum?");
-    let anim = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 440, 200, 0xffffff, 0x212121, 20);
+    let anim = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m10_graph.png", 200, 200, 440, 200, 0xffffff, 0x212121, 20);
     E_trueFalse4("Funken und kleine Blitze\nentstehen", "Gase werden durch Wärmezufuhr ionisiert,\nda (+) und (-) Ionen entstehen\nund es somit leitet.", "Nichts, weil Luft keine Elektrizität leitet", "Aufgrund der Wärme leiten die Metallnadeln\nbesser und überwinden die Distanz", 2, () => {
         e3m11();
     })
