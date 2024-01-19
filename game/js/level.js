@@ -986,7 +986,7 @@ function e3m6(){
     let iT = "In metallischen Leitern gibt es\nfreie Elektronen (Leitungselektronen)\ndie sich inmitten positiv\ngeladener Atomrümpfen (Gitterionen)\nregellos bewegen.";
     let infoText = new PlainText(iT, 300, 500, 100, 200, 0xffffff, 0x000000, 25);
     infoText.Draw();
-    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m6_anim.png", 300, 200, 600, 200, 300, 200, 0.5);
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m6_anim.png", 300, 200, 600, 200, 300, 200, 0.3);
     anim.Draw();
 }
 
@@ -1018,7 +1018,19 @@ function e3m8(){
 
 function e3m9(){
     G_LEVEL = 309;
-    E_dev(() => {e3m10();});
+    E_clear(G_BACKGROUND);
+    E_header();
+    E_topText("Elektrizitätsleitung in Flüssigkeiten\n\n\n\n\n\n\n\n\n\n\n\n\n\nLeuchtet die Lampe?");
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m9_anim.png", 400, 200, 340, 200, 400, 200, 0.1);
+    anim.Draw();
+    E_fiftyfifty("Ja", "Nein", 2, 200, 600, 600, 600, () => {
+        E_clear(G_BACKGROUND);
+        E_header();
+        E_topText("Wie wird die Lampe doch leuchten?");
+        E_trueFalse5("benötigt werden freie Ladungsträger", "Zugabe von Leitungsfähigen Stoffen\nz.B. Kupferchlorid", "Menge des Wassers ändern", "Wasser erwärmen", "es werden mehr Gitterionen benötigt", 2, () => {
+            e3m10();
+        });
+    })
 }
 
 function e3m10(){
