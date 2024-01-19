@@ -1023,6 +1023,10 @@ function e3m9(){
     E_topText("Elektrizitätsleitung in Flüssigkeiten\n\n\n\n\n\n\n\n\n\n\n\n\n\nLeuchtet die Lampe?");
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m9_anim.png", 400, 200, 340, 200, 400, 200, 0.1);
     anim.Draw();
+    let txt1 = new PlainText("Lampe\n\n\n\n\nAnode", 50, 200, 750, 220, 0xffffff, 0x0, 20);
+    txt1.Draw();
+    let txt2 = new PlainText("Kathode", 50, 200, 255, 285, 0xffffff, 0x0, 20);
+    txt2.Draw();
     E_fiftyfifty("Ja", "Nein", 2, 200, 600, 600, 600, () => {
         E_clear(G_BACKGROUND);
         E_header();
