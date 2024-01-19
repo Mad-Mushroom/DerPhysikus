@@ -843,7 +843,7 @@ function e3m2(){
     e3Btn.Draw();
     e3Btn.OnClick = () => {selection = 3;};
 
-    let eg1Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 100, 0xffffff, 0x212121, 20);
+    let eg1Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m2_graph.png", 200, 200, 600, 100, 0xffffff, 0x212121, 20);
     eg1Btn.Draw();
     eg1Btn.OnClick = () => {
         if(selection == 3){
@@ -857,7 +857,7 @@ function e3m2(){
         }
         if(dones >= 3) E_continue(() => {e3m3();});
     };
-    let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
+    let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m2_graph2.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
     eg2Btn.Draw();
     eg2Btn.OnClick = () => {
         if(selection == 1){
@@ -871,7 +871,7 @@ function e3m2(){
         }
         if(dones >= 3) E_continue(() => {e3m3();});
     };
-    let eg3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 600, 0xffffff, 0x212121, 20);
+    let eg3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m2_graph3.png", 200, 200, 600, 600, 0xffffff, 0x212121, 20);
     eg3Btn.Draw();
     eg3Btn.OnClick = () => {
         if(selection == 2){
@@ -930,11 +930,11 @@ function e3m5(){
     let e2Btn = new Button("Homogenes\nelektrisches\nFeld", 200, 150, 50, 300, 0xffffff, 0x212121, 20);
     e2Btn.Draw();
     e2Btn.OnClick = () => {selection = 2;};
-    let e3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 50, 500, 0xffffff, 0x212121, 20);
+    let e3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m5_graph3.png", 200, 200, 50, 500, 0xffffff, 0x212121, 20);
     e3Btn.Draw();
     e3Btn.OnClick = () => {selection = 3;};
 
-    let eg1Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 100, 0xffffff, 0x212121, 20);
+    let eg1Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m5_graph4.png", 200, 200, 600, 100, 0xffffff, 0x212121, 20);
     eg1Btn.Draw();
     eg1Btn.OnClick = () => {
         if(selection == 3){
@@ -948,7 +948,7 @@ function e3m5(){
         }
         if(dones >= 3) E_continue(() => {e3m6();});
     };
-    let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
+    let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m5_graph.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
     eg2Btn.Draw();
     eg2Btn.OnClick = () => {
         if(selection == 1){
@@ -962,7 +962,7 @@ function e3m5(){
         }
         if(dones >= 3) E_continue(() => {e3m6();});
     };
-    let eg3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 600, 600, 0xffffff, 0x212121, 20);
+    let eg3Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m5_graph2.png", 200, 200, 600, 600, 0xffffff, 0x212121, 20);
     eg3Btn.Draw();
     eg3Btn.OnClick = () => {
         if(selection == 2){
