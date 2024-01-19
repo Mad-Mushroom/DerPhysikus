@@ -995,15 +995,15 @@ function e3m7(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Was passiert, wenn sich ein metallischer Leiter\nin einem elektrischen Feld einer Batterie befindet?");
-    let pic1 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 50, 300, 0xffffff, 0x212121, 20);
+    let pic1 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m7_graph.png", 200, 200, 50, 300, 0xffffff, 0x212121, 20);
     pic1.Draw();
-    let pic2 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 400, 300, 0xffffff, 0x212121, 20);
+    pic1.OnClick = () => {e3m8();};
+    let pic2 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m7_graph2.png", 200, 200, 400, 300, 0xffffff, 0x212121, 20);
     pic2.Draw();
-    let pic3 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/Archive/main/Apocalypse/res/game/text/placeholder.png", 200, 200, 750, 300, 0xffffff, 0x212121, 20);
+    pic2.OnClick = () => {let tmp = new Button("", 200, 200, 400, 300, 0xffffff, 0xff0000, 20);tmp.Draw();G_Points--;E_header();};
+    let pic3 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m7_graph3.png", 200, 200, 750, 300, 0xffffff, 0x212121, 20);
     pic3.Draw();
-    E_continue(() => {
-        e3m8();
-    });
+    pic3.OnClick = () => {let tmp = new Button("", 200, 200, 750, 300, 0xffffff, 0xff0000, 20);tmp.Draw();G_Points--;E_header();};
 }
 
 function e3m8(){
