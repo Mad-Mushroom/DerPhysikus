@@ -56,6 +56,7 @@ async function G_cacheAssets(){
     let temp7 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim2.png");
     let temp8 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m6_anim.png");
     let temp9 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m9_anim.png");
+    let temp10 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10_anim.png");
     if(G_DEBUG) console.log("DEBUG: Assets cached.");
 }
 

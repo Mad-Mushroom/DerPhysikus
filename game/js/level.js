@@ -630,7 +630,8 @@ function e2m10(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
-    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10_anim.png", 400, 400, 200, 200, 400, 400, 0.2);
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10_anim.png", 400, 400, 450, 200, 400, 400, 0.05);
+    anim.Draw();
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10a_background.png');
     E_topText("Wärmeleitung erfolgt stets von Stellen höherer Temperatur\nzu Stellen niedrigerer Temperatur.");
     E_header();
