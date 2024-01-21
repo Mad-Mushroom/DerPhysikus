@@ -956,7 +956,7 @@ function E_topText(text, size = 30){
 
 function E_endscreen(){
     E_clear(0x212121);
-    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m13a_background.png');
+    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/schatz.png');
     E_header();
     let pText = "Total Points: " + G_Points;
     let pointsText = new PIXI.Text(pText,{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
