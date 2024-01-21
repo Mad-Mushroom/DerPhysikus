@@ -957,6 +957,16 @@ function E_topText(text, size = 30){
     app.stage.addChild(toptxt);
 }
 
+function E_gameover(){
+    E_clear(0x212121);
+    E_topText("Game Over!\n\nBeim nächsten mal klappts bestimmt :)");
+    let backBtn = new Button("Zurück", 200, 100, (window.innerWidth-200)/2, 600, 0xffffff, 0x313131, 20);
+    backBtn.Draw();
+    backBtn.OnClick = () => {
+        window.location.reload();
+    }
+}
+
 function E_endscreen(){
     E_clear(0x0);
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/schatz.png');
@@ -1081,7 +1091,7 @@ function Update(){
     }
 
     if(G_Points < 0){
-        E_clear(0xff00ff);
+        E_gameover();
     }
 
     if(G_LEVEL == 210){
