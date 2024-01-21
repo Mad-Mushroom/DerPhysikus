@@ -114,6 +114,7 @@ function E_clear(color){
 
 function E_mainmenu(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/title.png");
     vText = new PIXI.Text(G_VERSION,{fontFamily : 'Arial', fontSize: 10, fill : 0xffffff, align : 'center'});
     vText.x = 0;
     vText.y = window.innerHeight - 20;
