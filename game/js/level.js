@@ -491,23 +491,24 @@ function e2m5(){
 function e2m6(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m6_background.png");
+    E_topText("Angaben: Burg: m = 50T; Leiter: h = 5m")
     let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 150, 150, 50, 80, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m6c_background.png');
     G_LEVEL = 206;
     E_header();
-    let answer1Btn = new Button("1", 200, 200, 100, 300, 0xffffff, 0x313131, 69, 0);
+    let answer1Btn = new Button("g = 8.87 N/kg", 200, 200, 100, 300, 0xffffff, 0x313131, 20, 0);
     answer1Btn.Draw();
 
-    let answer2Btn = new Button("2", 200, 200, 100, 550, 0xffffff, 0x313131, 69, 0);
+    let answer2Btn = new Button("g = 9.81 N/kg", 200, 200, 100, 550, 0xffffff, 0x313131, 20, 0);
     answer2Btn.Draw();
 
-    let answer3Btn = new Button("3", 200, 200, 700, 300, 0xffffff, 0x313131, 69, 0);
+    let answer3Btn = new Button("g = 3.71 N/kg", 200, 200, 700, 300, 0xffffff, 0x313131, 20, 0);
     answer3Btn.Draw();
 
-    let answer4Btn = new Button("4", 200, 200, 700, 550, 0xffffff, 0x313131, 69, 0);
+    let answer4Btn = new Button("g = 24.79 N/kg", 200, 200, 700, 550, 0xffffff, 0x313131, 20, 0);
     answer4Btn.Draw();
 
-    let formulaText = new Button("Eₚₒₜ = m * g * h", 200, 200, (window.innerWidth-300)/2, 400, 0xffffff, 0x313131, 20, 0);
+    let formulaText = new Button("Eₚₒₜ = m * g * h\n\nWo ist die potenzielle Energie am höchsten?", 200, 200, (window.innerWidth-300)/2, 400, 0xffffff, 0x313131, 20, 0);
     formulaText.Draw();
 
     answer1Btn.OnClick = () => {
