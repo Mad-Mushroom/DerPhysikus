@@ -2,6 +2,7 @@ function e1m1(){
     E_clear(G_BACKGROUND);
     G_LEVEL = 101;
     E_header();
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur");
     E_topText("Die Mechanik\n\n\nHier gibts 4 Themenbereiche der Mechanik:")
     E_reveale("Mechanische Arbeit", "Mechanische Energie E", "Mechanische Leistung P", "Wirkungsgrad η", 0x313131, 0x313131, 0x313131, 0x313131, () => {
         e1m2();
