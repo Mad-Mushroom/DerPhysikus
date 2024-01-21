@@ -145,7 +145,7 @@ function e1m10(){
     let txt1 = new PlainText("max. potenzielle Energie", 100, 50, 650, 450, 0xffffff, 0x0, 20); txt1.Draw();
     let txt2 = new PlainText("potenzielle & kinetische Energie", 100, 50, 650, 550, 0xffffff, 0x0, 20); txt2.Draw();
     let txt3 = new PlainText("Spannenergie", 100, 50, 650, 650, 0xffffff, 0x0, 20); txt3.Draw();
-    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m10_anim.png", 200, 300, 440, 400, 200, 300, 0.1);
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m10_anim.png", 200, 300, 440, 400, 240, 360, 0.1);
     anim.Draw();
     E_continue(() => {e1m11();});
 }
@@ -270,7 +270,7 @@ function e1m12(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
-    E_topText("Der Energierhaltungssatz");
+    E_topText("Der Energieerhaltungssatz");
     let lTextObj = new PIXI.Text("Energie kann ________________________ werden, sie wird von einer Energieform ________________________\nEnergieformen ________________________.",{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
     lTextObj.x = 10;
     lTextObj.y = 300;
@@ -426,7 +426,7 @@ function e2m2(){
 function e2m3(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
-    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 150, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 1000, 550, 200, 280, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     G_LEVEL = 203;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m3_background.png');
     E_topText("Was ist innere Energie?\n\nEntsprechend dem Teilchenmodell: innere Energie =\nDie Summe der kinetischen und potenziellen Energien aller Teilchen des Körpers.");
@@ -434,15 +434,15 @@ function e2m3(){
 
     let tmpp = 0;
 
-    let circ  = new PIXI.Graphics(); circ.beginFill(0xffffff);
+    let circ  = new PIXI.Graphics(); circ.beginFill(0x0);
     circ.drawCircle((window.innerWidth)/2, 650, 100);
     app.stage.addChild(circ);
 
-    eventBtn = new Button("a", 200, 200, ((window.innerWidth)/2)-100, 550, 0xffffff, 0x313131, 20, 0);
+    eventBtn = new Button("", 200, 200, ((window.innerWidth)/2)-100, 550, 0xffffff, 0x313131, 20, 0);
     eventBtn.Draw();
 
     eventBtn.OnClick = () => {
-        let tmpTxt = new PIXI.Text("Eₖᵢₙ",{fontFamily : 'Arial', fontSize: 15, fill : 0x1008e0, align : 'center'});
+        let tmpTxt = new PIXI.Text("Eₖᵢₙ",{fontFamily : 'Arial', fontSize: 15, fill : 0xaaaaaa, align : 'center'});
         tmpTxt.x = E_random(((window.innerWidth)/2)-60, ((window.innerWidth)/2)+60);;
         tmpTxt.y = E_random(590, 710);;
         app.stage.addChild(tmpTxt);
