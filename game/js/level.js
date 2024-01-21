@@ -39,7 +39,7 @@ function e1m4(){
     G_LEVEL = 104;
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
-    E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon 80cm Höhe heben.");
+    E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\n\nvon 80cm Höhe heben.");
     let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 550, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     E_quiz3("1) Welche mechanische Arbeit verrichtet Physikus?", "Hub", "Reib", "Beschleunigungs", 1, () => {
         G_Points++;
@@ -47,14 +47,14 @@ function e1m4(){
         let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 550, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
         E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
         E_header();
-        E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon 80cm Höhe heben.");
+        E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\n\nvon 80cm Höhe heben.");
         E_quiz3("2) Um die verrichtete Arbeit zu berechnen,\nmusst du zuvor die Gewichtskraft Fɢ kennen: Fɢ = Masse * Ortsfaktor", "833.85kN", "8.3kN", "0.83kN", 3, () => {
             G_Points++;
             E_clear(G_BACKGROUND);
             let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 550, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
             E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
             E_header();
-            E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon 80cm Höhe heben.");
+            E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\n\nvon 80cm Höhe heben.");
             E_quiz3("3) Berechne die verrichtete Arbeit W:", "Wʜᴜʙ = 0.66kJ", "Wʜᴜʙ = 6.66kJ", "Wʜᴜʙ = 66kJ", 1, () => {
                 e1m5();
             })
@@ -79,7 +79,7 @@ function e1m6(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
-    E_topText("Spannarbeit\n\nist die Differenz von Espann nach - Espann vor, doch ACHTUNG:\nder Betrag der Kraft F während des Spannens ändert sich längs des Wegs,\ndann berechnet man die Fläche unter der Weg-Kraft-Kurve (Dreiecksfläche).\n\n\nBeispiel Gummiband:");
+    E_topText("Spannarbeit\n\nist die Differenz von Esᴘᴀɴɴ nach - Esᴘᴀɴɴ vor, doch ACHTUNG:\nder Betrag der Kraft F während des Spannens ändert sich längs des Wegs,\ndann berechnet man die Fläche unter der Weg-Kraft-Kurve (Dreiecksfläche).\n\n\nBeispiel Gummiband:");
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m6_anim.png", 200, 300, 440, 400, 200, 300, 0.1);
     anim.Draw();
     E_continue(() => {e1m7();});
@@ -91,18 +91,22 @@ function e1m7(){
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 650, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
-    E_topText("Spanne das Gummiband auf 16J");
+    E_topText("Spanne das Gummiband auf 16J\n\nindem du darauf klickst.");
+    let jText = new PIXI.Text("16 Joule",{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'left'});
+    jText.x = 480;
+    jText.y = 280;
     let clicks = 0;
     let feder = new PIXI.Graphics();
     feder.beginFill(0xffffff);
-    feder.drawRect((1080-20)/2, (810-200)/2, 20, 200);
+    feder.drawRect((1080-20)/2, (810-200)/2, 30, 200);
     app.stage.addChild(feder);
     feder.on('pointerdown', (event) => {
         feder.width--;
         feder.height++;
-        feder.x += 25;
+        feder.x += 15;
         clicks++;
         if(clicks >= 10){
+            app.stage.addChild(jText);
             E_continue(() => {e1m8();});
         }
     });

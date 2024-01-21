@@ -181,7 +181,7 @@ function E_quiz(question, answer1, answer2, answer3, answer4, rightAnswer, oncli
 }
 
 function E_quiz3(question, answer1, answer2, answer3, rightAnswer, onclick){
-    let questionTxt = new PIXI.Text(question,{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
+    let questionTxt = new PIXI.Text(question,{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'left'});
     questionTxt.x = 10;
     questionTxt.y = 200;
     app.stage.addChild(questionTxt);
