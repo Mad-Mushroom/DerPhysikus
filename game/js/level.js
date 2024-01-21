@@ -426,6 +426,8 @@ function e2m4(){
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m4_background.png');
     E_topText("Kinetische Energie ist eine spezielle Form der mechanischen Energie\n und kennzeichnet den Zustand eines sich bewegenden Körpers.\nSomit wird sie auch als Zustandsgröße bezeichnet.\n\nDie kinetische Energie eines Körpers ist abhängig von seiner Masse und der Geschwindigkeit.\n\nWer hat, wenn er unten ankommt, mehr Joul/Newtonmeter kinetische Energie?", 20);
     E_header();
+    let graph = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m4_graph.png", 1080, 600, 0, 210, 0xffffff, 0x313131, 0);
+    graph.Draw();
     E_fiftyfifty("Eₖᵢₙ = ½m * v²", "Eₖᵢₙ = ½m * v²", 1, 100, 700, 700, 700, () => {
         e2m5();
     })
