@@ -1029,7 +1029,7 @@ function main(){
     let startBtn = new Button("Start Game", 300, 200, 390, 305, 0xffffff, 0x000000, 20);
     startBtn.Draw();
     startBtn.OnClick = () => {
-        requestFullScreen(document.body);
+        //requestFullScreen(document.body);
         E_mainmenu();
     }
 }
