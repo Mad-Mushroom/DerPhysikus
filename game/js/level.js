@@ -988,6 +988,7 @@ function e3m6(){
     infoText.Draw();
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m6_anim.png", 300, 200, 600, 200, 300, 200, 0.3);
     anim.Draw();
+    E_continue(() => {e3m7();});
 }
 
 function e3m7(){

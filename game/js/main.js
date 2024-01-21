@@ -50,6 +50,20 @@ function E_random(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
 
+function requestFullScreen(element) {
+    // Supports most browsers and their versions.
+    var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
+
+    if (requestMethod) { // Native full screen.
+        requestMethod.call(element);
+    } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
+        var wscript = new ActiveXObject("WScript.Shell");
+        if (wscript !== null) {
+            wscript.SendKeys("{F11}");
+        }
+    }
+}
+
 function E_background(link){
     let bkgSprite = PIXI.Sprite.from(link);
     bkgSprite.x = 0;
@@ -84,6 +98,7 @@ function E_clear(color){
 }
 
 function E_mainmenu(){
+    E_clear(G_BACKGROUND);
     vText = new PIXI.Text(G_VERSION,{fontFamily : 'Arial', fontSize: 10, fill : 0xffffff, align : 'center'});
     vText.x = 0;
     vText.y = window.innerHeight - 20;
@@ -1011,7 +1026,12 @@ async function D_cacheAssets(){
 
 function main(){
     G_show_info();
-    E_mainmenu();
+    let startBtn = new Button("Start Game", 300, 200, 390, 305, 0xffffff, 0x000000, 20);
+    startBtn.Draw();
+    startBtn.OnClick = () => {
+        requestFullScreen(document.body);
+        E_mainmenu();
+    }
 }
 
 function Update(){
