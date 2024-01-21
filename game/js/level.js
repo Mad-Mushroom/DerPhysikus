@@ -490,7 +490,7 @@ function e2m5(){
 
 function e2m6(){
     E_clear(G_BACKGROUND);
-    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m6_background.png");
     let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 150, 150, 50, 80, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m6c_background.png');
     G_LEVEL = 206;
@@ -866,7 +866,7 @@ function e2m12(){
         //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12b_background.png');
         E_header();
 
-        let graph = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12_graph.png", 400, 200, 320, 280, 0xffffff, 0x313131, 0);
+        let graph = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12_graph.png", 400, 200, 350, 280, 0xffffff, 0x313131, 0);
         graph.Draw();
 
         L212_rect = new PIXI.Graphics();
