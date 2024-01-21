@@ -1,5 +1,6 @@
 function e1m1(){
     E_clear(G_BACKGROUND);
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg01_end.png", 150, 150, 50, 80, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     G_LEVEL = 101;
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
@@ -26,6 +27,7 @@ function e1m3(){
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Hubarbeit\n\n\nWʜᴜʙ = Hubarbeit =\n\ndie potenzielle Energie des Körpers nach dem Hubvorgang\nminus potenzielle Energie des Körpers vor dem Hubvorgang,\nes gilt auch die Kraft Fɢ zum Anheben (m*g)\nmultipliziert mit der Strecke h, die der Körper zurücklegt.\n\nEᴘᴏᴛ nach - Eᴘᴏᴛ vor = F(m*g) * h");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 150, 150, 50, 480, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     E_continue(() => {
         e1m4();
     });

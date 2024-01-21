@@ -5,14 +5,14 @@ const app = new PIXI.Application({
 document.body.appendChild(app.view);
 let elapsed = 0.0;
 
-let G_VERSION = "v. Alpha 2.7";
-let G_BUILD = "011824";
+let G_VERSION = "v. Alpha 2.8.2";
+let G_BUILD = "012124";
 let G_LEVEL = 0;
 let G_BACKGROUND = 0x212121;
 let G_DEBUG = false;
 
-let E_VERSION = "v. Alpha 3.8";
-let E_BUILD = "011824";
+let E_VERSION = "v. Alpha 3.8.2";
+let E_BUILD = "012124";
 
 let G_Points = 1;
 
@@ -113,8 +113,24 @@ function E_mainmenu(){
     let elehreBtn = new Button("Elektrizitätslehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+350)/2, 0xffffff, 0x000000, 20);
     elehreBtn.Draw();
     elehreBtn.OnClick = () => {e3m1();};*/
-    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg01_end.png", 200, 200, 100, 200, 0xffffff, 0x0, 20);
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg01_end.png", 400, 400, 50, 50, 0xffffff, 0x0, 20);
     mechanikCastl.Draw();
+    mechanikCastl.OnClick = () => {e1m1();};
+    let mechanikTxt = new Button("Mechanik", 400, 400, 50, 50, 0xffffff, 0x0, 30, 0);
+    mechanikTxt.Draw();
+    mechanikTxt.OnClick = () => {e1m1();};
+    let wlehreCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 400, 400, 750, 50, 0xffffff, 0x0, 20);
+    wlehreCastl.Draw();
+    wlehreCastl.OnClick = () => {e2m1();};
+    let wlehreTxt = new Button("Wärmelehre", 170, 80, 865, 210, 0xffffff, 0x0, 30);
+    wlehreTxt.Draw();
+    wlehreTxt.OnClick = () => {e2m1();};
+    let elehreCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg03_end.png", 400, 400, 500, 500, 0xffffff, 0x0, 20);
+    elehreCastl.Draw();
+    elehreCastl.OnClick = () => {e3m1();};
+    let elehreTxt = new Button("Elektrizitätslehre", 400, 400, 500, 500, 0xffffff, 0x0, 30, 0);
+    elehreTxt.Draw();
+    elehreTxt.OnClick = () => {e3m1();};
 }
 
 function E_transition(){
