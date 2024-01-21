@@ -118,7 +118,9 @@ function E_mainmenu(){
     vText.x = 0;
     vText.y = window.innerHeight - 20;
     app.stage.addChild(vText);
-    let selBtn = new Button("abc", 300, 150, 0, 0, 0xffffff, 0x0, 20);
+    let titleTxt = new PlainText("Der Physikus\n\nwird superschlau\n\n\nEin Lernspiel für die 8. Klasse", 1080, 500, 350, 100, 0xffffff, 0x0, 50);
+    titleTxt.Draw();
+    let selBtn = new Button("Los gehts!", 300, 150, (window.innerWidth-300)/2, 600, 0xffffff, 0x0, 20);
     selBtn.Draw();
     selBtn.OnClick = () => {
         E_clear(G_BACKGROUND);
@@ -955,11 +957,13 @@ function E_topText(text, size = 30){
 }
 
 function E_endscreen(){
-    E_clear(0x212121);
-    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/schatz.png');
+    E_clear(0x0);
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/schatz.png');
+    let graph = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/schatz.png", 500, 400, (window.innerWidth-500)/2, 50, 0xffffff, 0x0, 0);
+    graph.Draw();
     E_header();
-    let pText = "Total Points: " + G_Points;
-    let pointsText = new PIXI.Text(pText,{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
+    let pText = "Punkte: " + G_Points;
+    let pointsText = new PIXI.Text(pText,{fontFamily : 'Arial', fontSize: 25, fill : 0xffffff, align : 'center'});
     pointsText.x = (window.innerWidth-pointsText.width)/2;
     pointsText.y = 120;
     app.stage.addChild(pointsText);
@@ -971,7 +975,7 @@ function E_endscreen(){
     }
 
     if(G_LEVEL < 300){
-        let continueBtn = new Button("Weiter", 200, 100, (window.innerWidth-200)/2, 400, 0xffffff, 0x313131, 20);
+        let continueBtn = new Button("Weiter", 200, 100, (window.innerWidth-200)/2, 450, 0xffffff, 0x313131, 20);
         continueBtn.Draw();
         continueBtn.OnClick = () => {
             if(G_LEVEL == 116) e2m1();
