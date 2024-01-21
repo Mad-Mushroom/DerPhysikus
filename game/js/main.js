@@ -117,33 +117,33 @@ function E_mainmenu(){
     vText.x = 0;
     vText.y = window.innerHeight - 20;
     app.stage.addChild(vText);
-    /*let mechanikBtn = new Button("Mechanik", 200, 100, (window.innerWidth-200)/2, (window.innerHeight-150)/2, 0xffffff, 0x000000, 20);
-    mechanikBtn.Draw();
-    mechanikBtn.OnClick = () => {e1m1();};
-    let wlehreBtn = new Button("Wärmelehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+100)/2, 0xffffff, 0x000000, 20);
-    wlehreBtn.Draw();
-    wlehreBtn.OnClick = () => {e2m1();};
-    let elehreBtn = new Button("Elektrizitätslehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+350)/2, 0xffffff, 0x000000, 20);
-    elehreBtn.Draw();
-    elehreBtn.OnClick = () => {e3m1();};*/
-    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg01_end.png", 400, 400, 50, 50, 0xffffff, 0x0, 20);
-    mechanikCastl.Draw();
-    mechanikCastl.OnClick = () => {e1m1();};
-    let mechanikTxt = new Button("Mechanik", 400, 400, 50, 50, 0xffffff, 0x0, 30, 0);
-    mechanikTxt.Draw();
-    mechanikTxt.OnClick = () => {e1m1();};
-    let wlehreCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 400, 400, 750, 50, 0xffffff, 0x0, 20);
-    wlehreCastl.Draw();
-    wlehreCastl.OnClick = () => {e2m1();};
-    let wlehreTxt = new Button("Wärmelehre", 170, 80, 865, 210, 0xffffff, 0x0, 30);
-    wlehreTxt.Draw();
-    wlehreTxt.OnClick = () => {e2m1();};
-    let elehreCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg03_end.png", 400, 400, 500, 500, 0xffffff, 0x0, 20);
-    elehreCastl.Draw();
-    elehreCastl.OnClick = () => {e3m1();};
-    let elehreTxt = new Button("Elektrizitätslehre", 400, 400, 500, 500, 0xffffff, 0x0, 30, 0);
-    elehreTxt.Draw();
-    elehreTxt.OnClick = () => {e3m1();};
+    let selBtn = new Button("abc", 300, 150, 0, 0, 0xffffff, 0x0, 20);
+    selBtn.Draw();
+    selBtn.OnClick = () => {
+        E_clear(G_BACKGROUND);
+        vText = new PIXI.Text(G_VERSION,{fontFamily : 'Arial', fontSize: 10, fill : 0xffffff, align : 'center'});
+        vText.x = 0;
+        vText.y = window.innerHeight - 20;
+        app.stage.addChild(vText);
+        let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg01_end.png", 400, 400, 50, 50, 0xffffff, 0x0, 20);
+        mechanikCastl.Draw();
+        mechanikCastl.OnClick = () => {e1m1();};
+        let mechanikTxt = new Button("Mechanik", 400, 400, 50, 50, 0xffffff, 0x0, 30, 0);
+        mechanikTxt.Draw();
+        mechanikTxt.OnClick = () => {e1m1();};
+        let wlehreCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 400, 400, 750, 50, 0xffffff, 0x0, 20);
+        wlehreCastl.Draw();
+        wlehreCastl.OnClick = () => {e2m1();};
+        let wlehreTxt = new Button("Wärmelehre", 170, 80, 865, 210, 0xffffff, 0x0, 30);
+        wlehreTxt.Draw();
+        wlehreTxt.OnClick = () => {e2m1();};
+        let elehreCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg03_end.png", 400, 400, 500, 500, 0xffffff, 0x0, 20);
+        elehreCastl.Draw();
+        elehreCastl.OnClick = () => {e3m1();};
+        let elehreTxt = new Button("Elektrizitätslehre", 400, 400, 500, 500, 0xffffff, 0x0, 30, 0);
+        elehreTxt.Draw();
+        elehreTxt.OnClick = () => {e3m1();};
+    }
 }
 
 function E_transition(){
