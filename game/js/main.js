@@ -46,6 +46,19 @@ function E_show_info(){
     console.log("%cThe Documentation is avaible on GitHub, visit it at: https://github.com/Mad-Mushroom/DerPhysikus", "color: grey; font-size: x-small");
 }
 
+async function G_cacheAssets(){
+    let temp1 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m6_anim.png");
+    let temp2 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m8_anim.png");
+    let temp3 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m10_anim.png");
+    let temp4 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim.png");
+    let temp5 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim2.png");
+    let temp6 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim.png");
+    let temp7 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim2.png");
+    let temp8 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m6_anim.png");
+    let temp9 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m9_anim.png");
+    if(G_DEBUG) console.log("DEBUG: Assets cached.");
+}
+
 function E_random(min, max) {
     return Math.floor(Math.random() * (max - min) ) + min;
 }
@@ -1035,22 +1048,25 @@ function D_getLevel(){
 
 async function D_cacheAssets(){
     if(!G_DEBUG) return "Please enter DEBUG Mode first!";
-    let temp1 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m8_anim.png");
-    let temp2 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m10_anim.png");
-    let temp3 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/testanim.png");
-    let temp4 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m6_anim.png");
-    let temp5 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim.png");
-    let temp6 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim2.png");
+    let temp1 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m6_anim.png");
+    let temp2 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m8_anim.png");
+    let temp3 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m10_anim.png");
+    let temp4 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim.png");
+    let temp5 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim2.png");
+    let temp6 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim.png");
+    let temp7 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim2.png");
+    let temp8 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m6_anim.png");
+    let temp9 = await PIXI.BaseTexture.from("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m9_anim.png");
 }
 
 function main(){
     G_show_info();
-    let startBtn = new Button("Start Game", 300, 200, 390, 305, 0xffffff, 0x000000, 20);
-    startBtn.Draw();
-    startBtn.OnClick = () => {
+    //let startBtn = new Button("Start Game", 300, 200, 390, 305, 0xffffff, 0x000000, 20);
+    //startBtn.Draw();
+    //startBtn.OnClick = () => {
         //requestFullScreen(document.body);
         E_mainmenu();
-    }
+    //}
 }
 
 function Update(){

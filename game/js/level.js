@@ -1,4 +1,5 @@
 function e1m1(){
+    G_cacheAssets();
     E_clear(G_BACKGROUND);
     let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg01_end.png", 150, 150, 50, 80, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     G_LEVEL = 101;
@@ -27,7 +28,7 @@ function e1m3(){
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Hubarbeit\n\n\nWʜᴜʙ = Hubarbeit =\n\ndie potenzielle Energie des Körpers nach dem Hubvorgang\nminus potenzielle Energie des Körpers vor dem Hubvorgang,\nes gilt auch die Kraft Fɢ zum Anheben (m*g)\nmultipliziert mit der Strecke h, die der Körper zurücklegt.\n\nEᴘᴏᴛ nach - Eᴘᴏᴛ vor = F(m*g) * h");
-    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 150, 150, 50, 480, 0xffffff, 0x0, 20);mechanikCastl.Draw();
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 600, 300, 50, 480, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     E_continue(() => {
         e1m4();
     });
@@ -39,15 +40,18 @@ function e1m4(){
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon 80cm Höhe heben.");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 550, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     E_quiz3("1) Welche mechanische Arbeit verrichtet Physikus?", "Hub", "Reib", "Beschleunigungs", 1, () => {
         G_Points++;
         E_clear(G_BACKGROUND);
+        let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 550, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
         E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
         E_header();
         E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon 80cm Höhe heben.");
         E_quiz3("2) Um die verrichtete Arbeit zu berechnen,\nmusst du zuvor die Gewichtskraft Fɢ kennen: Fɢ = Masse * Ortsfaktor", "833.85kN", "8.3kN", "0.83kN", 3, () => {
             G_Points++;
             E_clear(G_BACKGROUND);
+            let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 550, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
             E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
             E_header();
             E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon 80cm Höhe heben.");
@@ -86,6 +90,7 @@ function e1m7(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 650, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     E_topText("Spanne das Gummiband auf 16J");
     let clicks = 0;
     let feder = new PIXI.Graphics();
@@ -120,6 +125,7 @@ function e1m9(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 550, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     E_quiz3("Wie viel Reibungsarbeit hat Physikus verrichtet,\nwenn er auf einer ebenen Fläche (μ = 0.090) 300m gezogen wurde?", "405kJ", "40.5kJ", "4.05J", 2, () => {
         G_Points++;
         e1m10();
@@ -350,6 +356,7 @@ function e1m15(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/castl_background1.png", 300, 150, 550, 560, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     G_LEVEL = 115;
     E_topText("Wirkungsgrad\n\ngibt an, welcher Anteil der zugeführten Energie\nin nutzbare Energie umgewandelt wird.\nDabei kann der Wirkungsgrad nicht größer als 1 sein,\nder maximale Wirkungsgrad wäre 100% = 1η\n\nη = Enutz/Ezu (Energie)\nes gilt auch η = Wnutz/Wzu (Arbeit) = Pnutz/Pzu (Leistung)");
     E_continue(() => {
@@ -383,8 +390,10 @@ function e1m16(){
 }
 
 function e2m1(){
+    G_cacheAssets();
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 150, 150, 50, 80, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     G_LEVEL = 201;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m1_background.png');
     E_header();
@@ -410,9 +419,10 @@ function e2m2(){
 function e2m3(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 150, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     G_LEVEL = 203;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m3_background.png');
-    E_topText("Was ist innere Energie?\n\nEntsprechend dem Teilchenmodell: innere Energie =\nDie Summe der kinetischen und potenziellen Energien aller Teilchen des Körpers.\n\n‚");
+    E_topText("Was ist innere Energie?\n\nEntsprechend dem Teilchenmodell: innere Energie =\nDie Summe der kinetischen und potenziellen Energien aller Teilchen des Körpers.");
     E_header();
 
     let tmpp = 0;
@@ -474,6 +484,7 @@ function e2m5(){
 function e2m6(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 150, 150, 50, 80, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m6c_background.png');
     G_LEVEL = 206;
     E_header();
@@ -537,6 +548,7 @@ function e2m8(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m8_background.png');
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     E_topText("Es gibt auch verschiedene Temperatureinheiten:")
     G_LEVEL = 208;
     E_header();
@@ -605,6 +617,7 @@ let L210_rotSpeed = 0.1;
 function e2m10(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10a_background.png');
     E_topText("Wärmeleitung erfolgt stets von Stellen höherer Temperatur\nzu Stellen niedrigerer Temperatur.");
     E_header();
@@ -691,6 +704,7 @@ function e2m11(){
     G_LEVEL = 0;
     E_clear(0x212121);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11a_background.png');
     E_topText("Unter Wärmeströmung (Konvektion) versteht man den Energietransport\nin Verbindung mit Teilchentransport innerhalb Flüssigkeiten oder Gasen");
     E_header();
@@ -826,6 +840,7 @@ let L212_count = 0;
 function e2m12(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12a_background.png');
     E_topText("Alle Körper emittieren aufgrund ihrer Temperatur Wärmestrahlung.\nZugleich absobieren sie auftreffende Wärmestrahlung.")
     E_header();
@@ -859,8 +874,10 @@ function e2m12(){
 }
 
 function e3m1(){
+    G_cacheAssets();
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg03_end.png", 150, 150, 50, 80, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     G_LEVEL = 301;
     E_header();
     E_topText("Elektrizitätslehre\n\n\nhandelt von Grundlagen und Erscheinungen elektrischer...");
@@ -1032,6 +1049,7 @@ function e3m6(){
     E_clear(G_BACKGROUND);
     E_header();
     E_topText("Elektrischer Strom\n\nanhand der Modellvorstellung von elektrischen Leitern");
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg03_end.png", 250, 250, 250, 480, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     let iT = "In metallischen Leitern gibt es\nfreie Elektronen (Leitungselektronen)\ndie sich inmitten positiv\ngeladener Atomrümpfen (Gitterionen)\nregellos bewegen.";
     let infoText = new PlainText(iT, 300, 500, 100, 200, 0xffffff, 0x000000, 25);
     infoText.Draw();
@@ -1060,6 +1078,7 @@ function e3m7(){
 function e3m8(){
     G_LEVEL = 308;
     E_clear(G_BACKGROUND);
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg03_end.png", 150, 150, 50, 80, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Warum wird Physikus' Schreibtischlampe relativ schnell heiß?");
@@ -1106,6 +1125,7 @@ function e3m10(){
 function e3m11(){
     G_LEVEL = 311;
     E_clear(G_BACKGROUND);
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg03_end.png", 150, 150, 50, 80, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Ordne zu:");
