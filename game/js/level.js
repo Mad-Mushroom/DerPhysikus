@@ -142,6 +142,9 @@ function e1m10(){
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Energie E\n\nist gespeicherte Arbeit.\nWird also an einem Körper Arbeit verrichtet,\ndann wird Energie übertragen.\n\nBeispiel:");
+    let txt1 = new PlainText("max. potenzielle Energie", 100, 50, 650, 450, 0xffffff, 0x0, 20); txt1.Draw();
+    let txt2 = new PlainText("potenzielle & kinetische Energie", 100, 50, 650, 550, 0xffffff, 0x0, 20); txt2.Draw();
+    let txt3 = new PlainText("Spannenergie", 100, 50, 650, 650, 0xffffff, 0x0, 20); txt3.Draw();
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m10_anim.png", 200, 300, 440, 400, 200, 300, 0.3);
     anim.Draw();
     E_continue(() => {e1m11();});
