@@ -606,15 +606,20 @@ function e2m8(){
 
 function e2m9(){
     E_clear(G_BACKGROUND);
+    let clicks = 0;
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m9_background.png');
     G_LEVEL = 209;
     E_header();
-    E_topText("Energie                    Temperaturunterschiede\n\n\nWÄRME\n\nModell Wärmetransport\n\n\n\nWärmeleitung         Wärmeströmung          Wärmestrahlung");
+    E_topText("Energie                    Temperaturunterschiede");
     let nextButton = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
     nextButton.Draw();
     nextButton.OnClick = () => {
-        e2m10();
+        clicks++;
+        if(clicks == 1) E_topText("\n\n\nWÄRME");
+        if(clicks == 2) E_topText("\n\n\n\n\nModell Wärmetransport");
+        if(clicks == 3) E_topText("\n\n\n\n\n\n\n\n\nWärmeleitung         Wärmeströmung          Wärmestrahlung");
+        if(clicks == 4) e2m10();
     }
 }
 
@@ -624,7 +629,8 @@ let L210_rotSpeed = 0.1;
 function e2m10(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
-    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
+    //let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
+    let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10_anim.png", 400, 400, 200, 200, 400, 400, 0.2);
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10a_background.png');
     E_topText("Wärmeleitung erfolgt stets von Stellen höherer Temperatur\nzu Stellen niedrigerer Temperatur.");
     E_header();
@@ -634,7 +640,7 @@ function e2m10(){
         E_clear(G_BACKGROUND);
         E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
         //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10b_background.png');
-        E_topText("Schaffe es durch Reibung insgesamt 60°C zu erreichen.");
+        E_topText("Schaffe es durch Reibung insgesamt 60°C zu erreichen.\n\nBitte auf die Kreise klicken :)");
         E_header();
         
         let outerCirc  = new PIXI.Graphics(); outerCirc.beginFill(0xffffff);
@@ -713,7 +719,7 @@ function e2m11(){
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11a_background.png');
-    E_topText("Unter Wärmeströmung (Konvektion) versteht man den Energietransport\nin Verbindung mit Teilchentransport innerhalb Flüssigkeiten oder Gasen");
+    E_topText("");
     E_header();
     let nextButton = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
     nextButton.Draw();
@@ -722,7 +728,7 @@ function e2m11(){
         //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11b_background.png');
         E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
         E_header();
-        E_topText("Dieses Wassergefäß wird von unten erhitzt.\n\nOrdne die Farben nach Temperatur den Teilchen zu.\n\n\nOrange = am heißesten\nblau = am kältesten");
+        E_topText("Unter Wärmeströmung (Konvektion) versteht man den Energietransport\nin Verbindung mit Teilchentransport innerhalb Flüssigkeiten oder Gasen\n\nDieses Wassergefäß wird von unten erhitzt.\n\nOrdne die Farben nach Temperatur den Teilchen zu.\n\n\nOrange = am heißesten\nblau = am kältesten");
 
         let water = new Button("", 320, 320, 40, 340, 0x0000ff, 0x0000ff, 1, 0.4);
         water.Draw();
@@ -913,7 +919,7 @@ function e3m2(){
     e3Btn.Draw();
     e3Btn.OnClick = () => {selection = 3;};
 
-    let eg1Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m2_graph.png", 200, 200, 600, 100, 0xffffff, 0x212121, 20);
+    let eg1Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m2_graph2.png", 200, 200, 600, 100, 0xffffff, 0x212121, 20);
     eg1Btn.Draw();
     eg1Btn.OnClick = () => {
         if(selection == 3){
@@ -927,7 +933,7 @@ function e3m2(){
         }
         if(dones >= 3) E_continue(() => {e3m3();});
     };
-    let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m2_graph2.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
+    let eg2Btn = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m2_graph.png", 200, 200, 600, 350, 0xffffff, 0x212121, 20);
     eg2Btn.Draw();
     eg2Btn.OnClick = () => {
         if(selection == 1){
@@ -1070,7 +1076,7 @@ function e3m7(){
     E_clear(G_BACKGROUND);
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
-    E_topText("Was passiert, wenn sich ein metallischer Leiter\nin einem elektrischen Feld einer Batterie befindet?");
+    E_topText("Was passiert, wenn sich ein metallischer Leiter\nin einem elektrischen Feld einer Batterie befindet?\n\nKlicke auf das richtige Bild");
     let pic1 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m7_graph.png", 200, 200, 50, 300, 0xffffff, 0x212121, 20);
     pic1.Draw();
     pic1.OnClick = () => {e3m8();};
@@ -1108,6 +1114,7 @@ function e3m9(){
     txt2.Draw();
     E_fiftyfifty("Ja", "Nein", 2, 200, 600, 600, 600, () => {
         E_clear(G_BACKGROUND);
+        E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
         E_header();
         E_topText("Wie wird die Lampe doch leuchten?");
         E_trueFalse5("benötigt werden freie Ladungsträger", "Zugabe von Leitungsfähigen Stoffen\nz.B. Kupferchlorid", "Menge des Wassers ändern", "Wasser erwärmen", "es werden mehr Gitterionen benötigt", 2, () => {
@@ -1202,6 +1209,7 @@ function e3m12(){
     E_topText("Stromstärke\n\nist der Quotient aus der transportierten Ladungsmenge und Zeit\n\nI = Q(mAh) / t(h)\n[I] = 1A (Ampere)\n\nWie lange braucht das Ladegerät mit einem Ladestrom von 2.0 A\num Physikus' Smartphone wieder voll aufzuladen, wenn noch\n4,100mAh fehlen?");
     E_quiz3("", "Formelumstellung:\n\nI = Q/t ; 10^4mA = 1A", "Formelumstellung:\n\nt = Q/I ; 10^3mA = 1A", "Formelumstellung:\n\nQ = I*t ; 10^2mA = 1A ;", 2, () => {
         E_clear(G_BACKGROUND);
+        E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
         E_header();
         E_topText("Stromstärke\n\nist der Quotient aus der transportierten Ladungsmenge und Zeit\n\nI = Q(mAh) / t(h)\n[I] = 1A (Ampere)\n\nWie lange braucht das Ladegerät mit einem Ladestrom von 2.0 A\num PWS's Smartphone wieder voll aufzuladen, wenn noch\n4,100mAh fehlen?");
         E_quiz3("", "Ergebnis:\n\n2.05h", "Ergebnis:\n\n0.205h", "Ergebnis:\n\n20.50h", 1, () => {
