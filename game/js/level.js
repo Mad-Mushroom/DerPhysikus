@@ -672,6 +672,9 @@ function e2m11(){
         let water = new Button("", 320, 320, 40, 340, 0x0000ff, 0x0000ff, 1, 0.4);
         water.Draw();
 
+        let fire = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11_graph.png", 200, 200, 0, 660, 0xffffff, 0x313131, 0, 1);
+        fire.Draw();
+
         let dones = 0;
 
         L211_ball01  = new PIXI.Graphics();
@@ -797,6 +800,9 @@ function e2m12(){
         E_clear(G_BACKGROUND);
         //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12b_background.png');
         E_header();
+
+        let graph = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12_graph.png", 400, 200, 320, 280, 0xffffff, 0x313131, 0);
+        graph.Draw();
 
         L212_rect = new PIXI.Graphics();
         L212_rect.beginFill(0xff0000);
