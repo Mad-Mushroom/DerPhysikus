@@ -70,6 +70,7 @@ function E_background(link){
     bkgSprite.y = 0;
     bkgSprite.width = window.innerWidth;
     bkgSprite.height = window.innerHeight;
+    bkgSprite.alpha = 0.5;
     app.stage.addChild(bkgSprite);
 }
 
@@ -103,7 +104,7 @@ function E_mainmenu(){
     vText.x = 0;
     vText.y = window.innerHeight - 20;
     app.stage.addChild(vText);
-    let mechanikBtn = new Button("Mechanik", 200, 100, (window.innerWidth-200)/2, (window.innerHeight-150)/2, 0xffffff, 0x000000, 20);
+    /*let mechanikBtn = new Button("Mechanik", 200, 100, (window.innerWidth-200)/2, (window.innerHeight-150)/2, 0xffffff, 0x000000, 20);
     mechanikBtn.Draw();
     mechanikBtn.OnClick = () => {e1m1();};
     let wlehreBtn = new Button("Wärmelehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+100)/2, 0xffffff, 0x000000, 20);
@@ -111,7 +112,9 @@ function E_mainmenu(){
     wlehreBtn.OnClick = () => {e2m1();};
     let elehreBtn = new Button("Elektrizitätslehre", 200, 100, (window.innerWidth-200)/2, (window.innerHeight+350)/2, 0xffffff, 0x000000, 20);
     elehreBtn.Draw();
-    elehreBtn.OnClick = () => {e3m1();};
+    elehreBtn.OnClick = () => {e3m1();};*/
+    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg01_end.png", 200, 200, 100, 200, 0xffffff, 0x0, 20);
+    mechanikCastl.Draw();
 }
 
 function E_transition(){

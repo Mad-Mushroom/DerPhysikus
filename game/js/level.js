@@ -1,8 +1,8 @@
 function e1m1(){
     E_clear(G_BACKGROUND);
     G_LEVEL = 101;
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
-    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur");
     E_topText("Die Mechanik\n\n\nHier gibts 4 Themenbereiche der Mechanik:")
     E_reveale("Mechanische Arbeit", "Mechanische Energie E", "Mechanische Leistung P", "Wirkungsgrad η", 0x313131, 0x313131, 0x313131, 0x313131, () => {
         e1m2();
@@ -12,6 +12,7 @@ function e1m1(){
 function e1m2(){
     E_clear(G_BACKGROUND);
     G_LEVEL = 102;
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Mechanische Arbeit W\n\n\nDer Betrag von verrichteter Arbeit W ist auch der Betrag,\num den sich Energie eines Systems bei einem Vorgang ändert.\n\nTypen der Arbeit sind z.B.:");
     E_reveale("Hubarbeit → pot. Energie", "Beschleunigungsarbeit\n→ kin. Energie", "Spannarbeit → Spannenergie", "Reibungsarbeit → innere Energie", 0x313131, 0x313131, 0x313131, 0x313131, () => {
@@ -22,6 +23,7 @@ function e1m2(){
 function e1m3(){
     E_clear(G_BACKGROUND);
     G_LEVEL = 103;
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Hubarbeit\n\n\nWʜᴜʙ = Hubarbeit =\n\ndie potenzielle Energie des Körpers nach dem Hubvorgang\nminus potenzielle Energie des Körpers vor dem Hubvorgang,\nes gilt auch die Kraft Fɢ zum Anheben (m*g)\nmultipliziert mit der Strecke h, die der Körper zurücklegt.\n\nEᴘᴏᴛ nach - Eᴘᴏᴛ vor = F(m*g) * h");
     E_continue(() => {
@@ -32,16 +34,19 @@ function e1m3(){
 function e1m4(){
     E_clear(G_BACKGROUND);
     G_LEVEL = 104;
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon 80cm Höhe heben.");
     E_quiz3("1) Welche mechanische Arbeit verrichtet Physikus?", "Hub", "Reib", "Beschleunigungs", 1, () => {
         G_Points++;
         E_clear(G_BACKGROUND);
+        E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
         E_header();
         E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon 80cm Höhe heben.");
         E_quiz3("2) Um die verrichtete Arbeit zu berechnen,\nmusst du zuvor die Gewichtskraft Fɢ kennen: Fɢ = Masse * Ortsfaktor", "833.85kN", "8.3kN", "0.83kN", 3, () => {
             G_Points++;
             E_clear(G_BACKGROUND);
+            E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
             E_header();
             E_topText("Physikus will eine Kiste von 85kg Masse vom Boden auf einen Tisch\nvon 80cm Höhe heben.");
             E_quiz3("3) Berechne die verrichtete Arbeit W:", "Wʜᴜʙ = 0.66kJ", "Wʜᴜʙ = 6.66kJ", "Wʜᴜʙ = 66kJ", 1, () => {
@@ -54,6 +59,7 @@ function e1m4(){
 function e1m5(){
     E_clear(G_BACKGROUND);
     G_LEVEL = 105;
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Beschleunigungsarbeit\n\nist die Differenz der kinetischer Energie des Körpers\nnach dem Beschleunigungsvorgangs mit der am Anfang.\n\nEkin nach - Ekin vor\noder bei konstanter Kraft Fs * s (zurückgelegte Strecke)\n\nWann kannst du Fs * s nutzen?");
     E_quiz3("", "Physikus bewegt sich reibungsfrei,\n bei konstanter Geschwindigkeit\nauf der Skatebahn waagerecht.", "Physikus wird immer schneller\nals er reibungsfrei\ndie schräge Skatebahn hinabfährt", "Physikus fährt die Halfpipe mit\nReibung rauf und runter", 1, () => {
@@ -65,6 +71,7 @@ function e1m5(){
 function e1m6(){
     G_LEVEL = 106;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Spannarbeit\n\nist die Differenz von Espann nach - Espann vor, doch ACHTUNG:\nder Betrag der Kraft F während des Spannens ändert sich längs des Wegs,\ndann berechnet man die Fläche unter der Weg-Kraft-Kurve (Dreiecksfläche).\n\n\nBeispiel Gummiband:");
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m6_anim.png", 200, 300, 440, 400, 200, 300, 0.1);
@@ -75,6 +82,7 @@ function e1m6(){
 function e1m7(){
     G_LEVEL = 107;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Spanne das Gummiband auf 16J");
     let clicks = 0;
@@ -97,6 +105,7 @@ function e1m7(){
 function e1m8(){
     G_LEVEL = 108;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Reibungsarbeit\n= Eᴘᴏᴛ nach - Eᴘᴏᴛ vor\n\nFällt Physikus mit konstanter Geschwindigkeit,\nso ist Fɢ = Freibung\n\nBeispiel Fallschirm:");
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m8_anim.png", 200, 200, 440, 400, 200, 200, 0.5);
@@ -107,6 +116,7 @@ function e1m8(){
 function e1m9(){
     G_LEVEL = 109;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_quiz3("Wie viel Reibungsarbeit hat Physikus verrichtet,\nwenn er auf einer ebenen Fläche (μ = 0.090) 300m gezogen wurde?", "405kJ", "40.5kJ", "4.05J", 2, () => {
         G_Points++;
@@ -117,6 +127,7 @@ function e1m9(){
 function e1m10(){
     G_LEVEL = 110;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Energie E\n\nist gespeicherte Arbeit.\nWird also an einem Körper Arbeit verrichtet,\ndann wird Energie übertragen.\n\nBeispiel:");
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m10_anim.png", 200, 300, 440, 400, 200, 300, 0.3);
@@ -126,6 +137,7 @@ function e1m10(){
 
 function e1m11(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     G_LEVEL = 111;
     E_header();
     E_topText("Ordne den verschiedenen mechanischen Energieformen Beispiele zu:");
@@ -241,6 +253,7 @@ function e1m11(){
 function e1m12(){
     G_LEVEL = 112;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Der Energierhaltungssatz");
     let lTextObj = new PIXI.Text("Energie kann ________________________ werden, sie wird von einer Energieform ________________________\nEnergieformen ________________________.",{fontFamily : 'Arial', fontSize: 20, fill : 0xffffff, align : 'center'});
@@ -302,6 +315,7 @@ function e1m12(){
 function e1m13(){
     G_LEVEL = 113;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Leistung P\n\nist der Quotient aus verrichteter Arbeit W und der dafür benötigten Zeit t.\nP = W/t [P] = 1 W (Watt)\n\nACHTUNG: W für Arbeit und W für Watt ist nicht das Gleiche!");
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e1m13_anim.png", 200, 300, 240, 400, 200, 300, 0.1);
@@ -314,11 +328,13 @@ function e1m13(){
 function e1m14(){
     G_LEVEL = 114;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     E_topText("Physikus trägt seine Schultasche in den 1. Stock und\nverrichtet somit eine Arbeit von 80J in 60 Sekunden.\n\nEin Schüler behauptet, wenn er seine gleich schwere Schultasche\nin 1.5 Minuten raufträgt, leistet er mehr Arbeit?");
     E_fiftyfifty("Ja", "Nein", 2, 200, 500, 600, 500, () => {
         G_Points++;
         E_clear(G_BACKGROUND);
+        E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
         E_header();
         E_topText("Physikus trägt seine Schultasche in den 1. Stock und\nverrichtet somit eine Arbeit von 80J in 60 Sekunden.\n\nEin Schüler behauptet, wenn er seine gleich schwere Schultasche\nin 1.5 Minuten raufträgt, leistet er mehr Arbeit?\n\nVerringert sich die Leistung P des Schülers im Vergleich zu Physikus?");
         E_fiftyfifty("Ja", "Nein", 1, 200, 500, 600, 500, () => {
@@ -330,6 +346,7 @@ function e1m14(){
 
 function e1m15(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     G_LEVEL = 115;
     E_topText("Wirkungsgrad\n\ngibt an, welcher Anteil der zugeführten Energie\nin nutzbare Energie umgewandelt wird.\nDabei kann der Wirkungsgrad nicht größer als 1 sein,\nder maximale Wirkungsgrad wäre 100% = 1η\n\nη = Enutz/Ezu (Energie)\nes gilt auch η = Wnutz/Wzu (Arbeit) = Pnutz/Pzu (Leistung)");
@@ -340,6 +357,7 @@ function e1m15(){
 
 function e1m16(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur.png");
     E_header();
     G_LEVEL = 116;
     E_topText("Physikus sitzt vor seinem PC und zockt,\ndabei gibt der PC bei einem Wirkungsgrad von 55%\neine Leistung von 900W ab.\n\nWie viel elektrische Leistung wird zugeführt?");
@@ -364,6 +382,7 @@ function e1m16(){
 
 function e2m1(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     G_LEVEL = 201;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m1_background.png');
     E_header();
@@ -376,6 +395,7 @@ function e2m1(){
 
 function e2m2(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     G_LEVEL = 202;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m2_background.png');
     E_header();
@@ -387,6 +407,7 @@ function e2m2(){
 
 function e2m3(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     G_LEVEL = 203;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m3_background.png');
     E_topText("Was ist innere Energie?\n\nEntsprechend dem Teilchenmodell: innere Energie =\nDie Summe der kinetischen und potenziellen Energien aller Teilchen des Körpers.\n\n‚");
@@ -423,6 +444,7 @@ function e2m3(){
 
 function e2m4(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     G_LEVEL = 204;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m4_background.png');
     E_topText("Kinetische Energie ist eine spezielle Form der mechanischen Energie\n und kennzeichnet den Zustand eines sich bewegenden Körpers.\nSomit wird sie auch als Zustandsgröße bezeichnet.\n\nDie kinetische Energie eines Körpers ist abhängig von seiner Masse und der Geschwindigkeit.\n\nWer hat, wenn er unten ankommt, mehr Joul/Newtonmeter kinetische Energie?", 20);
@@ -437,6 +459,7 @@ function e2m4(){
 function e2m5(){
     E_clear(G_BACKGROUND);
     G_LEVEL = 205;
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m5_background.png');
     E_header();
     E_topText("Potenzielle Energie ist eine spezielle Form mechanischer Energie.\nDie potenzielle Energie kennzeichnet den Zustand eines gehobenen oder eines verformten Körpers\nund wird deshalb wie jede Form von Energie auch als Zustandsgröße bezeichnet.\nPotenzielle Energie kann in einem Körper gespeichert sein.\nSie kann auch in andere Energieformen umgewandelt oder von einem Körper auf andere Körper übertragen werden.", 20);
@@ -448,6 +471,7 @@ function e2m5(){
 
 function e2m6(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m6c_background.png');
     G_LEVEL = 206;
     E_header();
@@ -495,6 +519,7 @@ function e2m6(){
 
 function e2m7(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     G_LEVEL = 207;
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m7_background.png');
     E_topText("Das wissen wir:\nWärme ist die Energie, die durch Temperaturunterschiede übertragen wird.\n\nAber was ist Temperatur?");
@@ -508,6 +533,7 @@ function e2m7(){
 function e2m8(){
     let dones = 0;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m8_background.png');
     E_topText("Es gibt auch verschiedene Temperatureinheiten:")
     G_LEVEL = 208;
@@ -559,6 +585,7 @@ function e2m8(){
 
 function e2m9(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m9_background.png');
     G_LEVEL = 209;
     E_header();
@@ -575,6 +602,7 @@ let L210_rotSpeed = 0.1;
 
 function e2m10(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10a_background.png');
     E_topText("Wärmeleitung erfolgt stets von Stellen höherer Temperatur\nzu Stellen niedrigerer Temperatur.");
     E_header();
@@ -582,6 +610,7 @@ function e2m10(){
     nextButton.Draw();
     nextButton.OnClick = () => {
         E_clear(G_BACKGROUND);
+        E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
         //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m10b_background.png');
         E_topText("Schaffe es durch Reibung insgesamt 60°C zu erreichen.");
         E_header();
@@ -659,6 +688,7 @@ function L211_frame2(){
 function e2m11(){
     G_LEVEL = 0;
     E_clear(0x212121);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11a_background.png');
     E_topText("Unter Wärmeströmung (Konvektion) versteht man den Energietransport\nin Verbindung mit Teilchentransport innerhalb Flüssigkeiten oder Gasen");
     E_header();
@@ -667,6 +697,7 @@ function e2m11(){
     nextButton.OnClick = () => {
         E_clear(0x212121);
         //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11b_background.png');
+        E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
         E_header();
         E_topText("Dieses Wassergefäß wird von unten erhitzt.\n\nOrdne die Farben nach Temperatur den Teilchen zu.\n\n\nOrange = am heißesten\nblau = am kältesten");
 
@@ -792,6 +823,7 @@ let L212_count = 0;
 
 function e2m12(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
     //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12a_background.png');
     E_topText("Alle Körper emittieren aufgrund ihrer Temperatur Wärmestrahlung.\nZugleich absobieren sie auftreffende Wärmestrahlung.")
     E_header();
@@ -799,6 +831,7 @@ function e2m12(){
     nextButton.Draw();
     nextButton.OnClick = () => {
         E_clear(G_BACKGROUND);
+        E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
         //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12b_background.png');
         E_header();
 
@@ -825,6 +858,7 @@ function e2m12(){
 
 function e3m1(){
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     G_LEVEL = 301;
     E_header();
     E_topText("Elektrizitätslehre\n\n\nhandelt von Grundlagen und Erscheinungen elektrischer...");
@@ -836,6 +870,7 @@ function e3m1(){
 function e3m2(){
     G_LEVEL = 302;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Ordne zu:");
 
@@ -899,6 +934,7 @@ function e3m2(){
 function e3m3(){
     G_LEVEL = 303;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Was ist richtig?");
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m3_anim.png", 200, 200, 200, 200, 200, 200, 0.05);
@@ -917,6 +953,7 @@ function e3m3(){
 function e3m4(){
     G_LEVEL = 304;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Elektrisches Feld\n\nist der Raum um einen elektrischen Körper, indem Kräfte auf andere Ladungen wirken.\nEs wird dargestellt durch Feldlinien.\nWas sind die Eigenschaften von Feldlinien?", 25);
     E_trueFalse6("Schneiden sich nie", "Reibung von + → -", "je stärker das Feld,\ndesto enger liegen die Linien\nbeisammen", "schneiden sich", "Richtung von - → +", "je stärker das Feld,\ndesto weiter die Linien\nauseinander", 3, () => {
@@ -927,6 +964,7 @@ function e3m4(){
 function e3m5(){
     G_LEVEL = 305;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Ordne zu:");
 
@@ -1003,6 +1041,7 @@ function e3m6(){
 function e3m7(){
     G_LEVEL = 307;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Was passiert, wenn sich ein metallischer Leiter\nin einem elektrischen Feld einer Batterie befindet?");
     let pic1 = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m7_graph.png", 200, 200, 50, 300, 0xffffff, 0x212121, 20);
@@ -1019,6 +1058,7 @@ function e3m7(){
 function e3m8(){
     G_LEVEL = 308;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Warum wird Physikus' Schreibtischlampe relativ schnell heiß?");
     E_trueFalse5("Die frei beweglichen Elektronen\nstoßen bei ihrer Bewegung hin zum\nPluspol mit den ortsfesten\nAtomrümpfen zusammen.", "Durch die Wechselwirkung zwischen\nden Elektronen und Gitterionen wird\nkinetische Energie abgegeben", "Übertragung von kinetischer Energie\nerhöht die Temperatur des Leiters,\nsomit erwärmt sich die Lampe", "Die Gitterionen fangen an\nsich in Richtung Minuspol zu bewegen", "Durch die kinetische Energie, aufgrund\nder Bewegung der Gitterionen,\nerwärmt sich die Lampe", 3, () => {
@@ -1029,6 +1069,7 @@ function e3m8(){
 function e3m9(){
     G_LEVEL = 309;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Elektrizitätsleitung in Flüssigkeiten\n\n\n\n\n\n\n\n\n\n\n\n\n\nLeuchtet die Lampe?");
     let anim = new AnimationButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m9_anim.png", 400, 200, 340, 200, 400, 200, 0.1);
@@ -1050,6 +1091,7 @@ function e3m9(){
 function e3m10(){
     G_LEVEL = 310;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Elektrizitätsleitung in Gasen\n\nWas wird passieren und warum?");
     let anim = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e3m10_graph.png", 200, 200, 440, 200, 0xffffff, 0x212121, 20);
@@ -1062,6 +1104,7 @@ function e3m10(){
 function e3m11(){
     G_LEVEL = 311;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Ordne zu:");
 
@@ -1125,6 +1168,7 @@ function e3m11(){
 function e3m12(){
     G_LEVEL = 312;
     E_clear(G_BACKGROUND);
+    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur3.png");
     E_header();
     E_topText("Stromstärke\n\nist der Quotient aus der transportierten Ladungsmenge und Zeit\n\nI = Q(mAh) / t(h)\n[I] = 1A (Ampere)\n\nWie lange braucht das Ladegerät mit einem Ladestrom von 2.0 A\num Physikus' Smartphone wieder voll aufzuladen, wenn noch\n4,100mAh fehlen?");
     E_quiz3("", "Formelumstellung:\n\nI = Q/t ; 10^4mA = 1A", "Formelumstellung:\n\nt = Q/I ; 10^3mA = 1A", "Formelumstellung:\n\nQ = I*t ; 10^2mA = 1A ;", 2, () => {
