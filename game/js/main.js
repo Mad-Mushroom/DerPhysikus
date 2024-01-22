@@ -995,6 +995,16 @@ function E_endscreen(){
     }
 }
 
+function E_junk(){
+    console.log("JUNK");
+    console.log("JUNK");
+    console.log("JUNK");
+    console.log("JUNK");
+    console.log("JUNK");
+    console.log("JUNK");
+    console.log("JUNK");
+}
+
 function G_SETDEBUG(){
     G_DEBUG = true;
     console.log("%cYou entered DEBUG Mode!", "color: red; font-size: xxx-large");
