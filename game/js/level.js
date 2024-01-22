@@ -837,38 +837,21 @@ let L212_count = 0;
 
 function e2m12(){
     E_clear(G_BACKGROUND);
-    E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
-    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
-    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12a_background.png');
-    E_topText("Alle Körper emittieren aufgrund ihrer Temperatur Wärmestrahlung.\nZugleich absobieren sie auftreffende Wärmestrahlung.")
+    E_topText("Alle Körper emittieren aufgrund ihrer Temperatur Wärmestrahlung.\nZugleich absobieren sie auftreffende Wärmestrahlung.\n\n\nHalte den Block in der Mitte, indem du auf ihn klickst.")
+    E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12_background.png');
     E_header();
-    let nextButton = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
-    nextButton.Draw();
-    nextButton.OnClick = () => {
-        E_clear(G_BACKGROUND);
-        E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
-        //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12b_background.png');
-        E_header();
-
-        let graph = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m12_graph.png", 400, 200, 350, 280, 0xffffff, 0x313131, 0);
-        graph.Draw();
-
-        L212_rect = new PIXI.Graphics();
-        L212_rect.beginFill(0xff0000);
-        L212_rect.drawRect(300, 400, 100, 100);
-        app.stage.addChild(L212_rect);
-
-        let eventBtn = new Button("", 100, 200, 300, 300, 0x313131, 0x313131, 20, 0.5);
-        eventBtn.Draw();
-
-        eventBtn.OnClick = () => {
-            L212_speed = -5;
-            L212_count++;
-            if(L212_count >= 69) E_endscreen();
-        }
-
-        G_LEVEL = 212;
+    L212_rect = new PIXI.Graphics();
+    L212_rect.beginFill(0xff0000);
+    L212_rect.drawRect(250, 600, 100, 100);
+    app.stage.addChild(L212_rect);
+    let eventBtn = new Button("", 100, 200, 250, 500, 0x313131, 0x313131, 20, 0.5);
+    eventBtn.Draw();
+    eventBtn.OnClick = () => {
+        L212_speed = -5;
+        L212_count++;
+        if(L212_count >= 69) E_endscreen();
     }
+    G_LEVEL = 212;
 }
 
 function e3m1(){

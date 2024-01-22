@@ -1125,7 +1125,8 @@ function Update(){
     }
 
     if(G_LEVEL == 212){
-        L212_rect.y += L212_speed;
+        if(L212_rect.y > 100) L212_rect.y = 99;
+        if(L212_rect.y < 100) L212_rect.y += L212_speed;
         if(L212_speed < 1.5) L212_speed++;
     }
 }
