@@ -718,134 +718,117 @@ function L211_frame2(){
 function e2m11(){
     G_LEVEL = 0;
     E_clear(0x212121);
+    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11b_background.png');
     E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
-    let mechanikCastl = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/burg02_end.png", 250, 250, 350, 380, 0xffffff, 0x0, 20);mechanikCastl.Draw();
-    //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11a_background.png');
-    E_topText("");
     E_header();
-    let nextButton = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
-    nextButton.Draw();
-    nextButton.OnClick = () => {
-        E_clear(0x212121);
-        //E_background('https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11b_background.png');
-        E_background("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/background_blur2.png");
-        E_header();
-        E_topText("Unter Wärmeströmung (Konvektion) versteht man den Energietransport\nin Verbindung mit Teilchentransport innerhalb Flüssigkeiten oder Gasen\n\nDieses Wassergefäß wird von unten erhitzt.\n\nOrdne die Farben nach Temperatur den Teilchen zu.\n\n\nOrange = am heißesten\nblau = am kältesten");
-
-        let water = new Button("", 320, 320, 40, 340, 0x0000ff, 0x0000ff, 1, 0.4);
-        water.Draw();
-
-        let fire = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11_graph.png", 200, 200, 0, 660, 0xffffff, 0x313131, 0, 1);
-        fire.Draw();
-
-        let dones = 0;
-
-        L211_ball01  = new PIXI.Graphics();
-        L211_ball01.beginFill(0xffffff);
-        L211_ball01.drawCircle(100, 600, 40);
-        app.stage.addChild(L211_ball01);
-        L211_ball02  = new PIXI.Graphics();
-        L211_ball02.beginFill(0xffffff);
-        L211_ball02.drawCircle(100, 500, 40);
-        app.stage.addChild(L211_ball02);
-        L211_ball03  = new PIXI.Graphics();
-        L211_ball03.beginFill(0xffffff);
-        L211_ball03.drawCircle(100, 400, 40);
-        app.stage.addChild(L211_ball03);
-        L211_ball04  = new PIXI.Graphics();
-        L211_ball04.beginFill(0xffffff);
-        L211_ball04.drawCircle(200, 400, 40);
-        app.stage.addChild(L211_ball04);
-        L211_ball05  = new PIXI.Graphics();
-        L211_ball05.beginFill(0xffffff);
-        L211_ball05.drawCircle(300, 400, 40);
-        app.stage.addChild(L211_ball05);
-        L211_ball06  = new PIXI.Graphics();
-        L211_ball06.beginFill(0xffffff);
-        L211_ball06.drawCircle(300, 500, 40);
-        app.stage.addChild(L211_ball06);
-        L211_ball07  = new PIXI.Graphics();
-        L211_ball07.beginFill(0xffffff);
-        L211_ball07.drawCircle(300, 600, 40);
-        app.stage.addChild(L211_ball07);
-        L211_ball08  = new PIXI.Graphics();
-        L211_ball08.beginFill(0xffffff);
-        L211_ball08.drawCircle(200, 600, 40);
-        app.stage.addChild(L211_ball08);
-
-        let animBtn = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
-
-        let yellow1Btn = new Button("", 50, 50, 700, 200, 0x000000, 0xf99602, 1);
-        yellow1Btn.Draw();
-        yellow1Btn.OnClick = () => {
-            L211_ball01.tint = 0xf99602; dones++;
-            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
-            let tmpBtn = new Button("", 50, 50, 700, 200, 0x000000, G_BACKGROUND, 1);
-            tmpBtn.Draw();
-        }
-        let yellow2Btn = new Button("", 50, 50, 800, 200, 0x000000, 0xf99602, 1);
-        yellow2Btn.Draw();
-        yellow2Btn.OnClick = () => {
-            L211_ball02.tint = 0xf99602; dones++;
-            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
-            let tmpBtn = new Button("", 50, 50, 800, 200, 0x000000, G_BACKGROUND, 1);
-            tmpBtn.Draw();
-        }
-        let red1Btn = new Button("", 50, 50, 700, 300, 0x000000, 0xff0000, 1);
-        red1Btn.Draw();
-        red1Btn.OnClick = () => {
-            L211_ball03.tint = 0xff0000; dones++;
-            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
-            let tmpBtn = new Button("", 50, 50, 700, 300, 0x000000, G_BACKGROUND, 1);
-            tmpBtn.Draw();
-        }
-        let red2Btn = new Button("", 50, 50, 800, 300, 0x000000, 0xff0000, 1);
-        red2Btn.Draw();
-        red2Btn.OnClick = () => {
-            L211_ball04.tint = 0xff0000; dones++;
-            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
-            let tmpBtn = new Button("", 50, 50, 800, 300, 0x000000, G_BACKGROUND, 1);
-            tmpBtn.Draw();
-        }
-        let orange1Btn = new Button("", 50, 50, 700, 400, 0x000000, 0xa539db, 1);
-        orange1Btn.Draw();
-        orange1Btn.OnClick = () => {
-            L211_ball05.tint = 0xa539db; dones++;
-            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
-            let tmpBtn = new Button("", 50, 50, 700, 400, 0x000000, G_BACKGROUND, 1);
-            tmpBtn.Draw();
-        }
-        let orange2Btn = new Button("", 50, 50, 800, 400, 0x000000, 0xa539db, 1);
-        orange2Btn.Draw();
-        orange2Btn.OnClick = () => {
-            L211_ball06.tint = 0xa539db; dones++;
-            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
-            let tmpBtn = new Button("", 50, 50, 800, 400, 0x000000, G_BACKGROUND, 1);
-            tmpBtn.Draw();
-        }
-        let blue1Btn = new Button("", 50, 50, 700, 500, 0x000000, 0x0000ff, 1);
-        blue1Btn.Draw();
-        blue1Btn.OnClick = () => {
-            L211_ball07.tint = 0x0000ff; dones++;
-            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
-            let tmpBtn = new Button("", 50, 50, 700, 500, 0x000000, G_BACKGROUND, 1);
-            tmpBtn.Draw();
-        }
-        let blue2Btn = new Button("", 50, 50, 800, 500, 0x000000, 0x0000ff, 1);
-        blue2Btn.Draw();
-        blue2Btn.OnClick = () => {
-            L211_ball08.tint = 0x0000ff; dones++;
-            if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
-            let tmpBtn = new Button("", 50, 50, 800, 500, 0x000000, G_BACKGROUND, 1);
-            tmpBtn.Draw();
-        }
-    
-        animBtn.OnClick = () => {
-            e2m12();
-        };
-
-        G_LEVEL = 211;
+    E_topText("Unter Wärmeströmung (Konvektion) versteht man den Energietransport\nin Verbindung mit Teilchentransport innerhalb Flüssigkeiten oder Gasen\n\nDieses Wassergefäß wird von unten erhitzt.\n\nOrdne die Farben nach Temperatur den Teilchen zu.\n\n\nOrange = am heißesten\nblau = am kältesten");
+    let water = new Button("", 320, 320, 40, 340, 0x0000ff, 0x0000ff, 1, 0.4);
+    water.Draw();
+    let fire = new SpriteButton("https://raw.githubusercontent.com/Mad-Mushroom/DerPhysikus/main/game/js/res/e2m11_graph.png", 200, 200, 0, 660, 0xffffff, 0x313131, 0, 1);
+    fire.Draw();
+    let dones = 0;
+    L211_ball01  = new PIXI.Graphics();
+    L211_ball01.beginFill(0xffffff);
+    L211_ball01.drawCircle(100, 600, 40);
+    app.stage.addChild(L211_ball01);
+    L211_ball02  = new PIXI.Graphics();
+    L211_ball02.beginFill(0xffffff);
+    L211_ball02.drawCircle(100, 500, 40);
+    app.stage.addChild(L211_ball02);
+    L211_ball03  = new PIXI.Graphics();
+    L211_ball03.beginFill(0xffffff);
+    L211_ball03.drawCircle(100, 400, 40);
+    app.stage.addChild(L211_ball03);
+    L211_ball04  = new PIXI.Graphics();
+    L211_ball04.beginFill(0xffffff);
+    L211_ball04.drawCircle(200, 400, 40);
+    app.stage.addChild(L211_ball04);
+    L211_ball05  = new PIXI.Graphics();
+    L211_ball05.beginFill(0xffffff);
+    L211_ball05.drawCircle(300, 400, 40);
+    app.stage.addChild(L211_ball05);
+    L211_ball06  = new PIXI.Graphics();
+    L211_ball06.beginFill(0xffffff);
+    L211_ball06.drawCircle(300, 500, 40);
+    app.stage.addChild(L211_ball06);
+    L211_ball07  = new PIXI.Graphics();
+    L211_ball07.beginFill(0xffffff);
+    L211_ball07.drawCircle(300, 600, 40);
+    app.stage.addChild(L211_ball07);
+    L211_ball08  = new PIXI.Graphics();
+    L211_ball08.beginFill(0xffffff);
+    L211_ball08.drawCircle(200, 600, 40);
+    app.stage.addChild(L211_ball08);
+    let animBtn = new Button("→", 100, 50, 900, 750, 0xffffff, 0x313131, 20);
+    let yellow1Btn = new Button("", 50, 50, 600, 400, 0x000000, 0xf99602, 1);
+    yellow1Btn.Draw();
+    yellow1Btn.OnClick = () => {
+        L211_ball01.tint = 0xf99602; dones++;
+        if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+        let tmpBtn = new Button("", 50, 50, 600, 400, 0x000000, G_BACKGROUND, 1);
+        tmpBtn.Draw();
     }
+    let yellow2Btn = new Button("", 50, 50, 700, 400, 0x000000, 0xf99602, 1);
+    yellow2Btn.Draw();
+    yellow2Btn.OnClick = () => {
+        L211_ball02.tint = 0xf99602; dones++;
+        if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+        let tmpBtn = new Button("", 50, 50, 700, 400, 0x000000, G_BACKGROUND, 1);
+        tmpBtn.Draw();
+    }
+    let red1Btn = new Button("", 50, 50, 600, 500, 0x000000, 0xff0000, 1);
+    red1Btn.Draw();
+    red1Btn.OnClick = () => {
+        L211_ball03.tint = 0xff0000; dones++;
+        if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+        let tmpBtn = new Button("", 50, 50, 600, 500, 0x000000, G_BACKGROUND, 1);
+        tmpBtn.Draw();
+    }
+    let red2Btn = new Button("", 50, 50, 700, 500, 0x000000, 0xff0000, 1);
+    red2Btn.Draw();
+    red2Btn.OnClick = () => {
+        L211_ball04.tint = 0xff0000; dones++;
+        if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+        let tmpBtn = new Button("", 50, 50, 700, 500, 0x000000, G_BACKGROUND, 1);
+        tmpBtn.Draw();
+    }
+    let orange1Btn = new Button("", 50, 50, 600, 600, 0x000000, 0xa539db, 1);
+    orange1Btn.Draw();
+    orange1Btn.OnClick = () => {
+        L211_ball05.tint = 0xa539db; dones++;
+        if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+        let tmpBtn = new Button("", 50, 50, 600, 600, 0x000000, G_BACKGROUND, 1);
+        tmpBtn.Draw();
+    }
+    let orange2Btn = new Button("", 50, 50, 700, 600, 0x000000, 0xa539db, 1);
+    orange2Btn.Draw();
+    orange2Btn.OnClick = () => {
+        L211_ball06.tint = 0xa539db; dones++;
+        if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+        let tmpBtn = new Button("", 50, 50, 700, 600, 0x000000, G_BACKGROUND, 1);
+        tmpBtn.Draw();
+    }
+    let blue1Btn = new Button("", 50, 50, 600, 700, 0x000000, 0x0000ff, 1);
+    blue1Btn.Draw();
+    blue1Btn.OnClick = () => {
+        L211_ball07.tint = 0x0000ff; dones++;
+        if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+        let tmpBtn = new Button("", 50, 50, 600, 700, 0x000000, G_BACKGROUND, 1);
+        tmpBtn.Draw();
+    }
+    let blue2Btn = new Button("", 50, 50, 700, 700, 0x000000, 0x0000ff, 1);
+    blue2Btn.Draw();
+    blue2Btn.OnClick = () => {
+        L211_ball08.tint = 0x0000ff; dones++;
+        if(dones >= 8){ animBtn.Draw(); L211_anim = true; }
+        let tmpBtn = new Button("", 50, 50, 700, 700, 0x000000, G_BACKGROUND, 1);
+        tmpBtn.Draw();
+    }
+
+    animBtn.OnClick = () => {
+        e2m12();
+    };
+    G_LEVEL = 211;
 }
 
 let L212_rect;
