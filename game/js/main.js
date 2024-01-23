@@ -5,13 +5,13 @@ const app = new PIXI.Application({
 document.body.appendChild(app.view);
 let elapsed = 0.0;
 
-let G_VERSION = "v. Alpha 2.8.5";
+let G_VERSION = "v. 2.8.5";
 let G_BUILD = "012224";
 let G_LEVEL = 0;
 let G_BACKGROUND = 0x212121;
 let G_DEBUG = false;
 
-let E_VERSION = "v. Alpha 3.8.6";
+let E_VERSION = "v. 3.8.6";
 let E_BUILD = "012224";
 
 let G_Points = 1;
