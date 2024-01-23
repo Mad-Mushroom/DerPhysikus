@@ -8,7 +8,7 @@ let elapsed = 0.0;
 let G_VERSION = "v. 2.8.5";
 let G_BUILD = "012224";
 let G_LEVEL = 0;
-let G_BACKGROUND = 0x212121;
+let G_BACKGROUND = 0x0;
 let G_DEBUG = false;
 
 let E_VERSION = "v. 3.8.6";
@@ -245,10 +245,10 @@ function E_ltext(Text, answer1, answer2, answer3, answer4, rightAnswer1, rightAn
     var selectedT = 0;
     var dones = 0;
 
-    let flBtn = new Button("________________________", 250, 20, l1X, l1Y, 0xffffff, 0x212121, 20, 0);
+    let flBtn = new Button("________________________", 250, 20, l1X, l1Y, 0xffffff, G_BACKGROUND, 20, 0);
     flBtn.Draw();
 
-    let slBtn = new Button("________________________", 250, 20, l2X, l2Y, 0xffffff, 0x212121, 20, 0);
+    let slBtn = new Button("________________________", 250, 20, l2X, l2Y, 0xffffff, G_BACKGROUND, 20, 0);
     slBtn.Draw();
 
     let fTextBtn = new Button(answer1, 300, 100, btn1X, btn1Y, 0xffffff, 0x313131, 20);
@@ -327,10 +327,10 @@ function E_ltext(Text, answer1, answer2, answer3, answer4, rightAnswer1, rightAn
                 btnnX = btn4X;
                 btnnY = btn4Y;
             }
-            let tmp = new Button(ranswer, 250, 20, l1X, l1Y, 0xffffff, 0x212121, 20, 0);
+            let tmp = new Button(ranswer, 250, 20, l1X, l1Y, 0xffffff, G_BACKGROUND, 20, 0);
             tmp.Draw();
             selectedT = 0;
-            let tmp2 = new Button("a", 300, 100, btnnX, btnnY, 0x212121, 0x212121, 20);
+            let tmp2 = new Button("a", 300, 100, btnnX, btnnY, G_BACKGROUND, G_BACKGROUND, 20);
             tmp2.Draw();
             dones++;
             G_Points++;
@@ -362,10 +362,10 @@ function E_ltext(Text, answer1, answer2, answer3, answer4, rightAnswer1, rightAn
                 btnnX = btn4X;
                 btnnY = btn4Y;
             }
-            let tmp = new Button(ranswer, 250, 20, l2X, l2Y, 0xffffff, 0x212121, 20, 0);
+            let tmp = new Button(ranswer, 250, 20, l2X, l2Y, 0xffffff, G_BACKGROUND, 20, 0);
             tmp.Draw();
             selectedT = 0;
-            let tmp2 = new Button("a", 300, 100, btnnX, btnnY, 0x212121, 0x212121, 20);
+            let tmp2 = new Button("a", 300, 100, btnnX, btnnY, G_BACKGROUND, G_BACKGROUND, 20);
             tmp2.Draw();
             dones++;
             G_Points++;
@@ -958,7 +958,7 @@ function E_topText(text, size = 30){
 }
 
 function E_gameover(){
-    E_clear(0x212121);
+    E_clear(G_BACKGROUND);
     E_topText("Game Over!\n\nBeim nächsten mal klappts bestimmt :)");
     let backBtn = new Button("Zurück", 200, 100, (window.innerWidth-200)/2, 600, 0xffffff, 0x313131, 20);
     backBtn.Draw();
