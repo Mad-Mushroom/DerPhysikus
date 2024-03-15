@@ -5,8 +5,8 @@ const app = new PIXI.Application({
 document.body.appendChild(app.view);
 let elapsed = 0.0;
 
-let G_VERSION = "v. 2.8.5";
-let G_BUILD = "012224";
+let G_VERSION = "v. 2.8.6";
+let G_BUILD = "031524";
 let G_LEVEL = 0;
 let G_BACKGROUND = 0x0;
 let G_DEBUG = false;
