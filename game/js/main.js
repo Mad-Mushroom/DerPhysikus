@@ -33,6 +33,7 @@ function gertrude(){
 	console.log("Wir hatten immernoch nichts besseres um 00:16 zu tun... (Was machen Sie so Morgends um 00:16?)");
 	console.log(" ");
 	console.log("Update: Wir haben um 00:30 immernoch nichts besseres zu tun.");
+	console.log("Weiteres Update: Es ist 2:18, morgens, Montag. Ich habe nichts besseres zu tun, als Bugs hier zu beheben...");
 }
 
 function relaunch(){
