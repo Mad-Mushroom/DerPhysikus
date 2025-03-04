@@ -20,26 +20,6 @@ function allesok(){
 	window.location.replace("https://mad-mushroom.github.io/DerPhysikus/game/js/res/allesok.mp3");
 }
 
-function gertrude(){
-	console.log("1) Du Gertrude, Heilender Hippie!");
-	console.log("2) Herr Hartl: Energie wird vernichtet. Stegreigaufgabe, 19.5/20 Punkten, sinvolle Ziffern??? 20.0?!?!?!");
-	console.log("   Herr Engl: HHwwwt Hwwtt. Tk. Tk. Haxn vom Tisch! So nedda leidln. Meister Schwarzrock! Es gibt ja nix dritts, leidln... Typischer Schülerfehler! Japanisches Kulturgut leidln. Bis morgen, zwei Seiten, Thema, Pünktlichkeit, domi. HHwwwt Hwwtt. Tk. Tk. 1.5² * 200 dividiert durch -50 minus 20 * -0.5 und davon 20%; Finger rauf, wers hat. Überschrift der letzen Stunde. Des kann doch ned sei, ihr sads da oansa zwoag. Ich bin stink sauer! Wos wos wos wos?!")
-	console.log("   Herr Schwab: Bitcoin kurs muss über 100.000 gehen... Song bei 'allesok()'");
-	console.log("   Rützi Mützi: Der War Thunder Grind muss weiter gehen, ganz wichtig leidln, und bummst eine aus dem Tanzkurs :) BTW: SINVOLLE ZIFFERN EXISTIEREN NICHT! (Zitat 00:21 Montag Früh (Montags haben wir Physik (bei Herr Hartl (der Süßi (wollen Sie unserem Discord joinen? bitti bitti))))) Punkt vor Strich bei Spitze minus Fuß.");
-	console.log("   Domi: Headset dent.");
-	console.log("   Praktikum: Ich arbeite, rando mando armin kommt, wir testen wie viele Tabs verschiedene Browser aushalten. Chrome weniger als Firefox :)");
-	console.log("π = e = 3");
-	console.log("   ");
-	console.log("Wir hatten immernoch nichts besseres um 00:16 zu tun... (Was machen Sie so Morgends um 00:16?)");
-	console.log(" ");
-	console.log("Update: Wir haben um 00:30 immernoch nichts besseres zu tun.");
-}
-
-function relaunch(){
-	console.log("POV: Es ist 00:11 in der Nacht und wir (Ich, Rützi & Timmy) haben nichts besseres zu tuni. So ein Süßi. Und Feini vielleicht auch nochi.");
-	console.log("Tipp: Drücki machi bitti 'gertrude()'");
-}
-
 function G_show_license(){
     window.location.replace("https://mad-mushroom.github.io/DerPhysikus/license/game.txt");
 }
