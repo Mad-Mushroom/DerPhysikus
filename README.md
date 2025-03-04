@@ -4,24 +4,6 @@ Ein Spiel für eine Projektpräsentation in der Schule.
 
 The Game is made using <a href="https://pixijs.com/">PixiJS</a>, therefore it is Web-based.
 
-## HOW TO: Open Game in iPad "mode" on Firefox
-
-**This only works in Firefox!**
-
-1) Click F12
-  
-2) Click this Button on the Menu at the bottom
-![howto1](https://github.com/Mad-Mushroom/DerPhysikus/assets/100442757/d6609128-edcc-4b41-81c5-e48c59a109b3)
-4) Click On the Drop-Down (left)
-   
-5) Select iPad
-   
-6) Click the "Rotate Screen" Button, **IF NOT IN LANDSCAPE**
-![howto2](https://github.com/Mad-Mushroom/DerPhysikus/assets/100442757/830d4900-6dca-4931-b0ca-3f99e859bdbf)
-7) Press F5 to reload the page
-    
-8) Enjoy!
-
 ## Credits
 
 **Programming** | Benjamin Braun / MadMushroom
